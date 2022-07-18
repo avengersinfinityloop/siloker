@@ -1,0 +1,221 @@
+<?php
+    require "fungsi.php";
+    require "koneksidb.php";
+    
+    session_start();
+    //tampilan USER yang sedang LOGIN
+    $nik = $_SESSION['nik'];
+    $nama = $_SESSION['nama'];
+    if(isset($_GET['idIklan'])){ //mendapatkan informasi dari page cekTempat.php untuk idIklan
+        $idIklan    =$_GET['idIklan']; //menyimpan informasi di variable
+    }
+    else {
+        die ("Error. No ID Selected!"); //error apabila tidak mendapatkan id
+    }
+
+    //CONTENT SUBMIT AREA
+    $info=""; //variable informasi
+    $hide = 0; //variable link dengan javascript membuat tampilan menjadi HIDE ketika di submit
+    $query1 = mysqli_query($conn, "SELECT * FROM pasang_iklan WHERE idIklan='$idIklan'"); //query menampilkan informasi detail berdasarkan id iklan
+    $result1 = mysqli_fetch_array($query1);
+    //CONTENT SUBMIT AREA >>> AUTO GENERATE NO ID DAFTAR BARU
+    $cekmaxID = mysqli_query($conn, "SELECT MAX(idDaftar) FROM daftar_kursus"); //mengecek IDDAFTAR paling tinggi untuk di buatkan ID baru
+    $result2 = mysqli_fetch_array($cekmaxID); //memasukan query ke dalam variable
+    $nextID = intval($result2[0]) + 1; //rumus mendapatkan ID baru
+    $idDaftar=$nextID; //variable untuk daftar ID baru
+    //CONTENT SUBMIT AREA >>> MENCARI INFORMASI DARIDATABASE APAKAH IKLAN YANG MAU DI DAFTARKAN SUDAH ADA ATAU BELUM BERDASARKAN ID USER YANG SEDANG LOGIN
+    $query3 = mysqli_query($conn, "SELECT idIklan FROM daftar_kursus WHERE (idIklan = $idIklan AND nik = $nik)"); // search apa id iklan sudah terdaftar di user tersebut
+    $result3 = mysqli_fetch_array($query3);
+    if ($result3 != null) { //apabila isi search tidak null maka hasil search masuk ke variable bantu
+        $dobleData = $result3['idIklan'];
+    } else { //apabila isi search null maka variable bantu menjadi 0
+        $dobleData = 0;
+    }
+    //CONTENT SUBMIT AREA >>> DENGAN MENGGUNAKAN BUTTON DAFTAR MAKA IKLAN AKAN TERDAFTAR DI DATABASE BERDASARKAN USER
+    if(isset($_POST['daftar'])){ //berfungsi ketika form di daftar
+        $hide = 1;
+        if($dobleData != $idIklan) { //berjalan apabila mendapatkan id daftar dan tidak ada iklan yang sudah didaftarkan dengan user yang sama
+            $query2 = mysqli_query($conn, "INSERT INTO daftar_kursus (idDaftar,nik,idIklan) VALUES ('$idDaftar','$nik','$idIklan')"); //query untuk memesukan data ke database
+            $info = "Success! sudah masuk dalam list dengan IDDAFTAR-".$idDaftar." dan IDIKLAN-".$idIklan.". Silahkan Kembali ";
+        } else {
+            $info = "Failed! user-".$nik." sudah tidak bisa daftar dari iklan yang sama dengan IDIKLAN-".$idIklan.". Silahkan Kembali ";
+        }
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+        created by  :   nama    :joy mr
+                        nim     :10121910
+                        kelas   :IF9K
+        created on              :20220703
+        page name               :submit.php
+        total                   :??? pages
+        logs                    :v1.0 20220703 - create file
+                                :v1.0 20220709 - finish file
+                                :v1.1 2022???? - finishing  file
+        [Table of contents]
+    -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KURSUS</title>
+    <link rel="icon" href="multimedia/image/icon joy mode.jpeg">
+    <link rel="stylesheet" href="css/jmr.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<!-- HEADER -->
+<div class="">
+    <div class=" jpageHeader fixed-top"> 
+        <nav class="container navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><b>SILOKER</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        LOKER
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">INDEX</a></li>
+                            <li><a class="dropdown-item" href="#">MAINLOKER</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        KURSUS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
+                            <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        BOOTCAMP
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">HOME</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">OUR BOOTCAMP</a></li>
+                            <li><a class="dropdown-item" href="#">DAFTAR SEKARANG</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        PROFILE
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">MENU</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+                <div class="d-flex">
+                    <b class="me-2"><?php echo "LOGIN - " .$nama." - ".$nik ?></b>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- CONTENT -->
+<div class="">
+    <!-- SUBMIT AREA-->
+    <div class="jpageCon1">
+        <div class="container ">
+            <h4 class="text-center">SUBMIT INFORMATION DAFTAR KURSUS</h4>
+            <h5 class="text-center"><?php echo $info; ?></h5>
+            <?php if ($hide != 1) :?>
+            <div>
+                <img class="highlight" src="<?php echo $result1['imageRegister']?>" alt="">
+                <table cellpadding="1">
+                    <tr>
+                        <td>idIklan</td>
+                        <td>: <?php echo $result1['idIklan']?></td>
+                    </tr>
+                    <tr>
+                        <td>tanggal</td>
+                        <td>: <?php echo $result1['tanggal']?></td>
+                    </tr>
+                    <tr>
+                        <td>namaKursus</td>
+                        <td>: <?php echo $result1['namaKursus']?></td>
+                    </tr>
+                    <tr>
+                        <td>bidang</td>
+                        <td>: <?php echo $result1['bidang']?></td>
+                    </tr>
+                    <tr>
+                        <td>harga</td>
+                        <td>: <?php echo $result1['harga']?></td>
+                    </tr>
+                    <tr>
+                        <td>wilayah</td>
+                        <td>: <?php echo $result1['wilayah']?></td>
+                    </tr>
+                    <tr>
+                        <td>onlineOffline</td>
+                        <td>: <?php echo $result1['onlineOffline']?></td>
+                    </tr>
+                    <tr>
+                        <td>imageRegister</td>
+                        <td>: <?php echo $result1['imageRegister']?></td>
+                    </tr>
+                    <tr>
+                        <td>nik</td>
+                        <td>: <?php echo $result1['nik']?></td>
+                    </tr>
+                    <tr height="100px">
+                        <td>
+                            <form method="POST" class="my-auto" id="myForm">
+                                <input type="submit" name="daftar" value="DAFTAR" class="btn btn-outline-secondary">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <?php endif; ?>
+        </div>
+        <div class="container text-center my-3">
+            <a href="cekTempat.php"><button class="btn btn-outline-secondary">KEMBALI</button></a>
+        </div>
+    </div>
+</div>
+<!-- FOOTER -->
+<div class="jpageFooter">
+    <div class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <iframe name="footer" scrolling="no" src="footer.html" class="jfooter">404 not found</iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jmr.js"></script>
+<script>
+    //JS UNTUK HIDE TAMPILAN KETIKA DI SUBMIT
+    var run = <?=json_encode($hide, JSON_HEX_TAG | JSON_HEX_AMP) ?>; //informasi variable dari PHP
+    if (run == 1) { //run apabila sudah di submit
+        var x = document.getElementById("hide"); //DIV dengan id hide akan menghilang dari mukabumi
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

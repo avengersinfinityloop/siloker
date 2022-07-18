@@ -1,0 +1,99 @@
+/* HEADER */
+.jpageHeader {
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.jpageHeader .navbar-brand{
+    margin-right: 100px;
+    font-size: 25px;
+}
+.jpageHeader .nav-item{
+    margin-right: 15px;
+    font-size: 20px;
+}
+.jpageHeader .dropdown-menu{
+    font-size: 15px;
+}
+
+/* CONTENT */
+.jpageCon1 {
+    background-color: white;
+    margin-top: 90px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    min-height: 550px;
+}
+/* CONTENT PERTAMA */
+.jpageCon1 .highlight {
+    background-color: lightgray;
+    margin-bottom: 15px;
+    height: 450px;
+    width: 100%;
+}
+.jpageCon1 .tableDaftar {
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+}
+
+/* CONTENT KEDUA */
+.jpageCon2{
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+.jpageCon2 .columns {
+    width: 350px;
+    margin: 0px 100px 0px 100px;
+}
+.jpageCon2 .jText1 {
+    font-size: 20px;
+    height: 30px;
+}
+.jpageCon2 .jText2 {
+    font-size: 16px;
+    height: 80px;
+}
+.jpageCon2 .jText3 {
+    height: 20px;
+}
+.jpageCon2 .navbar-brand {
+    border: 2px solid black;
+    padding: 5px 20px 5px 20px;
+}
+.jpageCon2 .iklanInfo{
+    height: auto;
+}
+.jpageCon2 .iklanInfo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 1250px;
+}
+.jpageCon2 .iklanInfo table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: auto;
+}
+.jpageCon2 select {
+    width: 100px;
+}
+
+/* FOOTER */
+.jpageFooter {
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.jpageFooter iframe {
+    height: 1000px;
+    width: 100%;
+}
