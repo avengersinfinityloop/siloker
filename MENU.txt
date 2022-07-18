@@ -1,0 +1,21 @@
+joy	
+MENU				kursus.php
+CEK TEMPAT			cekTempat.php
+PASANG IKLAN			pasangIklan.php
+	
+bagus	
+INDEX				indexloker.php
+MAIN LOKER			loker.php
+	
+nasir	
+ABOUT				about.html
+DIGITAL MARKETING		digitalMarketing.php
+FULL STACK WEB DEVELOPMENT	fullStackWebDevelopment.php
+INDEX BOOTCAMP			indexBootcamp.php
+UI UX				uiUx.php
+	
+sidiq	
+MENU				profil.php
+	
+irfan	
+???				??
