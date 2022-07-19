@@ -14,7 +14,7 @@
     $result = mysqli_fetch_array($cekmaxID); //memasukan query ke dalam variable
     $nextID = intval($result[0]) + 1; //rumus mendapatkan ID baru
     $idIklan = $nextID; //variable untuk daftar ID baru
-    $imageRegister ='libraryImage/' . $nextID . '.jpg'; //variable untuk path image baru pada ID baru
+    $imageRegister ='multimedia/image/LibraryImage/' . $nextID . '.jpg'; //variable untuk path image baru pada ID baru
     //CONTENT FORM >>> DENGAN MENGGUNAKAN BUTTON PASANG MAKA IKLAN AKAN TERDAFTAR DI DATABASE
     if(isset($_POST['submit'])) {
         $namaKursus=$_POST['namaKursus'];
@@ -25,7 +25,7 @@
         $cekIMAGE=basename($_FILES["fileToUpload"]["name"]);
         if($namaKursus != '' && $bidang != '' && $harga !='' && $wilayah !='' && $onlineOffline !='' && $cekIMAGE != '' ) {
             $query =mysqli_query($conn, "INSERT INTO pasang_iklan (idIklan,namaKursus,bidang,harga,wilayah,onlineOffline,imageRegister,nik) VALUES ('$idIklan','$namaKursus','$bidang','$harga','$wilayah','$onlineOffline','$imageRegister','$nik')");
-            $target_dir = "libraryImage/";
+            $target_dir = "multimedia/image/LibraryImage/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             $newFileName = $target_dir . basename($nextID.".jpg");

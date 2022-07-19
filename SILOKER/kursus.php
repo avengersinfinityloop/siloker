@@ -64,8 +64,8 @@
                         LOKER
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">INDEX</a></li>
-                            <li><a class="dropdown-item" href="#">MAINLOKER</a></li>
+                            <li><a class="dropdown-item" href="indexloker.php">INDEX</a></li>
+                            <li><a class="dropdown-item" href="loker.php">MAIN LOKER</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -74,7 +74,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
-                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
                             <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
                         </ul>
@@ -84,10 +83,11 @@
                         BOOTCAMP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">HOME</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">OUR BOOTCAMP</a></li>
-                            <li><a class="dropdown-item" href="#">DAFTAR SEKARANG</a></li>
+                            <li><a class="dropdown-item" href="about.html">ABOUT</a></li>
+                            <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
+                            <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
+                            <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
+                            <li><a class="dropdown-item" href="uiUx.php">UI UX</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -95,7 +95,7 @@
                         PROFILE
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">MENU</a></li>
+                            <li><a class="dropdown-item" href="profil.php">MENU</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -149,12 +149,12 @@
                 <div class="col-md-6 columns">
                     <h2 class="jText1">KURSUS</h2>
                     <p class="jText2">Hanya Dengan Mengikuti Kursus Disini Anda Akan Mendapatkan Bonus Keren. <br> Yuk Belajar!</p>
-                    <p class="jText3"><a class="navbar-brand" href="cekTempat.php"><img src="multimedia/image/switch.png" alt="" width="30" height="24" class="d-inline-block align-text-top">CEK TEMPAT</a></p>
+                    <p class="jText3"><a class="navbar-brand" href="cekTempat.php"><img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="d-inline-block align-text-top">CEK TEMPAT</a></p>
                 </div>
                 <div class="col-md-6 columns">
                     <h2 class="jText1">PERUSAHAAN</h2>
                     <p class="jText2">Pasang iklan Kursus agar terhubung dengan orang yang paling potensial. <br> Yuk Pasang!</p>
-                    <p class="jText3"><a class="navbar-brand" href="pasangIklan.php"><img src="multimedia/image/switch.png" alt="" width="30" height="24" class="d-inline-block align-text-top">PASANG IKLAN</a></p>
+                    <p class="jText3"><a class="navbar-brand" href="pasangIklan.php"><img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="d-inline-block align-text-top">PASANG IKLAN</a></p>
                 </div>
             </div>
     </div>
