@@ -2,6 +2,12 @@
   include("koneksidb.php");
   session_start();
 ?>
+
+<!--  Created by  : Indi Bagus Prasetyo
+      NIM         : 10121902
+      Logs        : 20/07/2022 ; 12:22 AM    
+-->
+      
   
 <!doctype html>
 <html lang="en">
@@ -15,7 +21,7 @@
         <!-- Title -->
         <title>SILOKER - Loker</title>
         <!-- Links -->
-        <base href="index.php">
+        <base href="dashloker.php">
         <link rel="icon" href="multimedia/image/siloker.png" type="image/icon type">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/d13b076ab0.js" crossorigin="anonymous"></script>
@@ -28,7 +34,7 @@
 <!-- Navbar (Brands) -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-      <a class="navbar-brand" href="index.php">SILOKER</a>
+      <a class="navbar-brand" href="dashloker.php">SILOKER</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
@@ -306,58 +312,16 @@
         </div>
       </div>
     </div>
+
+    <br>
+    <br>
+    <br>
                 
 
 <!-- Footer -->
-    <nav class="navbar navbar-light bg-light">
-      <div class="container-fluid">
         <div class="container">
-          <div class="footer-dark">
-            <footer>
-                <div class="container p-5">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>Layanan</h3>
-                            <ul>
-                                <li><a href="loker.php">Loker</a></li>
-                                <li><a href="#">Kursus</a></li>
-                                <li><a href="#">Bootcamp</a></li>
-                                <li><a href="#">Profil</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>Tentang Kami</h3>
-                            <ul>
-                                <li><a href="#">Hubungi Kami</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Kirim Saran</a></li>
-                                <li><a href="#">Profil Kami</a></li>
-                            </ul>
-
-                        </div>
-                        <div class="col-md-6 item text">
-                            <h3>SILOKER</h3>
-                            <p>Cari Lowongan pekerjaan dengan cepat bersama SILOKER.</p>
-                            <br>
-                            <p><strong>Head Office : </strong>Jl.Haji Dharma Yasa, Blok M-8 Ds.Mandalawangi, Kec.Paseh 40383, Kab.Bandung</p>
-                            <p><strong>Jakarta Office : </strong>Jl.Pintu Terbuka, Komplek Gerbang Tertutup,Kec.Sawah Besar,Kota Jakarta Pusat</p>
-                        </div>
-                      </div>
-                      <ul>
-                        <li type="none">
-                          <a href="#"><i class="fab fa-facebook"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                          <a href="#"><i class="fab fa-twitter-square"></i></a>
-                          <a href="#"><i class="fab fa-linkedin"></i></a>
-                          <a href="mailto:"><i class="fas fa-envelope"></i></a>
-                        </li>
-                      </ul>
-                    <p class="copyright">PT. AVENGERS INFINITY LOOP (INSAN CERDAS) © 2022</p>
-                </div>
-            </footer>
-          </div>
+          <iframe src="footer.html" width="1280" height="480"></iframe>
         </div>
-      </div>
-    </nav>
+
   </body>
 </html>

@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -26,7 +23,7 @@
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <div class="container">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php">SILOKER</a>
+                    <a class="navbar-brand" href="dashloker.php">SILOKER</a>
                 </div>
             </div>
         </nav>
@@ -41,33 +38,36 @@
                 <h2>LOWONGAN PEKERJAAN</h2>
             </div>
             <div class="row">
+            <form action="loker.php" method="POST">
 
                 <div class="col">
                     <p>Bidang</p>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Arsitektur</option>
-                        <option value="1">Tenaga Ahli</option>
-                      </select>
+                    <select name="bidang_kerja" class="form-select" aria-label="Default select example">
+                      <option value="" selected>Pilih Bidang Kerja</option>
+                        <option value="ARSITEKTUR" >Arsitektur</option>
+                        <option value="TENAGA AHLI">Tenaga Ahli</option>
+                    </select>
                 </div>
 
                 <div class="col">
                     <p>Lulusan</p>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>S1 / D4 (Strata 1/DIPLOMA 4)</option>
-                        <option value="1">S2 / Strata 2 (Magister)</option>
-                        <option value="2">S3 / Strata 3 (Doktoral)</option>
-                        <option value="3">D1 / DIPLOMA 1</option>
-                        <option value="4">D2 / DIPLOMA 2</option>
-                        <option value="5">D3 / DIPLOMA 3</option>
-                        <option value="6">SMA/K/MA</option>
-                        <option value="7">SMP</option>
-                        <option value="8">SD</option>
+                    <select name="lulusan_min" class="form-select" aria-label="Default select example">
+                        <option value="" selected>Pilih Lulusan</option>
+                        <option value="S1">S1 / D4 (Strata 1/DIPLOMA 4)</option>
+                        <option value="S2">S2 / Strata 2 (Magister)</option>
+                        <option value="S3">S3 / Strata 3 (Doktoral)</option>
+                        <option value="D1">D1 / DIPLOMA 1</option>
+                        <option value="D2">D2 / DIPLOMA 2</option>
+                        <option value="D3">D3 / DIPLOMA 3</option>
+                        <option value="SMA/K/MA">SMA/K/MA</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SD">SD</option>
                       </select>
                 </div>
 
                 <div class="col">
                     <p>Gender</p>
-                    <select class="form-select" aria-label="Default select example">
+                    <select name="gender" class="form-select" aria-label="Default select example">
                         <option selected>Pria</option>
                         <option value="1">Wanita</option>
                       </select>
@@ -82,19 +82,19 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="u18">
+                                    <input name="usia" class="form-check-input" type="checkbox" value="" id="u18">
                                     <label class="form-check-label" for="flexCheckDefault">Usia > 18 Tahun</label>
                                 </div>
                             </li>
                           <li>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="u25">
+                                <input name="usia" class="form-check-input" type="checkbox" value="" id="u25">
                                 <label class="form-check-label" for="flexCheckDefault">Usia < 25 Tahun</label>
                             </div>
                           </li>
                           <li>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="u35">
+                                <input name="usia" class="form-check-input" type="checkbox" value="" id="u35">
                                 <label class="form-check-label" for="flexCheckDefault">Usia < 35 Tahun</label>
                             </div>
                           </li>
@@ -111,25 +111,25 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="fulltime">
+                                    <input name="durasi" class="form-check-input" type="checkbox" value="" id="fulltime">
                                     <label class="form-check-label" for="flexCheckDefault">Full Time</label>
                                 </div>
                             </li>
                           <li>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="parttime">
+                                <input name="durasi" class="form-check-input" type="checkbox" value="" id="parttime">
                                 <label class="form-check-label" for="flexCheckDefault">Part Time</label>
                             </div>
                           </li>
                           <li>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="freelance">
+                                <input name="durasi" class="form-check-input" type="checkbox" value="" id="freelance">
                                 <label class="form-check-label" for="flexCheckDefault">Freelance</label>
                             </div>
                           </li>
                           <li>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="magang">
+                                <input name="durasi" class="form-check-input" type="checkbox" value="" id="magang">
                                 <label class="form-check-label" for="flexCheckDefault">Magang</label>
                             </div>
                           </li>
@@ -137,7 +137,7 @@
                     </div>
                 </div>
                 
-                <div class="col">
+                  <div class="col">
                     <p>Lokasi</p>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -146,19 +146,19 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="fulltime">
+                                    <input name="lokasi" class="form-check-input" type="checkbox" value="" id="fulltime">
                                     <label class="form-check-label" for="flexCheckDefault">Seluruh Wilayah</label>
                                 </div>
                             </li>
                           <li>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="parttime">
+                                <input name="lokasi" class="form-check-input" type="checkbox" value="" id="parttime">
                                 <label class="form-check-label" for="flexCheckDefault">Bandung</label>
                             </div>
                           </li>
                           <li>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="freelance">
+                                <input name="lokasi" class="form-check-input" type="checkbox" value="" id="freelance">
                                 <label class="form-check-label" for="flexCheckDefault">Jakarta</label>
                             </div>
                           </li>
@@ -170,21 +170,33 @@
                           </li>
                         </ul>
                     </div>
-                </div>
-
-            </div>
-        </div>
-
+                  </div>
+                  <div class="col">
+                  
+                      <button type="submit" class="btn btn-light">Cari</button>
+                    </div>
+              </div>
+            </form>
+          </div>
+        
 <br/>
 <br/>
 <br/>
 
 <?php
-  include("connection.php");
-  
-  $sql = "SELECT * FROM loker";
-  if($result = mysqli_query($link, $sql)){
-    
+  include("koneksidb.php");
+  $WHERE = "";
+  if ($_POST and $_POST["bidang_kerja"]) {
+    $WHERE = $WHERE . "'" .$_POST["bidang_kerja"] ."'" ;
+  };
+
+  if ($_POST and $_POST["lulusan_min"]) {
+    $WHERE = $WHERE . " and " . "'"  . $_POST["lulusan_min"]. "'" ;
+  };
+  $sql = "SELECT * FROM loker " . $WHERE;
+
+
+  if($result = mysqli_query($conn, $sql)){
       if(mysqli_num_rows($result) > 0){
         $col = 0;
         echo '<div class="container">';
@@ -241,11 +253,11 @@
           echo "No records matching your query were found.";
       }
   } else{
-      echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+      echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
   }
   
   // Close connection
-  mysqli_close($link);
+  mysqli_close($conn);
 ?>
 
 
@@ -305,52 +317,12 @@
       </div>
     </div>
         
+    <br/>
+    <br/>
+    <br/>
 
 <!-- Footer -->
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-              <div class="container">
-                <div class="footer-dark">
-                  <footer>
-                      <div class="container p-5">
-                          <div class="row">
-                              <div class="col-sm-6 col-md-3 item">
-                                  <h3>Layanan</h3>
-                                  <ul>
-                                      <li><a href="#">Loker</a></li>
-                                      <li><a href="#">Kursus</a></li>
-                                      <li><a href="#">Bootcamp</a></li>
-                                      <li><a href="#">Profil</a></li>
-                                  </ul>
-                              </div>
-                              <div class="col-sm-6 col-md-3 item">
-                                  <h3>Tentang Kami</h3>
-                                  <ul>
-                                      <li><a href="#">Hubungi Kami</a></li>
-                                      <li><a href="#">FAQ</a></li>
-                                      <li><a href="#">Kirim Saran</a></li>
-                                      <li><a href="#">Profil Kami</a></li>
-                                  </ul>
-                              </div>
-                              <div class="col-md-6 item text">
-                                  <h3>SILOKER</h3>
-                                  <p>Cari Lowongan pekerjaan dengan cepat bersama SILOKER.</p>
-                                  <br>
-                                  <p><strong>Head Office : </strong>Jl.Haji Dharma Yasa, Blok M-8 Ds.Mandalawangi, Kec.Paseh 40383, Kab.Bandung</p>
-                                  <p><strong>Jakarta Office : </strong>Jl.Pintu Terbuka, Komplek Gerbang Tertutup,Kec.Sawah Besar,Kota Jakarta Pusat</p>
-                              </div>
-                          <p class="copyright">PT. AVENGERS INFINITY LOOP (INSAN CERDAS) © 2022</p>
-                      </div>
-                  </footer>
-                </div>
-              </div>
-            </div>
-          </nav>
-
-
-
-
-
+       <iframe src="footer.html" width="1280" height="480"></iframe>
 
     </body>
 </html>
