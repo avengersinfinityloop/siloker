@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2022 at 05:07 PM
+-- Generation Time: Jul 20, 2022 at 06:52 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -54,15 +54,14 @@ CREATE TABLE `login` (
 
 CREATE TABLE `loker` (
   `idloker` int(20) NOT NULL,
-  `lokerinfo` varchar(30) NOT NULL,
-  `logo` varchar(20) NOT NULL,
-  `nama_pt` varchar(25) NOT NULL,
-  `bidang_kerja` varchar(20) NOT NULL,
-  `lulusan_min` varchar(20) NOT NULL,
-  `gender` varchar(7) NOT NULL,
-  `usia_max` int(5) NOT NULL,
-  `durasi` int(5) NOT NULL,
-  `gaji` int(10) NOT NULL,
+  `logo` varchar(100) NOT NULL,
+  `nama_pt` varchar(100) NOT NULL,
+  `bidang_kerja` varchar(50) NOT NULL,
+  `lulusan_min` varchar(11) NOT NULL,
+  `gender` varchar(2) NOT NULL,
+  `usia_max` int(2) NOT NULL,
+  `durasi` varchar(20) NOT NULL,
+  `gaji` varchar(50) NOT NULL,
   `lokasi` varchar(15) NOT NULL,
   `deskripsi` text NOT NULL,
   `link_pt` varchar(20) NOT NULL,
