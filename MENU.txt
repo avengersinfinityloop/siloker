@@ -1,24 +1,29 @@
 joy	
+title navbar                KURSUS
 MENU				        kursus.php
 CEK TEMPAT			        cekTempat.php
 PASANG IKLAN		        pasangIklan.php
-	
+
 bagus	
+tile navbar                 LOKER
 MENU UTAMA				    dashloker.php
 MAIN LOKER			        loker.php
 	
 nasir	
+title navbar                BOOTCAMP
 ABOUT				        about.php
 DIGITAL MARKETING		    digitalMarketing.php
 FULL STACK WEB DEVELOPMENT	fullStackWebDevelopment.php
 INDEX BOOTCAMP			    indexBootcamp.php
 UI UX				        uiUx.php
 	
-sidiq	
+sidiq
+title navbar                PROFIL
 MENU				        profil.php
 	
-irfan	
-???				??
+irfan
+title navbar                BERANDA
+LOGIN                       index.php
 
 SESSION SHARE DATA
 index.php > POST 
