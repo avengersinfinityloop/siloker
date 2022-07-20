@@ -23,7 +23,7 @@
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <div class="container">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="dashloker.php">SILOKER</a>
+                    <a class="navbar-brand" href="dashloker.php">SILOKER---</a>
                 </div>
             </div>
         </nav>
