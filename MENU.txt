@@ -19,3 +19,13 @@ MENU				profil.php
 	
 irfan	
 ???				??
+
+SESSION SHARE DATA
+index.php > POST 
+    session_start();
+    $_SESSION['nik'] = $shareNIK;
+
+
+all page > GET
+    session_start();
+    $shareNIK = $_SESSION['nik'];
