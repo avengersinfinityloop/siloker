@@ -1,21 +1,31 @@
 joy	
-MENU				kursus.php
-CEK TEMPAT			cekTempat.php
-PASANG IKLAN			pasangIklan.php
+MENU				        kursus.php
+CEK TEMPAT			        cekTempat.php
+PASANG IKLAN		        pasangIklan.php
 	
 bagus	
-INDEX				indexloker.php
-MAIN LOKER			loker.php
+MENU UTAMA				    dashloker.php
+MAIN LOKER			        loker.php
 	
 nasir	
-ABOUT				about.html
-DIGITAL MARKETING		digitalMarketing.php
+ABOUT				        about.php
+DIGITAL MARKETING		    digitalMarketing.php
 FULL STACK WEB DEVELOPMENT	fullStackWebDevelopment.php
-INDEX BOOTCAMP			indexBootcamp.php
-UI UX				uiUx.php
+INDEX BOOTCAMP			    indexBootcamp.php
+UI UX				        uiUx.php
 	
 sidiq	
-MENU				profil.php
+MENU				        profil.php
 	
 irfan	
 ???				??
+
+SESSION SHARE DATA
+index.php > POST 
+    session_start();
+    $_SESSION['nik'] = $shareNIK;
+
+
+all page > GET
+    session_start();
+    $shareNIK = $_SESSION['nik'];

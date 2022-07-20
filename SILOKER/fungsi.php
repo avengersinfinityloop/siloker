@@ -11,16 +11,6 @@ function cekRow($query) {
     return $rows;
 }
 
-// $jumlahDataPerHalaman = 10;
-// $jumlahData = count(cekRow("SELECT * from pasang_iklan"));
-// $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
-// $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
-// $awalData = ($jumlahDataPerHalaman * $halamanAktif)-$jumlahDataPerHalaman;
-// $queryPagination = cekRow("SELECT * FROM pasang_iklan LIMIT $awalData, $jumlahDataPerHalaman ");
-
-
-
-
 //FUNGSI CARI
 function cari($keyword,$awalData,$jumlahDataPerHalaman) {
     $query = "SELECT * FROM pasang_iklan WHERE 
