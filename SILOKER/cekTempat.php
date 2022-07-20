@@ -1,6 +1,4 @@
 <?php
-    $saya='joy';
-    $saya2='harus berhasil semoga';
     require "fungsi.php";
     require ("koneksidb.php");
     
