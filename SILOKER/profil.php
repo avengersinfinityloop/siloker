@@ -18,7 +18,6 @@
 <script src="bar.js"></script>
 <body>
     <!-- Navbar -->
-    <!-- test -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="media/image/loker.jpeg" alt="no gambar" width="30" height="30">SILOKER
@@ -26,31 +25,42 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Dropdown -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Loker</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Daftar Kursus</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Bootcamp</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pasang Iklan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profil</a>
-                </li>
-                <!-- Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">DropDown</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kursus</a>
                     <div class="dropdown-menu" aria-labelledby="NavbarDrop">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="kursus.php">Menu</a>
+                        <a class="dropdown-item" href="cekTempat.php">Cek Tempat</a>
+                        <a class="dropdown-item" href="pasangIklan.php">Pasang Iklan</a>
                     </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Loker</a>
+                    <div class="dropdown-menu" aria-labelledby="NavbarDrop">
+                        <a class="dropdown-item" href="dashloker.php">Menu Utama</a>
+                        <a class="dropdown-item" href="loker.php">Main Loker</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bootcamp</a>
+                    <div class="dropdown-menu" aria-labelledby="NavbarDrop">
+                        <a class="dropdown-item" href="uiUx.php">UI UX</a>
+                        <a class="dropdown-item" href="indexBootcamp.php">Index Bootcamp</a>
+                        <a class="dropdown-item" href="fullStackWebDevelopment.php">Full Stack Web Development</a>
+                        <a class="dropdown-item" href="digitalMarketing.php">Digital Marketing</a>
+                        <a class="dropdown-item" href="about.php">About</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
+                    <div class="dropdown-menu" aria-labelledby="NavbarDrop">
+                        <a class="dropdown-item" href="profil.php">Profil</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">LOGIN</a>
                 </li>
             </ul>
         </div>
