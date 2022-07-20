@@ -68,7 +68,7 @@
 <body>
 <!-- HEADER -->
 <div class="">
-    <div class=" jpageHeader fixed-top"> 
+    <div class=" jpageHeader fixed-top">
         <nav class="container navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><b>SILOKER</b></a>
@@ -82,8 +82,8 @@
                         LOKER
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">INDEX</a></li>
-                            <li><a class="dropdown-item" href="#">MAINLOKER</a></li>
+                            <li><a class="dropdown-item" href="indexloker.php">INDEX</a></li>
+                            <li><a class="dropdown-item" href="loker.php">MAIN LOKER</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -92,7 +92,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
-                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
                             <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
                         </ul>
@@ -102,10 +101,11 @@
                         BOOTCAMP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">HOME</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">OUR BOOTCAMP</a></li>
-                            <li><a class="dropdown-item" href="#">DAFTAR SEKARANG</a></li>
+                            <li><a class="dropdown-item" href="about.html">ABOUT</a></li>
+                            <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
+                            <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
+                            <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
+                            <li><a class="dropdown-item" href="uiUx.php">UI UX</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -113,7 +113,7 @@
                         PROFILE
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">MENU</a></li>
+                            <li><a class="dropdown-item" href="profil.php">MENU</a></li>
                         </ul>
                     </li>
                 </ul>
