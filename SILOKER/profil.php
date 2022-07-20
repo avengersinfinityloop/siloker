@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <script src="js/bootstrap.bundle.min.js"></script>
     <title>Profil Akun</title>
 </head>
 <script src="bar.js"></script>
@@ -350,9 +350,11 @@
                 </fieldset>
             </div>
         </div>
-        <input type="submit" class="btn btn-outline-success btn-lg btn-block" id="tombol" value="Simpan" disabled>
-        <input type="reset" class="btn btn-outline-danger btn-lg btn-block" value="Buang">
-        <a herf="#" class="btn btn-outline-primary btn-lg btn-block" >Menu Utama</a>
+        <div class="container">
+            <input type="submit" class="btn btn-outline-success btn-lg btn-block" id="tombol" value="Simpan" disabled><br>
+            <input type="reset" class="btn btn-outline-danger btn-lg btn-block" value="Buang"><br>
+            <a herf="#" class="btn btn-outline-primary btn-lg btn-block" >Menu Utama</a>
+        </div>
     </form>
 </body>
 <script>

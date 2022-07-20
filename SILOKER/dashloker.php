@@ -34,53 +34,61 @@
 <!-- Navbar (Brands) -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-      <a class="navbar-brand" href="dashloker.php">SILOKER</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                  <a class="nav-link active" href="#"></a>
-              </li>
-              <!-- <li class="nav-item">
-                  <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">About Us</a>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      View More
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Web Development</a></li>
-                      <li><a class="dropdown-item" href="#">Web Designing</a></li>
-                      <li><a class="dropdown-item" href="#">Android Development</a></li>
-                  </ul>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Contact Us</a>
-              </li> -->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="dashloker.php">SILOKER</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            KURSUS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
+            <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
+            <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
           </ul>
-          <div class="d-flex">
-              <!-- <div class="dropdown">
-                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                      Our Products
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <li><a class="dropdown-item" href="#">Product One</a></li>
-                      <li><a class="dropdown-item" href="#">Product Two</a></li>
-                      <li><a class="dropdown-item" href="#">Product Three</a></li>
-                  </ul>
-              </div> -->
-             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Masuk
-            </button>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            LOKER
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="dashloker.php">MENU UTAMA</a></li>
+            <li><a class="dropdown-item" href="loker.php">MAIN LOKER</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            BOOTCAMP
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about.php">ABOUT</a></li>
+            <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
+            <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
+            <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
+            <li><a class="dropdown-item" href="uiUx.php">UI UX</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="profil.php">PROFIL</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-light" href="index.php">
+    Masuk
+  </button>
 
             <!-- Modal -->
-            <div class="modal fade modalfix" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- <div class="modal fade modalfix" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -140,8 +148,11 @@
             </div>
           </div>
       </div>
+  </div> -->
   </div>
 </nav>
+
+
 
 <br>
 <br>
