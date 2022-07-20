@@ -18,6 +18,7 @@
 <script src="bar.js"></script>
 <body>
     <!-- Navbar -->
+    <!-- test -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="media/image/loker.jpeg" alt="no gambar" width="30" height="30">SILOKER
