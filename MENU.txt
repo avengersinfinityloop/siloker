@@ -21,7 +21,7 @@ sidiq
 title navbar                PROFIL
 MENU				        profil.php
 	
-irfan
+irfan/sidiq
 title navbar                BERANDA
 LOGIN                       index.php
 
