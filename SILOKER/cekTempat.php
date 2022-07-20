@@ -1,4 +1,5 @@
 <?php
+    $saya='joy';
     require "fungsi.php";
     require ("koneksidb.php");
     
