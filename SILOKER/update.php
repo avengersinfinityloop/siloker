@@ -88,7 +88,7 @@
                         LOKER
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="indexloker.php">INDEX</a></li>
+                            <li><a class="dropdown-item" href="dashloker.php">MENU UTAMA</a></li>
                             <li><a class="dropdown-item" href="loker.php">MAIN LOKER</a></li>
                         </ul>
                     </li>
