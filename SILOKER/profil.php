@@ -20,7 +20,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <a class="navbar-brand" href="#">
-            <img src="media/image/loker.jpeg" alt="no gambar" width="30" height="30">SILOKER
+            <img src="multimedia/image/loker.jpeg" alt="no gambar" width="30" height="30">SILOKER
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -72,7 +72,7 @@
             height: 1px;
             background: #333;
             background-image: linear-gradient(to right, #ccc, #333, #ccc);">
-        <img src="media/image/loker.jpeg" alt="no gambar" style="width: 90px; height: 100px; border-radius:100px">
+        <img src="multimedia/image/loker.jpeg" alt="no gambar" style="width: 90px; height: 100px; border-radius:100px">
         <br><br>
     </center>
     <br>
