@@ -8,17 +8,22 @@
     $nama = $_SESSION['nama'];
 
     //CONTENT IKLAN
-    $RowPerHalIklan = 10;
+    $RowPerHalIklan = 5;
     $RowIklan = count(cekRow("SELECT * from pasang_iklan"));
     $HalPerPageIklan = ceil($RowIklan / $RowPerHalIklan);
-    $halAktifIklan = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
-    $awalData = ($RowPerHalIklan * $halAktifIklan)-$RowPerHalIklan;
-    $no=0; //tampilan nomor pada table IKLAN
-    $query  = mysqli_query($conn, "SELECT * FROM pasang_iklan LIMIT $awalData, $RowPerHalIklan "); //query pada table IKLAN with PAGINATION
+    $halAktifIklan = (isset($_GET["halIklan"])) ? $_GET["halIklan"] : 1;
+    $awalDataIklan = ($RowPerHalIklan * $halAktifIklan)-$RowPerHalIklan;
+    $noIklan=$awalDataIklan; //tampilan nomor pada table IKLAN
+    $query  = mysqli_query($conn, "SELECT * FROM pasang_iklan LIMIT $awalDataIklan, $RowPerHalIklan "); //query pada table IKLAN with PAGINATION
 
     //CONTENT LIST DAFTAR BY IDUSER
-    $no2=0; //tampilan nomor pada table LIST DAFTAR
-    $query2 = mysqli_query($conn, "SELECT * FROM `daftar_kursus` WHERE nik = $nik ORDER BY tanggal"); //query pada table LIST DAFTAR
+    $RowPerHalDaftar = 5;
+    $RowDaftar = count(cekRow("SELECT * FROM `daftar_kursus` WHERE nik = $nik"));
+    $HalPerPageDaftar = ceil($RowDaftar / $RowPerHalDaftar);
+    $halAktifDaftar = (isset($_GET["halDaftar"])) ? $_GET["halDaftar"] : 1;
+    $awalDataDaftar = ($RowPerHalDaftar * $halAktifDaftar)-$RowPerHalDaftar;
+    $noDaftar=$awalDataDaftar; //tampilan nomor pada table LIST DAFTAR
+    $query2 = mysqli_query($conn, "SELECT * FROM `daftar_kursus` WHERE nik = $nik ORDER BY tanggal LIMIT $awalDataDaftar, $RowPerHalDaftar "); //query pada table LIST DAFTAR
     $query3 = mysqli_query($conn, "SELECT idDaftar FROM `daftar_kursus` WHERE nik = $nik"); //query untuk tampilan select dan di DELETE
     //CONTENT LIST DAFTAR >>> DENGAN MENGGUNAKAN BUTTON DELETE MAKA AKAN DELETE ROW DI DATABASE
     if(isset($_POST['delete'])){ //berjalan ketika FORM di delete
@@ -69,8 +74,8 @@
                         LOKER
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">INDEX</a></li>
-                            <li><a class="dropdown-item" href="#">MAINLOKER</a></li>
+                            <li><a class="dropdown-item" href="indexloker.php">INDEX</a></li>
+                            <li><a class="dropdown-item" href="loker.php">MAIN LOKER</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -79,7 +84,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
-                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
                             <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
                         </ul>
@@ -89,10 +93,11 @@
                         BOOTCAMP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">HOME</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">OUR BOOTCAMP</a></li>
-                            <li><a class="dropdown-item" href="#">DAFTAR SEKARANG</a></li>
+                            <li><a class="dropdown-item" href="about.html">ABOUT</a></li>
+                            <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
+                            <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
+                            <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
+                            <li><a class="dropdown-item" href="uiUx.php">UI UX</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -100,7 +105,7 @@
                         PROFILE
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">MENU</a></li>
+                            <li><a class="dropdown-item" href="profil.php">MENU</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -122,17 +127,18 @@
         <div class="container">
             <!-- navigasi -->
             <?php if($halAktifIklan > 1) : ?>
-            <a href="?halaman=<?= $halAktifIklan - 1; ?>">&laquo;</a>
+                <!-- echo "<a href='specificAssignmentPage.php?assignName=$value2'teacherYes=$isTeacher>$value2</a>"; -->
+            <a href="? halIklan=<?= $halAktifIklan - 1 ?>" >&laquo;</a>
             <?php endif; ?>
             <?php for($i = 1; $i <= $HalPerPageIklan; $i++) :?>
                 <?php if( $i == $halAktifIklan) : ?>
-                    <a href="?halaman=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                    <a href="?halIklan=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
                 <?php else : ?>
-                    <a href="?halaman=<?= $i  ?>"><?= $i  ?></a>
+                    <a href="?halIklan=<?= $i  ?>"><?= $i  ?></a>
                 <?php endif ; ?>
             <?php endfor; ?>
             <?php if($halAktifIklan < $HalPerPageIklan) : ?>
-            <a href="?halaman=<?= $halAktifIklan + 1; ?>">&raquo;</a>
+            <a href="?halIklan=<?= $halAktifIklan + 1; ?>">&raquo;</a>
             <?php endif; ?>
             <table class="table table-bordered table-striped tableIklan">
                 <tr>
@@ -146,10 +152,10 @@
                 </tr>
                 <?php
                 while($result    =mysqli_fetch_array($query)){
-                $no++
+                $noIklan++
                 ?>
                 <tr>
-                    <td><?php echo $no?></td>
+                    <td><?php echo $noIklan?></td>
                     <td><?php echo $result['namaKursus']?></td>
                     <td><?php echo $result['bidang']?></td>
                     <td><?php echo $result['harga']?></td>
@@ -170,6 +176,20 @@
     <div class="jpageCon2">
         <div class="container">
             <h2 align="center">INFORMASI LIST YANG SUDAH DAFTAR  <br> BY ID USER <?php echo $nik ?></h2><br><br>
+            <!-- navigasi -->
+            <?php if($halAktifDaftar > 1) : ?>
+            <a href="?halDaftar=<?= $halAktifDaftar - 1; ?>">&laquo;</a>
+            <?php endif; ?>
+            <?php for($j = 1; $j <= $HalPerPageDaftar; $j++) :?>
+                <?php if( $j == $halAktifDaftar) : ?>
+                    <a href="?halDaftar=<?= $j  ?>" style="font-weight:bold; color:red;"><?= $j  ?></a>
+                <?php else : ?>
+                    <a href="?halDaftar=<?= $j  ?>"><?= $j  ?></a>
+                <?php endif ; ?>
+            <?php endfor; ?>
+            <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
+            <a href="?halDaftar=<?= $halAktifDaftar + 1; ?>">&raquo;</a>
+            <?php endif; ?>
             <table class="table table-bordered table-striped tableIklan">
                 <tr>
                     <th width="50px">No</th>
@@ -180,10 +200,10 @@
                 </tr>
                 <?php
                 while($result2 = mysqli_fetch_array($query2)){
-                $no2++
+                $noDaftar++
                 ?>
                 <tr>
-                    <td><?php echo $no2?></td>
+                    <td><?php echo $noDaftar?></td>
                     <td><?php echo $result2['idDaftar']?></td>
                     <td><?php echo $result2['nik']?></td>
                     <td><?php echo $result2['idIklan']?></td>

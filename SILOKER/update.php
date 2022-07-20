@@ -33,16 +33,16 @@
         $harga2=$_POST['harga'];
         $wilayah2=$_POST['wilayah'];
         $onlineOffline2=$_POST['onlineOffline'];
-        $imageRegister2='libraryImage/' . $idIklan . '.jpg';
+        $imageRegister2='multimedia/image/LibraryImage/' . $idIklan . '.jpg';
         $cekIMAGE=basename($_FILES["fileToUpload"]["name"]);
         if($namaKursus2 != $namaKursus1 || $bidang2 != $bidang1 || $harga2 != $harga1 || $wilayah2 != $wilayah1 || $onlineOffline2 != $onlineOffline1 || $cekIMAGE != '') {
-            $target_dir = "libraryImage/";
+            $target_dir = "multimedia/image/LibraryImage/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             $newFileName = $target_dir . basename($idIklan.".jpg");
             move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $newFileName);
             $query2 =mysqli_query($conn, "UPDATE pasang_iklan SET namaKursus = '$namaKursus2', bidang='$bidang2', harga='$harga2', wilayah='$wilayah2', onlineOffline='$onlineOffline2', imageRegister='$newFileName', tanggal=CURRENT_DATE WHERE idIklan = $idIklan");
-            $info="Update Berhasil, File". $newFileName. " sudah ter Upload ";
+            $info="Update Berhasil, File ". $newFileName. " sudah ter Upload ";
         } else {
             $info="Update Gagal";
         }
@@ -74,7 +74,7 @@
 <body>
 <!-- HEADER -->
 <div class="">
-    <div class=" jpageHeader fixed-top"> 
+    <div class=" jpageHeader fixed-top">
         <nav class="container navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><b>SILOKER</b></a>
@@ -88,8 +88,8 @@
                         LOKER
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">INDEX</a></li>
-                            <li><a class="dropdown-item" href="#">MAINLOKER</a></li>
+                            <li><a class="dropdown-item" href="indexloker.php">INDEX</a></li>
+                            <li><a class="dropdown-item" href="loker.php">MAIN LOKER</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -98,7 +98,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
-                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
                             <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
                         </ul>
@@ -108,10 +107,11 @@
                         BOOTCAMP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">HOME</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">OUR BOOTCAMP</a></li>
-                            <li><a class="dropdown-item" href="#">DAFTAR SEKARANG</a></li>
+                            <li><a class="dropdown-item" href="about.html">ABOUT</a></li>
+                            <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
+                            <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
+                            <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
+                            <li><a class="dropdown-item" href="uiUx.php">UI UX</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -119,7 +119,7 @@
                         PROFILE
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">MENU</a></li>
+                            <li><a class="dropdown-item" href="profil.php">MENU</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -157,6 +157,10 @@
                     <tr>
                         <td>tanggal</td>
                         <td>:&nbsp <?php echo $result1['tanggal']?></td>
+                    </tr>
+                    <tr>
+                        <td>imageRegister</td>
+                        <td>:&nbsp <?php echo $result1['imageRegister']?></td>
                     </tr>
                     <tr>
                         <td>namaKursus</td>
