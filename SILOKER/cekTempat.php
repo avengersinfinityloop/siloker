@@ -1,4 +1,5 @@
 <?php
+    echo 'semoga bisa';
     require "fungsi.php";
     require ("koneksidb.php");
     
