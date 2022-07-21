@@ -1,8 +1,3 @@
-<?php
-//KONEKSI DATABASE
-$conn = mysqli_connect("localhost","root","","silokermain");
-?>
-
     <!--
         created by  :   nama    :joy mr
                         nim     :10121910
@@ -14,3 +9,8 @@ $conn = mysqli_connect("localhost","root","","silokermain");
                                 :v1.0 20220709 - finish file
         [Table of contents]
     -->
+
+<?php
+
+?>
+

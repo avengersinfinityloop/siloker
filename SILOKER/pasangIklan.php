@@ -1,6 +1,5 @@
 <?php
     require "fungsi.php";
-    require "koneksidb.php";
     
     session_start();
     //tampilan USER yang sedang LOGIN

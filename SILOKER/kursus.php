@@ -1,6 +1,5 @@
 <?php
     require "fungsi.php";
-    require "koneksidb.php";
     
     //TEMPORARI RANDOM LOGIN  USER
     $query2= mysqli_query($conn, "SELECT * FROM profil ORDER BY RAND() LIMIT 1");
