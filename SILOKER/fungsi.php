@@ -15,7 +15,7 @@
 //KONEKSI DATABASE
 $conn = mysqli_connect("localhost","root","","siloker");
 
-//FUNGSI PAGINATION CEK ROW
+//FUNGSI PAGINATION CEK ROW (TIDAK TERPAKAI)
 function cekRow($query) {
     global $conn;
     $result = mysqli_query($conn, $query);
@@ -26,7 +26,7 @@ function cekRow($query) {
     return $rows;
 }
 
-//FUNGSI CARI
+//FUNGSI CARI (TIDAK TERPAKAI)
 function cari($keyword,$awalData,$jumlahDataPerHalaman) {
     $query = "SELECT * FROM pasang_iklan WHERE 
     idIklan LIKE '%$keyword%' OR

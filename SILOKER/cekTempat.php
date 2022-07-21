@@ -14,14 +14,16 @@
 <?php
     require "fungsi.php";
     
+    //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
-    //tampilan USER yang sedang LOGIN
-    $nik = $_SESSION['nik'];
-    $nama = $_SESSION['nama'];
+    $shareUsername = $_SESSION['username'];
+    //TEMP
+    $nik = $shareUsername;
 
     //CONTENT IKLAN
     $RowPerHalIklan = 10;
-    $RowIklan = count(cekRow("SELECT * from pasang_iklan"));
+    // $RowIklan = count(cekRow("SELECT * from pasang_iklan"));
+    $RowIklan = mysqli_num_rows(mysqli_query($conn,"SELECT * from pasang_iklan"));
     $HalPerPageIklan = ceil($RowIklan / $RowPerHalIklan);
     $halAktifIklan = (isset($_GET["halIklan"])) ? $_GET["halIklan"] : 1;
     $awalDataIklan = ($RowPerHalIklan * $halAktifIklan)-$RowPerHalIklan;
@@ -30,7 +32,7 @@
 
     //CONTENT LIST DAFTAR BY IDUSER
     $RowPerHalDaftar = 5;
-    $RowDaftar = count(cekRow("SELECT * FROM `daftar_kursus` WHERE nik = $nik"));
+    $RowDaftar = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM `daftar_kursus` WHERE nik = $nik"));
     $HalPerPageDaftar = ceil($RowDaftar / $RowPerHalDaftar);
     $halAktifDaftar = (isset($_GET["halDaftar"])) ? $_GET["halDaftar"] : 1;
     $awalDataDaftar = ($RowPerHalDaftar * $halAktifDaftar)-$RowPerHalDaftar;
@@ -114,7 +116,15 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form> -->
                 <div class="d-flex">
-                    <b class="me-2"><?php echo "LOGIN - " .$nama." - ".$nik ?></b>
+                    <b class="me-2">
+                        <?php 
+                            if ($shareUsername != '') {
+                                echo $shareUsername ;
+                            } else {
+                                echo "<a href='index.php' class=''>LOGIN</a>";
+                            }
+                        ?>
+                    </b>
                 </div>
             </div>
         </nav>
