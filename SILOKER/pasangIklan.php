@@ -229,20 +229,25 @@
         <div class="container">
             <h2 align="center">INFORMASI LIST IKLAN  <br> BY ID USER <?php echo $nik ?></h2><br><br>
             <!-- navigasi -->
-            <?php if($halAktifIklan > 1) : ?>
-                <!-- echo "<a href='specificAssignmentPage.php?assignName=$value2'teacherYes=$isTeacher>$value2</a>"; -->
-            <a href="? halIklan=<?= $halAktifIklan - 1 ?>" >&laquo;</a>
-            <?php endif; ?>
-            <?php for($i = 1; $i <= $HalPerPageIklan; $i++) :?>
-                <?php if( $i == $halAktifIklan) : ?>
-                    <a href="?halIklan=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+            <div class="pagination mb-3">
+                <?php if($halAktifIklan > 1) : ?>
+                    <a class="page-link" href="? halIklan=<?= $halAktifIklan - 1 ?>" >Previous</a>
                 <?php else : ?>
-                    <a href="?halIklan=<?= $i  ?>"><?= $i  ?></a>
-                <?php endif ; ?>
-            <?php endfor; ?>
-            <?php if($halAktifIklan < $HalPerPageIklan) : ?>
-            <a href="?halIklan=<?= $halAktifIklan + 1; ?>">&raquo;</a>
-            <?php endif; ?>
+                    <a class="page-link" href="" >Previous</a>
+                <?php endif; ?>
+                <?php for($i = 1; $i <= $HalPerPageIklan; $i++) :?>
+                    <?php if( $i == $halAktifIklan) : ?>
+                        <a class="page-link" href="?halIklan=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                    <?php else : ?>
+                        <a class="page-link" href="?halIklan=<?= $i  ?>"><?= $i  ?></a>
+                    <?php endif ; ?>
+                <?php endfor; ?>
+                <?php if($halAktifIklan < $HalPerPageIklan) : ?>
+                    <a class="page-link" href="?halIklan=<?= $halAktifIklan + 1; ?>">Next</a>
+                <?php else : ?>
+                    <a class="page-link" href="" >Next</a>
+                <?php endif; ?>
+            </div>
             <table class="table table-bordered table-striped tableIklan">
                 <tr>
                     <th width="50px">No</th>
@@ -290,19 +295,25 @@
         <div class="container">
             <h2 align="center">INFORMASI LIST DAFTAR  <br>DARI IKLAN YANG DI BUAT ID USER <?php echo $nik ?></h2><br><br>
             <!-- navigasi -->
-            <?php if($halAktifDaftar > 1) : ?>
-            <a href="?halDaftar=<?= $halAktifDaftar - 1; ?>">&laquo;</a>
-            <?php endif; ?>
-            <?php for($j = 1; $j <= $HalPerPageDaftar; $j++) :?>
-                <?php if( $j == $halAktifDaftar) : ?>
-                    <a href="?halDaftar=<?= $j  ?>" style="font-weight:bold; color:red;"><?= $j  ?></a>
+            <div class="pagination mb-3">
+                <?php if($halAktifDaftar > 1) : ?>
+                    <a class="page-link" href="? halDaftar=<?= $halAktifDaftar - 1 ?>" >Previous</a>
                 <?php else : ?>
-                    <a href="?halDaftar=<?= $j  ?>"><?= $j  ?></a>
-                <?php endif ; ?>
-            <?php endfor; ?>
-            <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
-            <a href="?halDaftar=<?= $halAktifDaftar + 1; ?>">&raquo;</a>
-            <?php endif; ?>
+                    <a class="page-link" href="" >Previous</a>
+                <?php endif; ?>
+                <?php for($i = 1; $i <= $HalPerPageDaftar; $i++) :?>
+                    <?php if( $i == $halAktifDaftar) : ?>
+                        <a class="page-link" href="?halDaftar=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                    <?php else : ?>
+                        <a class="page-link" href="?halDaftar=<?= $i  ?>"><?= $i  ?></a>
+                    <?php endif ; ?>
+                <?php endfor; ?>
+                <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
+                    <a class="page-link" href="?halDaftar=<?= $halAktifDaftar + 1; ?>">Next</a>
+                <?php else : ?>
+                    <a class="page-link" href="" >Next</a>
+                <?php endif; ?>
+            </div>
             <table class="table table-bordered table-striped tableIklan">
                 <tr>
                     <th width="50px">No</th>
