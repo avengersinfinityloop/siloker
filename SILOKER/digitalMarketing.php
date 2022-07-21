@@ -7,7 +7,7 @@
   <!-- buat icon -->
   <link rel="shortcut icon" href="multimedia/image/logo//silokerlogo.png">
   <title>Bootcamp Digital Marketing</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrapv2/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/plugins.css">
   <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
   <link rel="stylesheet" type="text/css" href="type/type.css">
