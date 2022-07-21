@@ -1,6 +1,18 @@
+    <!--
+        created by  :   nama    :joy mr
+                        nim     :10121910
+                        kelas   :IF9K
+        created on              :20220713
+        page name               :update.php
+        total                   :??? pages
+        logs                    :v1.0 20220713 - create file
+                                :v1.0 20220717 - finish file
+                                :v1.1 2022???? - finishing  file
+        [Table of contents]
+    -->
+
 <?php
     require "fungsi.php";
-    require "koneksidb.php";
     
     session_start();
     //tampilan USER yang sedang LOGIN
@@ -50,18 +62,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <!--
-        created by  :   nama    :joy mr
-                        nim     :10121910
-                        kelas   :IF9K
-        created on              :20220713
-        page name               :update.php
-        total                   :??? pages
-        logs                    :v1.0 20220713 - create file
-                                :v1.0 202207?? - finish file
-                                :v1.1 2022???? - finishing  file
-        [Table of contents]
-    -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

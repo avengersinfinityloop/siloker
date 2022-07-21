@@ -1,6 +1,18 @@
+    <!--
+        created by  :   nama    :joy mr
+                        nim     :10121910
+                        kelas   :IF9K
+        created on              :20220619
+        page name               :kursus.html
+        total                   :??? pages
+        logs                    :v1.0 20220619 - create file
+                                :v1.0 2022???? - finish file
+                                :v1.1 2022???? - finishing  file
+        [Table of contents]
+    -->
+
 <?php
     require "fungsi.php";
-    require "koneksidb.php";
     
     //TEMPORARI RANDOM LOGIN  USER
     $query2= mysqli_query($conn, "SELECT * FROM profil ORDER BY RAND() LIMIT 1");
@@ -26,18 +38,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <!--
-        created by  :   nama    :joy mr
-                        nim     :10121910
-                        kelas   :IF9K
-        created on              :20220619
-        page name               :kursus.html
-        total                   :??? pages
-        logs                    :v1.0 20220619 - create file
-                                :v1.0 2022???? - finish file
-                                :v1.1 2022???? - finishing  file
-        [Table of contents]
-    -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

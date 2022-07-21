@@ -1,5 +1,20 @@
+    <!--
+        created by  :   nama    :joy mr
+                        nim     :10121910
+                        kelas   :IF9K
+        created on              :20220623
+        page name               :fungsi.php
+        description             :fungsi fungsi supaya mempermudah koding
+        total                   :??? pages
+        logs                    :v1.0 20220717 - create file
+                                :v1.0 20220720 - finish file
+        [Table of contents]
+    -->
+
 <?php 
-require "koneksidb.php";
+//KONEKSI DATABASE
+$conn = mysqli_connect("localhost","root","","silokermain");
+
 //FUNGSI PAGINATION
 function cekRow($query) {
     global $conn;
@@ -24,7 +39,7 @@ function cari($keyword,$awalData,$jumlahDataPerHalaman) {
     imageRegister LIKE '%$keyword%' OR
     idUser LIKE '%$keyword%'
     LIMIT $awalData, $jumlahDataPerHalaman ";
-    return query($query);
+    return cekRow($query);
 }
 //MENG NON AKTIFKAN TAMPILAN ERROR
 error_reporting(E_ERROR | E_PARSE);
