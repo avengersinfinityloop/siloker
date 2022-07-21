@@ -13,7 +13,7 @@
 
 <?php 
 //KONEKSI DATABASE
-$conn = mysqli_connect("localhost","root","","silokermain");
+$conn = mysqli_connect("localhost","root","","siloker");
 
 //FUNGSI PAGINATION CEK ROW
 function cekRow($query) {
