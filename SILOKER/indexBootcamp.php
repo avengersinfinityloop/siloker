@@ -36,19 +36,19 @@
 						<button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
 					</div>
 					<ul class="navbar-nav mx-auto">
-						<li class="nav-item"><a class="nav-link" href="#">Home</a>
+						<li class="nav-item"><a class="nav-link" href="index.php">Home</a>
 						</li>
 						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">Loker</a>
 							<ul class="dropdown-menu">
-								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="indexloker.php">Index Loker</a>
+								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="dashloker.php">Menu Utama</a>
 								</li>
-								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="loker.php">Loker</a>
+								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="loker.php">Main Loker</a>
 								</li>
 							</ul>
 						</li>
-						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="kursus.php">Kursus</a>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">Kursus</a>
 							<ul class="dropdown-menu">
-								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="kursus.php">Kursus</a>
+								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="kursus.php">Menu</a>
 								</li>
 								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="cekTempat.php">Cek Tempat</a>
 								</li>
@@ -67,11 +67,11 @@
 										<li class="nav-item"><a class="dropdown-item" href="fullstackwebdevelopment.php">Full Stack Web Development</a></li>
 									</ul>
 								</li>
-								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="about.html">About</a>
+								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="about.php">About</a>
 								</li>
 							</ul>
 						</li>
-						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="profil.php">Profile</a>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="profil.php">Profil</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="#!" style="padding-left: 15rem;">Login</a>
 						</li>
