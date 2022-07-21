@@ -20,7 +20,7 @@
     $nama = $_SESSION['nama'];
 
     //CONTENT IKLAN
-    $RowPerHalIklan = 5;
+    $RowPerHalIklan = 10;
     $RowIklan = count(cekRow("SELECT * from pasang_iklan"));
     $HalPerPageIklan = ceil($RowIklan / $RowPerHalIklan);
     $halAktifIklan = (isset($_GET["halIklan"])) ? $_GET["halIklan"] : 1;

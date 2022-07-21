@@ -15,7 +15,7 @@
 //KONEKSI DATABASE
 $conn = mysqli_connect("localhost","root","","silokermain");
 
-//FUNGSI PAGINATION
+//FUNGSI PAGINATION CEK ROW
 function cekRow($query) {
     global $conn;
     $result = mysqli_query($conn, $query);
@@ -41,6 +41,7 @@ function cari($keyword,$awalData,$jumlahDataPerHalaman) {
     LIMIT $awalData, $jumlahDataPerHalaman ";
     return cekRow($query);
 }
+
 //MENG NON AKTIFKAN TAMPILAN ERROR
 error_reporting(E_ERROR | E_PARSE);
 ?>
