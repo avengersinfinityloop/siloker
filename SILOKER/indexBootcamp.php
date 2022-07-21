@@ -393,6 +393,7 @@
 		<!-- Free Trial -->
 		<div class="container inner pt-10">
 			<figure class="cover"><img src="multimedia/image/concept/masihbingung.png" alt="" /></figure>
+			<div class="space25"></div>
 			<div class="text-center"><a href="#" class="btn" data-toggle="modal" data-target="#modal-06">Free Trial</a></div>
 			<div class="modal fade" id="modal-06" tabindex="-1" role="dialog" aria-labelledby="modal-06" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
@@ -408,12 +409,11 @@
 								<!-- /column -->
 							</div>
 							<!-- /.row -->
-							<h3>Join the mailing list and get %10 off</h3>
-							<p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla.</p>
+							<h3>Daftarkan email kamu untuk mendapat FREE TRIAL 3 HARI GRATISSS!!!</h3>
 							<div class="newsletter-wrapper">
 								<div class="row">
 									<div class="col-md-10 offset-md-1">
-										<form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+										<form action="#" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 											<div id="mc_embed_signup_scroll2" class="input-group">
 												<input type="email" value="" name="EMAIL" class="email form-control mb-0 mr-2 mb-sm-0" id="mce-EMAIL2" placeholder="Email Address" required>
 												<button type="submit" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">Join</button>
