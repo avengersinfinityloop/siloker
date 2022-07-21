@@ -137,7 +137,7 @@
                         BOOTCAMP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="about.html">ABOUT</a></li>
+                            <li><a class="dropdown-item" href="about.php">ABOUT</a></li>
                             <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
                             <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
                             <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
