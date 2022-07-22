@@ -2,7 +2,7 @@
 
 <?php
   session_start();
-  $_SESSION['username'] = $shareUsername;
+  $shareUsername = $_SESSION['username'];
 ?>
 
 <html lang="en">

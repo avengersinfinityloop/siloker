@@ -1,6 +1,7 @@
 <?php
   include("koneksidb.php");
   session_start();
+  $shareUsername = $_SESSION['username'];
 ?>
 
 <!--  Created by  : Indi Bagus Prasetyo
@@ -9,12 +10,6 @@
 -->
       
 <!doctype html>
-
-<?php
-  session_start();
-  $_SESSION['username'] = $shareUsername;
-?>
-
 <html lang="en">
     <head>
         <!-- MetaData -->
