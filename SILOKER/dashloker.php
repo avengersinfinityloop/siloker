@@ -1,5 +1,4 @@
 <?php
-  include("koneksidb.php");
   session_start();
   $shareUsername = $_SESSION['username'];
 ?>
