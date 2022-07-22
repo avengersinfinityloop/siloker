@@ -4,6 +4,15 @@
 //     header("location: loginp.php");
 // }
 ?>
+<?php 
+    //PAGE LOGIN KIRIM VARIABLE, JOY EDIT
+    require "fungsi.php";
+    $query = mysqli_query($conn, "SELECT username FROM profil ORDER BY RAND() LIMIT 1");
+    $result = mysqli_fetch_array($query);
+    $shareUsername=$result['username'] ;
+    session_start();
+    $_SESSION['username'] = $shareUsername;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,6 +77,7 @@
     <br>
     <center>
         <h1>Profil Diri</h1>
+        <?php echo 'USERNAME = '. $shareUsername ?>
         <hr style="border: 0;
             height: 1px;
             background: #333;
@@ -85,12 +95,7 @@
                     <legend class="w-auto px-3">Data Diri</legend>
                     <div class="form-group">
                         <label>NIK</label>
-                        <input type="text" class="form-control username" name="username" id="username" onchange="tes()" placeholder="NIK">
-                    </div>
-                    <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control nik" name="nik" id="nik" onchange="tes()">
-                    </div>
+                        <input type="text" class="form-control nik" name="nik" id="nik" onchange="tes()" placeholder="NIK">
                     <div class="form-group">
                         <label>Nama</label>
                         <input type="text" class="form-control nama" name="nama" id="nama" onchange="tes()" placeholder="Nama">
@@ -355,9 +360,10 @@
                 </fieldset>
             </div>
         </div>
-        <div class="d-grid gap-2 col-12 mx-auto">
+        <div class="container">
             <input type="submit" class="btn btn-outline-success btn-lg btn-block" id="tombol" value="Simpan" disabled><br>
-            <input type="reset" class="btn btn-outline-danger btn-lg btn-block" value="Reset">
+            <input type="reset" class="btn btn-outline-danger btn-lg btn-block" value="Buang"><br>
+            <a herf="#" class="btn btn-outline-primary btn-lg btn-block" >Menu Utama</a>
         </div>
     </form>
 </body>
@@ -365,7 +371,6 @@
     function tes(){
         // Data Diri
         var nik = document.getElementById('nik').value;
-        var username = document.getElementById('username').value;
         var nama = document.getElementById('nama').value;
         var tanggalLahir = document.getElementById('tanggal-lahir').value;
         var jenisKel = document.getElementById('jk').value;
@@ -410,7 +415,7 @@
         var penyelenggara = document.getElementById('penyelenggara').value;
         var tanggalSertif = document.getElementById('tanggal-sertifikat').value;
 
-        if (nik&&username&&nama&&tanggalLahir&&jenisKel&&status&&kebangsaan&&gajiHarap&&
+        if (nik&&nama&&tanggalLahir&&jenisKel&&status&&kebangsaan&&gajiHarap&&
             telepon&&hp&&email&&lokasiTinggal&&alamat&&pos&&
             pendidikan&&sekolah&&jurusan&&prestasi&&lulus&&nilai&&
             perusahaan&&jabatan&&bidang&&lokasiKerja&&pengalaman&&tanggalMulai&&jenisKontrak&&
