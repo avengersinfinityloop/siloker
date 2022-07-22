@@ -14,13 +14,10 @@
 <?php
     require "fungsi.php";
     
-    //TEMPORARI RANDOM LOGIN  USER
-    // $query2= mysqli_query($conn, "SELECT * FROM profil ORDER BY RAND() LIMIT 1");
-    // $result2 = mysqli_fetch_array($query2);
-    // $shareUsername= $result2['nik'];
     //tampilan USER yang sedang LOGIN
     session_start();
     $shareUsername = $_SESSION['username'];
+    $nik = cekNik($shareUsername);
 
     //CONTENT HIGHLIGHT
     $query1 = mysqli_query($conn, "SELECT namaKursus,imageRegister,idIklan FROM pasang_iklan ORDER BY RAND() LIMIT 3"); //query tampil 3 row by RANDOM
@@ -106,7 +103,7 @@
                     <b class="me-2">
                         <?php 
                             if ($shareUsername != '') {
-                                echo $shareUsername ;
+                                echo $shareUsername .' - '.$nik;
                             } else {
                                 echo "<a href='index.php' class=''>LOGIN</a>";
                             }

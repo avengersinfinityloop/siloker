@@ -6,8 +6,7 @@
         page name               :update.php
         total                   :??? pages
         logs                    :v1.0 20220713 - create file
-                                :v1.0 20220717 - finish file
-                                :v1.1 2022???? - finishing  file
+                                :v1.0 20220722 - finish file
         [Table of contents]
     -->
 
@@ -17,8 +16,7 @@
     //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
     $shareUsername = $_SESSION['username'];
-    //TEMP
-    $nik = $shareUsername;
+    $nik = cekNik($shareUsername);
     if(isset($_GET['idIklan'])){ //mendapatkan informasi dari page cekTempat.php untuk idIklan
         $idIklan    =$_GET['idIklan']; //menyimpan informasi di variable
     }

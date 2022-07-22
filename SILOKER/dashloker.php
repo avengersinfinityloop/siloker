@@ -1,6 +1,6 @@
 <?php
-  include("koneksidb.php");
   session_start();
+  $shareUsername = $_SESSION['username'];
 ?>
 
 <!--  Created by  : Indi Bagus Prasetyo
@@ -8,7 +8,6 @@
       Logs        : 20/07/2022 ; 12:22 AM    
 -->
       
-  
 <!doctype html>
 <html lang="en">
     <head>
@@ -42,7 +41,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
+          <a class="nav-link active" aria-current="page" href="index.php">BERANDA</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,7 +67,7 @@
             BOOTCAMP
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="about.html">ABOUT</a></li>
+            <li><a class="dropdown-item" href="about.php">ABOUT</a></li>
             <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
             <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
             <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
@@ -77,6 +76,11 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="profil.php">PROFIL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="padding-left: 15rem;">
+            <p>Helo, <strong><?php echo $_SESSION['username']; ?></strong></p>
+          </a>
         </li>
       </ul>
     </div>

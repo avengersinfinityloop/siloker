@@ -6,8 +6,7 @@
         page name               :cekTempat.html
         total                   :??? pages
         logs                    :v1.0 20220623 - create file
-                                :v1.0 20220720 - finish file
-                                :v1.1 2022???? - finishing  file
+                                :v1.0 20220722 - finish file
         [Table of contents]
     -->
 
@@ -17,8 +16,7 @@
     //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
     $shareUsername = $_SESSION['username'];
-    //TEMP
-    $nik = $shareUsername;
+    $nik = cekNik($shareUsername);
 
     //CONTENT IKLAN
     $RowPerHalIklan = 10;

@@ -4,12 +4,6 @@
 //     header("location: loginp.php");
 // }
 ?>
-<?php 
-    //PAGE LOGIN KIRIM VARIABLE, JOY EDIT
-    $shareUsername=12345 ;
-    session_start();
-    $_SESSION['username'] = $shareUsername;
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +85,12 @@
                     <legend class="w-auto px-3">Data Diri</legend>
                     <div class="form-group">
                         <label>NIK</label>
-                        <input type="text" class="form-control nik" name="nik" id="nik" onchange="tes()" placeholder="NIK">
+                        <input type="text" class="form-control username" name="username" id="username" onchange="tes()" placeholder="NIK">
+                    </div>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control nik" name="nik" id="nik" onchange="tes()">
+                    </div>
                     <div class="form-group">
                         <label>Nama</label>
                         <input type="text" class="form-control nama" name="nama" id="nama" onchange="tes()" placeholder="Nama">
@@ -356,10 +355,9 @@
                 </fieldset>
             </div>
         </div>
-        <div class="container">
+        <div class="d-grid gap-2 col-12 mx-auto">
             <input type="submit" class="btn btn-outline-success btn-lg btn-block" id="tombol" value="Simpan" disabled><br>
-            <input type="reset" class="btn btn-outline-danger btn-lg btn-block" value="Buang"><br>
-            <a herf="#" class="btn btn-outline-primary btn-lg btn-block" >Menu Utama</a>
+            <input type="reset" class="btn btn-outline-danger btn-lg btn-block" value="Reset">
         </div>
     </form>
 </body>
@@ -367,6 +365,7 @@
     function tes(){
         // Data Diri
         var nik = document.getElementById('nik').value;
+        var username = document.getElementById('username').value;
         var nama = document.getElementById('nama').value;
         var tanggalLahir = document.getElementById('tanggal-lahir').value;
         var jenisKel = document.getElementById('jk').value;
@@ -411,7 +410,7 @@
         var penyelenggara = document.getElementById('penyelenggara').value;
         var tanggalSertif = document.getElementById('tanggal-sertifikat').value;
 
-        if (nik&&nama&&tanggalLahir&&jenisKel&&status&&kebangsaan&&gajiHarap&&
+        if (nik&&username&&nama&&tanggalLahir&&jenisKel&&status&&kebangsaan&&gajiHarap&&
             telepon&&hp&&email&&lokasiTinggal&&alamat&&pos&&
             pendidikan&&sekolah&&jurusan&&prestasi&&lulus&&nilai&&
             perusahaan&&jabatan&&bidang&&lokasiKerja&&pengalaman&&tanggalMulai&&jenisKontrak&&

@@ -1,5 +1,16 @@
+<?php
+  session_start();
+  $shareUsername = $_SESSION['username'];
+?>
+
 <!doctype html>
 <html lang="en">
+
+<!--  Created by  : Indi Bagus Prasetyo
+      NIM         : 10121902
+      Logs        : 22/07/2022 ; 12:22 AM    
+-->
+      
     <head>
         <!-- MetaData -->
         <meta charset="utf-8">
@@ -21,54 +32,59 @@
     <body>
     <!-- Navbar (Brands) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="dashloker.php">SILOKER</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            KURSUS
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
-            <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
-            <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            LOKER
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="dashloker.php">MENU UTAMA</a></li>
-            <li><a class="dropdown-item" href="loker.php">MAIN LOKER</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            BOOTCAMP
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="about.php">ABOUT</a></li>
-            <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
-            <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
-            <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
-            <li><a class="dropdown-item" href="uiUx.php">UI UX</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="profil.php">PROFIL</a>
-        </li>
-      </ul>
+    <div class="container">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="dashloker.php">SILOKER</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.php">BERANDA</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              KURSUS
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
+              <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
+              <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              LOKER
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="dashloker.php">MENU UTAMA</a></li>
+              <li><a class="dropdown-item" href="loker.php">MAIN LOKER</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              BOOTCAMP
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.php">ABOUT</a></li>
+              <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
+              <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
+              <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
+              <li><a class="dropdown-item" href="uiUx.php">UI UX</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="profil.php">PROFIL</a>
+          </li>
+          <li class="nav-item">
+							<a class="nav-link" href="#" style="padding-left: 15rem;">
+								<p>Helo, <strong><?php echo $_SESSION['username']; ?></strong></p>
+							</a>
+						</li>
+        </ul>
+      </div>
     </div>
-  </div>
 
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-light" href="index.php">
@@ -298,15 +314,26 @@
 
 <?php
   include("koneksidb.php");
-  $WHERE = "";
-  if ($_POST and $_POST["bidang_kerja"]) {
-    $WHERE = $WHERE . "'" .$_POST["bidang_kerja"] ."'" ;
-  };
+  $filter=[];
 
-  if ($_POST and $_POST["lulusan_min"]) {
-    $WHERE = $WHERE . " and " . "'"  . $_POST["lulusan_min"]. "'" ;
-  };
-  $sql = "SELECT * FROM loker " . $WHERE;
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    foreach($_POST as $key => $value) {
+      if (is_array($value)) {
+        $f=[];
+        foreach($value as $k => $v) {
+          if ($key=="usia_max") {
+            $f[]="{key} <= '{$v}'";
+          } else $f[]="{key} = '{$v}";
+        }
+        $filter[]="(".implode(" or ", $f).")";
+      } else {
+        if(!empty($value)) $filter[]="{$key} = '{$value}'";
+      }
+    }
+  } 
+  if(empty($filter)) {
+    $sql = "SELECT * FROM loker";
+  } else $sql = "SELECT * FROM loker WHERE " . implode(" and ",$filter);
 
 
   if($result = mysqli_query($conn, $sql)){
