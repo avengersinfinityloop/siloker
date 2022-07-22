@@ -78,6 +78,11 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="profil.php">PROFIL</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="padding-left: 15rem;">
+            <p>Helo, <strong><?php echo $_SESSION['username']; ?></strong></p>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
