@@ -13,7 +13,7 @@
         $sql = "SELECT * FROM profil";
      ?>
     <center>
-        <h1 style="font-size: 3em; font-family: ">DATA ANDA</h1>
+        <h1 style="font-size: 3em; font-family: sans-serif">DATA ANDA</h1>
         <hr style="border: 1;
             height: 1px;
             background: #333;
@@ -61,8 +61,8 @@
                         <td>$kebangsaan</td>
                         <td>$gajiHarapan</td>
                         <td>
-                            <a herf='#' class='btn btn-outline-warning'>Edit</a>
-                            <a herf='#' class='btn btn-outline-danger'>Delete</a>
+                            <a href='editProfil.php?nik=$nik' class='btn btn-outline-warning'>Edit</a>
+                            <a href='hapusProfil.php?nik=$nik' class='btn btn-outline-danger'>Delete</a>
                         </td>
                       </tr>";
                     $n++;
@@ -111,8 +111,8 @@
                             <td>$alamat</td>
                             <td>$kodePos</td>
                             <td>
-                                <a herf='#' class='btn btn-outline-warning'>Edit</a>
-                                <a herf='#' class='btn btn-outline-danger'>Delete</a>
+                                <a href='#' class='btn btn-outline-warning'>Edit</a>
+                                <a href='#' class='btn btn-outline-danger'>Delete</a>
                             </td>
                         </tr>";
                     $n++;
@@ -161,8 +161,8 @@
                             <td>$tahunLulus</td>
                             <td>$nilai</td>
                             <td>
-                                <a herf='#' class='btn btn-outline-warning'>Edit</a>
-                                <a herf='#' class='btn btn-outline-danger'>Delete</a>
+                                <a href='#' class='btn btn-outline-warning'>Edit</a>
+                                <a href='#' class='btn btn-outline-danger'>Delete</a>
                             </td>
                         </tr>";
                     $n++;
@@ -213,8 +213,8 @@
                             <td>$tanggalMulai</td>
                             <td>$tipeKontrak</td>
                             <td>
-                                <a herf='#' class='btn btn-outline-warning'>Edit</a>
-                                <a herf='#' class='btn btn-outline-danger'>Delete</a>
+                                <a href='#' class='btn btn-outline-warning'>Edit</a>
+                                <a href='#' class='btn btn-outline-danger'>Delete</a>
                             </td>
                         </tr>";
                     $n++;
@@ -259,8 +259,8 @@
                             <td>$deskripsi</td>
                             <td>$periode</td>
                             <td>
-                                <a herf='#' class='btn btn-outline-warning'>Edit</a>
-                                <a herf='#' class='btn btn-outline-danger'>Delete</a>
+                                <a href='#' class='btn btn-outline-warning'>Edit</a>
+                                <a href='#' class='btn btn-outline-danger'>Delete</a>
                             </td>
                         </tr>";
                     $n++;
@@ -305,8 +305,8 @@
                             <td>$penyelenggara</td>
                             <td>$tanggalKeluar</td>
                             <td>
-                                <a herf='#' class='btn btn-outline-warning'>Edit</a>
-                                <a herf='#' class='btn btn-outline-danger'>Delete</a>
+                                <a href='editProfil.php?nik=$nik' class='btn btn-outline-warning'>Edit</a>
+                                <a href='hapusProfil.php?nik=$nik' class='btn btn-outline-danger'>Delete</a>
                             </td>
                         </tr>";
                     $n++;

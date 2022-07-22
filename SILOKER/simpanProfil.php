@@ -4,6 +4,7 @@
 require("koneksi.php");
 // Data Diri
 $nik = $_POST['nik'];
+$username = $_POST['username'];
 $nama = $_POST['nama'];
 $tanggalLahir = $_POST['tanggal-lahir'];
 $jenisKelamin = $_POST['jenis-kelamin'];
@@ -46,7 +47,7 @@ $tanggalKeluar = $_POST['tanggal-keluar'];
 
 if($nik != '')
 {
-    $sql = "insert into profil values ('$nik','$nama','$tanggalLahir','$jenisKelamin','$status','$kebangsaan','$gajiHarapan'
+    $sql = "insert into profil values ('$nik','$username','$nama','$tanggalLahir','$jenisKelamin','$status','$kebangsaan','$gajiHarapan'
     ,'$telepon','$hp','$email','$lokasi','$alamat','$kodePos'
     ,'$pendidikan','$namaSekolah','$jurusan','$prestasi','$tahunLulus','$nilai'
     ,'$namaPerusahaan','$jabatan','$bidang','$lokasiKerja','$gajiPengalaman','$tanggalMulai','$tipeKontrak'
@@ -60,6 +61,9 @@ else
 }
 ?>
 <br>
-<center><a href="profil.php" class="btn btn-primary btn-lg">Kembali</a></center>
-<h1>SI</h1><img src="media/image/loker.jpeg" alt="test">
+<center>
+    <a href="profil.php" class="btn btn-primary btn-lg">Kembali</a>
+    <a href="cekProfil.php" class="btn btn-success btn-lg">Cek Data</a>
+</center>
+<h1>SI</h1><img src="multimedia/image/loker.jpeg" alt="test">
 </html>
