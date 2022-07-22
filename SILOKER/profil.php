@@ -6,7 +6,7 @@
 ?>
 <?php 
     //PAGE LOGIN KIRIM VARIABLE, JOY EDIT
-    $shareUsername=12345 ;
+    $shareUsername='mulhan123' ;
     session_start();
     $_SESSION['username'] = $shareUsername;
 ?>

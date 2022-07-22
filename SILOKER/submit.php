@@ -17,8 +17,7 @@
     //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
     $shareUsername = $_SESSION['username'];
-    //TEMP
-    $nik = $shareUsername;
+    $nik = cekNik($shareUsername);
     if(isset($_GET['idIklan'])){ //mendapatkan informasi dari page cekTempat.php untuk idIklan
         $idIklan    =$_GET['idIklan']; //menyimpan informasi di variable
     }

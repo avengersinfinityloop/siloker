@@ -15,6 +15,15 @@
 //KONEKSI DATABASE
 $conn = mysqli_connect("localhost","root","","siloker");
 
+//CEK NIK BY USERNAME
+function cekNik($username) {
+    global $conn;
+    $queryNik = mysqli_query($conn, "SELECT nik FROM profil WHERE username = '$username' ");
+    $resultNik = mysqli_fetch_array($queryNik);
+    $nik = $resultNik['nik'];
+    return $nik;
+}
+
 //FUNGSI PAGINATION CEK ROW (TIDAK TERPAKAI)
 function cekRow($query) {
     global $conn;

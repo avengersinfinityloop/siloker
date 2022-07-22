@@ -17,8 +17,7 @@
     //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
     $shareUsername = $_SESSION['username'];
-    //TEMP
-    $nik = $shareUsername;
+    $nik = cekNik($shareUsername);
 
     //CONTENT FORM
     $info=""; //variable informasi
