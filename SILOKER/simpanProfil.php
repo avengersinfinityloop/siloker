@@ -60,6 +60,6 @@ else
 }
 ?>
 <br>
-<center><a href="profil2.php" class="btn btn-primary btn-lg">Kembali</a></center>
+<center><a href="profil.php" class="btn btn-primary btn-lg">Kembali</a></center>
 <h1>SI</h1><img src="media/image/loker.jpeg" alt="test">
 </html>
