@@ -1,10 +1,9 @@
-<!doctype html>
-
 <?php
   session_start();
   $shareUsername = $_SESSION['username'];
 ?>
 
+<!doctype html>
 <html lang="en">
 
 <!--  Created by  : Indi Bagus Prasetyo
