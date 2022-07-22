@@ -80,7 +80,10 @@ $shareUsername = $_SESSION['username'];
             </li>
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="profil.php">Profil</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#!" style="padding-left: 15rem;">Login</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#!" style="padding-left: 15rem;">
+                <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+              </a>
             </li>
           </ul>
         </div>
