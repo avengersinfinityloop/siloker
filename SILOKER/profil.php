@@ -1,8 +1,6 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['username'])){
-//     header("location: loginp.php");
-// }
+    session_start();
+    $shareUsername = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -68,6 +66,10 @@
     <br>
     <center>
         <h1>Profil Diri</h1>
+        <?php
+        echo "<h1>$shareUsername</h1>";
+        var_dump($shareUsername);
+        ?>
         <hr style="border: 0;
             height: 1px;
             background: #333;
@@ -89,7 +91,7 @@
                     </div>
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control nik" name="nik" id="nik" onchange="tes()">
+                        <input type="text" class="form-control nik" name="nik" value="<?php echo "$shareUsername" ?>" onchange="tes()">
                     </div>
                     <div class="form-group">
                         <label>Nama</label>

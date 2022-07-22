@@ -1,8 +1,8 @@
 <?php
+    session_start();
+    error_reporting(E_ERROR | E_PARSE);
     include 'koneksi.php';
     //PAGE LOGIN KIRIM VARIABLE
-    session_start();
-    $_SESSION['username'] = $shareUsername;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +26,8 @@
         $username2 = $row['username'];
         if($username==$username2){
             $shareUsername = $username;
+            $_SESSION['username'] = $shareUsername;
+            header('location:profil.php');
         }
         else{
             $error = "Bisa Masuk Gak Sih Bro";
@@ -42,10 +44,10 @@
                         <input type="text" class="form-control" placeholder="Username *" name="username"><br>
                     </div>
                     <div class="form-group">
-                        <input type="pasword" class="form-control" placeholder="Password *" name="password"><br>
+                        <input type="password" class="form-control" placeholder="Password *" name="password"><br>
                     </div>
                     <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
+                        <input type="submit" name="submit" class="btnSubmit" value="Login" />
                     </div>
                 </form>
             </div>
