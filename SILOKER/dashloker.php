@@ -8,8 +8,13 @@
       Logs        : 20/07/2022 ; 12:22 AM    
 -->
       
-  
 <!doctype html>
+
+<?php
+  session_start();
+  $_SESSION['nik'] = $shareNIK;
+?>
+
 <html lang="en">
     <head>
         <!-- MetaData -->
@@ -42,7 +47,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
+          <a class="nav-link active" aria-current="page" href="index.php">BERANDA</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

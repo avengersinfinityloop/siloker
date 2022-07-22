@@ -1,5 +1,17 @@
 <!doctype html>
+
+<?php
+  session_start();
+  $_SESSION['nik'] = $shareNIK;
+?>
+
 <html lang="en">
+
+<!--  Created by  : Indi Bagus Prasetyo
+      NIM         : 10121902
+      Logs        : 22/07/2022 ; 12:22 AM    
+-->
+      
     <head>
         <!-- MetaData -->
         <meta charset="utf-8">
@@ -30,7 +42,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
+          <a class="nav-link active" aria-current="page" href="index.php">BERANDA</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -298,15 +310,26 @@
 
 <?php
   include("koneksidb.php");
-  $WHERE = "";
-  if ($_POST and $_POST["bidang_kerja"]) {
-    $WHERE = $WHERE . "'" .$_POST["bidang_kerja"] ."'" ;
-  };
+  $filter=[];
 
-  if ($_POST and $_POST["lulusan_min"]) {
-    $WHERE = $WHERE . " and " . "'"  . $_POST["lulusan_min"]. "'" ;
-  };
-  $sql = "SELECT * FROM loker " . $WHERE;
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    foreach($_POST as $key => $value) {
+      if (is_array($value)) {
+        $f=[];
+        foreach($value as $k => $v) {
+          if ($key=="usia_max") {
+            $f[]="{key} <= '{$v}'";
+          } else $f[]="{key} = '{$v}";
+        }
+        $filter[]="(".implode(" or ", $f).")";
+      } else {
+        if(!empty($value)) $filter[]="{$key} = '{$value}'";
+      }
+    }
+  } 
+  if(empty($filter)) {
+    $sql = "SELECT * FROM loker";
+  } else $sql = "SELECT * FROM loker WHERE " . implode(" and ",$filter);
 
 
   if($result = mysqli_query($conn, $sql)){
