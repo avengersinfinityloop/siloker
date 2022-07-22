@@ -7,7 +7,7 @@
         description             :fungsi fungsi supaya mempermudah koding
         total                   :??? pages
         logs                    :v1.0 20220717 - create file
-                                :v1.0 20220720 - finish file
+                                :v1.0 20220722 - finish file
         [Table of contents]
     -->
 
@@ -15,7 +15,7 @@
 //KONEKSI DATABASE
 $conn = mysqli_connect("localhost","root","","siloker");
 
-//CEK NIK BY USERNAME
+//CEK NIK IN PROFIL TABLE BY USERNAME
 function cekNik($username) {
     global $conn;
     $queryNik = mysqli_query($conn, "SELECT nik FROM profil WHERE username = '$username' ");
@@ -51,6 +51,6 @@ function cari($keyword,$awalData,$jumlahDataPerHalaman) {
     return cekRow($query);
 }
 
-//MENG NON AKTIFKAN TAMPILAN ERROR
+//MENG NON AKTIFKAN TAMPILAN ERROR YANG B SAJA
 error_reporting(E_ERROR | E_PARSE);
 ?>

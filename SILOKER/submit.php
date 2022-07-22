@@ -6,8 +6,7 @@
         page name               :submit.php
         total                   :??? pages
         logs                    :v1.0 20220703 - create file
-                                :v1.0 20220709 - finish file
-                                :v1.1 20220717 - finishing  file
+                                :v1.0 20220722 - finish file
         [Table of contents]
     -->
 

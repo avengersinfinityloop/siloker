@@ -6,7 +6,10 @@
 ?>
 <?php 
     //PAGE LOGIN KIRIM VARIABLE, JOY EDIT
-    $shareUsername='mulhan123' ;
+    require "fungsi.php";
+    $query = mysqli_query($conn, "SELECT username FROM profil ORDER BY RAND() LIMIT 1");
+    $result = mysqli_fetch_array($query);
+    $shareUsername=$result['username'] ;
     session_start();
     $_SESSION['username'] = $shareUsername;
 ?>
@@ -74,6 +77,7 @@
     <br>
     <center>
         <h1>Profil Diri</h1>
+        <?php echo 'USERNAME = '. $shareUsername ?>
         <hr style="border: 0;
             height: 1px;
             background: #333;
