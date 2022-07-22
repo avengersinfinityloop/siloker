@@ -4,12 +4,6 @@
 //     header("location: loginp.php");
 // }
 ?>
-<?php 
-    //PAGE LOGIN KIRIM VARIABLE, JOY EDIT
-    $shareUsername=12345 ;
-    session_start();
-    $_SESSION['username'] = $shareUsername;
-?>
 
 <!DOCTYPE html>
 <html lang="en">
