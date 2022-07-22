@@ -28,9 +28,9 @@ LOGIN                       index.php
 SESSION SHARE DATA
 index.php > POST 
     session_start();
-    $_SESSION['nik'] = $shareNIK;
+    $_SESSION['username'] = $shareUsername;
 
 
 all page > GET
     session_start();
-    $shareNIK = $_SESSION['nik'];
+    $shareUsername = $_SESSION['username'];

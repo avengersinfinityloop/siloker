@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2022 at 06:52 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.31
+-- Generation Time: Jul 21, 2022 at 07:38 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -97,6 +97,13 @@ CREATE TABLE `pasang_iklan` (
   `imageRegister` varchar(50) NOT NULL,
   `nik` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pasang_iklan`
+--
+
+INSERT INTO `pasang_iklan` (`idIklan`, `tanggal`, `namaKursus`, `bidang`, `harga`, `wilayah`, `onlineOffline`, `imageRegister`, `nik`) VALUES
+(1, '2022-07-22', 'IKLAN KURSUS 002', 'BAHASA INGGRIS', 'IKLAN KURSUS 002', 'IKLAN KURSUS 002', 'IKLAN KURSUS 002', 'multimedia/image/LibraryImage/1.jpg', '10121901');
 
 -- --------------------------------------------------------
 
@@ -227,7 +234,8 @@ ALTER TABLE `profil`
 -- Constraints for table `daftar_kursus`
 --
 ALTER TABLE `daftar_kursus`
-  ADD CONSTRAINT `daftar_kursus_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `profil` (`nik`);
+  ADD CONSTRAINT `daftar_kursus_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `profil` (`nik`),
+  ADD CONSTRAINT `daftar_kursus_ibfk_2` FOREIGN KEY (`idIklan`) REFERENCES `pasang_iklan` (`idIklan`);
 
 --
 -- Constraints for table `login`
@@ -246,12 +254,6 @@ ALTER TABLE `loker`
 --
 ALTER TABLE `online`
   ADD CONSTRAINT `online_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `profil` (`nik`);
-
---
--- Constraints for table `pasang_iklan`
---
-ALTER TABLE `pasang_iklan`
-  ADD CONSTRAINT `pasang_iklan_ibfk_1` FOREIGN KEY (`idIklan`) REFERENCES `daftar_kursus` (`idIklan`);
 
 --
 -- Constraints for table `pesertabootcamp`

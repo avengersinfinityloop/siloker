@@ -14,10 +14,11 @@
 <?php
     require "fungsi.php";
     
+    //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
-    //tampilan USER yang sedang LOGIN
-    $nik = $_SESSION['nik'];
-    $nama = $_SESSION['nama'];
+    $shareUsername = $_SESSION['username'];
+    //TEMP
+    $nik = $shareUsername;
 
     //CONTENT FORM
     $info=""; //variable informasi
@@ -45,13 +46,18 @@
             $info= "IKLAN sudah terdaftar. File ". $newFileName. " sudah ter Upload ";
             $query2 = mysqli_query($conn, "SELECT * FROM pasang_iklan WHERE nik = $nik ORDER BY tanggal");
         } else {
-            echo "Upload Gagal, FORM HARUS DI ISI SEMUA ";
+            $info= "Upload Gagal, FORM HARUS DI ISI SEMUA ";
         }
     }
 
     //CONTENT LIST IKLAN BY IDUSER
-    $no=0; //tampilan nomor pada table LIST IKLAN
-    $query2 = mysqli_query($conn, "SELECT * FROM pasang_iklan WHERE nik = $nik ORDER BY tanggal"); //query pada table LIST IKLAN
+    $RowPerHalIklan = 5;
+    $RowIklan = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM pasang_iklan WHERE nik = $nik"));
+    $HalPerPageIklan = ceil($RowIklan / $RowPerHalIklan);
+    $halAktifIklan = (isset($_GET["halIklan"])) ? $_GET["halIklan"] : 1;
+    $awalDataIklan = ($RowPerHalIklan * $halAktifIklan)-$RowPerHalIklan;
+    $noIklan=$awalDataIklan; //tampilan nomor pada table IKLAN
+    $query2 = mysqli_query($conn, "SELECT * FROM pasang_iklan WHERE nik = $nik ORDER BY tanggal LIMIT $awalDataIklan, $RowPerHalIklan"); //query pada table LIST IKLAN
     //CONTENT LIST IKLAN >>> DENGAN MENGGUNAKAN BUTTON DELETE MAKA AKAN DELETE ROW DI DATABASE
     if(isset($_POST['delete'])){ //berjalan ketika FORM table iklan di delete
         $idDelete = $_POST['delete']; //mengambil data ID
@@ -69,13 +75,13 @@
     }
 
     //CONTENT LIST DAFTAR BY IDUSER
-    $no2=0; //tampilan nomor pada table LIST DAFTAR
-    $query5 = mysqli_query($conn, "SELECT * FROM daftar_kursus WHERE idIklan IN (SELECT idIklan FROM pasang_iklan WHERE nik = $nik) ORDER BY tanggal"); //query pada table LIST DAFTAR
-    //CONTENT LIST DAFTAR >>> DENGAN MENGGUNAKAN BUTTON EDIT MAKA AKAN EDIT ROW DI DATABASE
-    if(isset($_POST['edit'])){ //berjalan ketika FORM table iklan di edit
-        $idEdit = $_POST['edit']; //mengambil data ID 
-        $info= "IKLAN dengan ID-".$idEdit."  belum bisa di edit karena belum beres wkwkwk";
-    }
+    $RowPerHalDaftar = 5;
+    $RowDaftar = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM daftar_kursus WHERE idIklan IN (SELECT idIklan FROM pasang_iklan WHERE nik = $nik)"));
+    $HalPerPageDaftar = ceil($RowDaftar / $RowPerHalDaftar);
+    $halAktifDaftar = (isset($_GET["halDaftar"])) ? $_GET["halDaftar"] : 1;
+    $awalDataDaftar = ($RowPerHalDaftar * $halAktifDaftar)-$RowPerHalDaftar;
+    $noDaftar=$awalDataDaftar; //tampilan nomor pada table LIST DAFTAR
+    $query5 = mysqli_query($conn, "SELECT * FROM daftar_kursus WHERE idIklan IN (SELECT idIklan FROM pasang_iklan WHERE nik = $nik) ORDER BY tanggal LIMIT $awalDataDaftar, $RowPerHalDaftar"); //query pada table LIST DAFTAR
     //CONTENT LIST DAFTAR >>> DENGAN MENGGUNAKAN BUTTON DELETE MAKA AKAN DELETE ROW DI DATABASE
     if(isset($_POST['delete2'])){ //berjalan ketika FORM table daftar di delete
         $idDelete = $_POST['delete2']; //mengambil data ID
@@ -132,7 +138,7 @@
                         BOOTCAMP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="about.html">ABOUT</a></li>
+                            <li><a class="dropdown-item" href="about.php">ABOUT</a></li>
                             <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
                             <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
                             <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
@@ -153,7 +159,15 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form> -->
                 <div class="d-flex">
-                    <b class="me-2"><?php echo "LOGIN - " .$nama." - ".$nik ?></b>
+                    <b class="me-2">
+                        <?php 
+                            if ($shareUsername != '') {
+                                echo $shareUsername ;
+                            } else {
+                                echo "<a href='index.php' class=''>LOGIN</a>";
+                            }
+                        ?>
+                    </b>
                 </div>
             </div>
         </nav>
@@ -214,6 +228,26 @@
     <div class="jpageCon2">
         <div class="container">
             <h2 align="center">INFORMASI LIST IKLAN  <br> BY ID USER <?php echo $nik ?></h2><br><br>
+            <!-- navigasi -->
+            <div class="pagination mb-3">
+                <?php if($halAktifIklan > 1) : ?>
+                    <a class="page-link" href="? halIklan=<?= $halAktifIklan - 1 ?>" >Previous</a>
+                <?php else : ?>
+                    <a class="page-link" href="" >Previous</a>
+                <?php endif; ?>
+                <?php for($i = 1; $i <= $HalPerPageIklan; $i++) :?>
+                    <?php if( $i == $halAktifIklan) : ?>
+                        <a class="page-link" href="?halIklan=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                    <?php else : ?>
+                        <a class="page-link" href="?halIklan=<?= $i  ?>"><?= $i  ?></a>
+                    <?php endif ; ?>
+                <?php endfor; ?>
+                <?php if($halAktifIklan < $HalPerPageIklan) : ?>
+                    <a class="page-link" href="?halIklan=<?= $halAktifIklan + 1; ?>">Next</a>
+                <?php else : ?>
+                    <a class="page-link" href="" >Next</a>
+                <?php endif; ?>
+            </div>
             <table class="table table-bordered table-striped tableIklan">
                 <tr>
                     <th width="50px">No</th>
@@ -230,10 +264,10 @@
                 </tr>
                 <?php
                 while($result2 = mysqli_fetch_array($query2)){
-                $no++
+                $noIklan++
                 ?>
                 <tr>
-                    <td><?php echo $no?></td>
+                    <td><?php echo $noIklan?></td>
                     <td><?php echo $result2['idIklan']?></td>
                     <td><?php echo $result2['tanggal']?></td>
                     <td><?php echo $result2['namaKursus']?></td>
@@ -260,6 +294,26 @@
     <div class="jpageCon2">
         <div class="container">
             <h2 align="center">INFORMASI LIST DAFTAR  <br>DARI IKLAN YANG DI BUAT ID USER <?php echo $nik ?></h2><br><br>
+            <!-- navigasi -->
+            <div class="pagination mb-3">
+                <?php if($halAktifDaftar > 1) : ?>
+                    <a class="page-link" href="? halDaftar=<?= $halAktifDaftar - 1 ?>" >Previous</a>
+                <?php else : ?>
+                    <a class="page-link" href="" >Previous</a>
+                <?php endif; ?>
+                <?php for($i = 1; $i <= $HalPerPageDaftar; $i++) :?>
+                    <?php if( $i == $halAktifDaftar) : ?>
+                        <a class="page-link" href="?halDaftar=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                    <?php else : ?>
+                        <a class="page-link" href="?halDaftar=<?= $i  ?>"><?= $i  ?></a>
+                    <?php endif ; ?>
+                <?php endfor; ?>
+                <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
+                    <a class="page-link" href="?halDaftar=<?= $halAktifDaftar + 1; ?>">Next</a>
+                <?php else : ?>
+                    <a class="page-link" href="" >Next</a>
+                <?php endif; ?>
+            </div>
             <table class="table table-bordered table-striped tableIklan">
                 <tr>
                     <th width="50px">No</th>
@@ -271,10 +325,10 @@
                 </tr>
                 <?php
                 while($result5    =mysqli_fetch_array($query5)){
-                $no2++
+                $noDaftar++
                 ?>
                 <tr>
-                    <td><?php echo $no2?></td>
+                    <td><?php echo $noDaftar?></td>
                     <td><?php echo $result5['idDaftar']?></td>
                     <td><?php echo $result5['nik']?></td>
                     <td><?php echo $result5['idIklan']?></td>

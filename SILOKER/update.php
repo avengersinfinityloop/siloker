@@ -14,10 +14,11 @@
 <?php
     require "fungsi.php";
     
+    //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
-    //tampilan USER yang sedang LOGIN
-    $nik = $_SESSION['nik'];
-    $nama = $_SESSION['nama'];
+    $shareUsername = $_SESSION['username'];
+    //TEMP
+    $nik = $shareUsername;
     if(isset($_GET['idIklan'])){ //mendapatkan informasi dari page cekTempat.php untuk idIklan
         $idIklan    =$_GET['idIklan']; //menyimpan informasi di variable
     }
@@ -107,7 +108,7 @@
                         BOOTCAMP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="about.html">ABOUT</a></li>
+                            <li><a class="dropdown-item" href="about.php">ABOUT</a></li>
                             <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
                             <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
                             <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
@@ -128,7 +129,15 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form> -->
                 <div class="d-flex">
-                    <b class="me-2"><?php echo "LOGIN - " .$nama." - ".$nik ?></b>
+                    <b class="me-2">
+                        <?php 
+                            if ($shareUsername != '') {
+                                echo $shareUsername ;
+                            } else {
+                                echo "<a href='index.php' class=''>LOGIN</a>";
+                            }
+                        ?>
+                    </b>
                 </div>
             </div>
         </nav>

@@ -14,14 +14,16 @@
 <?php
     require "fungsi.php";
     
+    //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
-    //tampilan USER yang sedang LOGIN
-    $nik = $_SESSION['nik'];
-    $nama = $_SESSION['nama'];
+    $shareUsername = $_SESSION['username'];
+    //TEMP
+    $nik = $shareUsername;
 
     //CONTENT IKLAN
-    $RowPerHalIklan = 5;
-    $RowIklan = count(cekRow("SELECT * from pasang_iklan"));
+    $RowPerHalIklan = 10;
+    // $RowIklan = count(cekRow("SELECT * from pasang_iklan"));
+    $RowIklan = mysqli_num_rows(mysqli_query($conn,"SELECT * from pasang_iklan"));
     $HalPerPageIklan = ceil($RowIklan / $RowPerHalIklan);
     $halAktifIklan = (isset($_GET["halIklan"])) ? $_GET["halIklan"] : 1;
     $awalDataIklan = ($RowPerHalIklan * $halAktifIklan)-$RowPerHalIklan;
@@ -30,7 +32,7 @@
 
     //CONTENT LIST DAFTAR BY IDUSER
     $RowPerHalDaftar = 5;
-    $RowDaftar = count(cekRow("SELECT * FROM `daftar_kursus` WHERE nik = $nik"));
+    $RowDaftar = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM `daftar_kursus` WHERE nik = $nik"));
     $HalPerPageDaftar = ceil($RowDaftar / $RowPerHalDaftar);
     $halAktifDaftar = (isset($_GET["halDaftar"])) ? $_GET["halDaftar"] : 1;
     $awalDataDaftar = ($RowPerHalDaftar * $halAktifDaftar)-$RowPerHalDaftar;
@@ -93,7 +95,7 @@
                         BOOTCAMP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="about.html">ABOUT</a></li>
+                            <li><a class="dropdown-item" href="about.php">ABOUT</a></li>
                             <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
                             <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
                             <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
@@ -114,7 +116,15 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form> -->
                 <div class="d-flex">
-                    <b class="me-2"><?php echo "LOGIN - " .$nama." - ".$nik ?></b>
+                    <b class="me-2">
+                        <?php 
+                            if ($shareUsername != '') {
+                                echo $shareUsername ;
+                            } else {
+                                echo "<a href='index.php' class=''>LOGIN</a>";
+                            }
+                        ?>
+                    </b>
                 </div>
             </div>
         </nav>
@@ -126,20 +136,25 @@
     <div class="jpageCon1">
         <div class="container">
             <!-- navigasi -->
-            <?php if($halAktifIklan > 1) : ?>
-                <!-- echo "<a href='specificAssignmentPage.php?assignName=$value2'teacherYes=$isTeacher>$value2</a>"; -->
-            <a href="? halIklan=<?= $halAktifIklan - 1 ?>" >&laquo;</a>
-            <?php endif; ?>
-            <?php for($i = 1; $i <= $HalPerPageIklan; $i++) :?>
-                <?php if( $i == $halAktifIklan) : ?>
-                    <a href="?halIklan=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+            <div class="pagination mb-3">
+                <?php if($halAktifIklan > 1) : ?>
+                    <a class="page-link" href="? halIklan=<?= $halAktifIklan - 1 ?>" >Previous</a>
                 <?php else : ?>
-                    <a href="?halIklan=<?= $i  ?>"><?= $i  ?></a>
-                <?php endif ; ?>
-            <?php endfor; ?>
-            <?php if($halAktifIklan < $HalPerPageIklan) : ?>
-            <a href="?halIklan=<?= $halAktifIklan + 1; ?>">&raquo;</a>
-            <?php endif; ?>
+                    <a class="page-link" href="" >Previous</a>
+                <?php endif; ?>
+                <?php for($i = 1; $i <= $HalPerPageIklan; $i++) :?>
+                    <?php if( $i == $halAktifIklan) : ?>
+                        <a class="page-link" href="?halIklan=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                    <?php else : ?>
+                        <a class="page-link" href="?halIklan=<?= $i  ?>"><?= $i  ?></a>
+                    <?php endif ; ?>
+                <?php endfor; ?>
+                <?php if($halAktifIklan < $HalPerPageIklan) : ?>
+                    <a class="page-link" href="?halIklan=<?= $halAktifIklan + 1; ?>">Next</a>
+                <?php else : ?>
+                    <a class="page-link" href="" >Next</a>
+                <?php endif; ?>
+            </div>
             <table class="table table-bordered table-striped tableIklan">
                 <tr>
                     <th width="50px">No</th>
@@ -177,19 +192,25 @@
         <div class="container">
             <h2 align="center">INFORMASI LIST YANG SUDAH DAFTAR  <br> BY ID USER <?php echo $nik ?></h2><br><br>
             <!-- navigasi -->
-            <?php if($halAktifDaftar > 1) : ?>
-            <a href="?halDaftar=<?= $halAktifDaftar - 1; ?>">&laquo;</a>
-            <?php endif; ?>
-            <?php for($j = 1; $j <= $HalPerPageDaftar; $j++) :?>
-                <?php if( $j == $halAktifDaftar) : ?>
-                    <a href="?halDaftar=<?= $j  ?>" style="font-weight:bold; color:red;"><?= $j  ?></a>
+            <div class="pagination mb-3">
+                <?php if($halAktifDaftar > 1) : ?>
+                    <a class="page-link" href="? halDaftar=<?= $halAktifDaftar - 1 ?>" >Previous</a>
                 <?php else : ?>
-                    <a href="?halDaftar=<?= $j  ?>"><?= $j  ?></a>
-                <?php endif ; ?>
-            <?php endfor; ?>
-            <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
-            <a href="?halDaftar=<?= $halAktifDaftar + 1; ?>">&raquo;</a>
-            <?php endif; ?>
+                    <a class="page-link" href="" >Previous</a>
+                <?php endif; ?>
+                <?php for($i = 1; $i <= $HalPerPageDaftar; $i++) :?>
+                    <?php if( $i == $halAktifDaftar) : ?>
+                        <a class="page-link" href="?halDaftar=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                    <?php else : ?>
+                        <a class="page-link" href="?halDaftar=<?= $i  ?>"><?= $i  ?></a>
+                    <?php endif ; ?>
+                <?php endfor; ?>
+                <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
+                    <a class="page-link" href="?halDaftar=<?= $halAktifDaftar + 1; ?>">Next</a>
+                <?php else : ?>
+                    <a class="page-link" href="" >Next</a>
+                <?php endif; ?>
+            </div>
             <table class="table table-bordered table-striped tableIklan">
                 <tr>
                     <th width="50px">No</th>

@@ -1,10 +1,10 @@
 <?php 
     //PAGE LOGIN KIRIM VARIABLE
     session_start();
-    $_SESSION['nik'] = $shareNIK;
+    $_SESSION['username'] = $shareUsername;
 
     //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
-    $shareNIK = $_SESSION['nik'];
-    $query="SELECT dataYangdibutuhkan FROM `profil` WHERE nik = $shareNIK";
+    $shareUsername = $_SESSION['username'];
+    $query="SELECT dataYangdibutuhkan FROM `profil` WHERE username = $shareUsername";
 ?>

@@ -7,7 +7,7 @@
 	<!-- buat icon -->
 	<link rel="shortcut icon" href="multimedia/image/logo//silokerlogo.png">
 	<title>Tifa's Bootcamp</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrapv2/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/plugins.css">
 	<link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
 	<link rel="stylesheet" type="text/css" href="type/type.css">
@@ -22,7 +22,7 @@
 		<!-- Navbar -->
 		<nav class="navbar bg-white shadow navbar-expand-lg">
 			<div class="container">
-				<div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerlogo.png" style="width: 40%;" class="logo-light" alt="" /></a></div>
+				<div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 40%;" class="logo-light" alt="" /></a></div>
 				<div class="navbar-other ml-auto order-lg-3">
 					<ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
 						<li class="nav-item">
@@ -36,19 +36,19 @@
 						<button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
 					</div>
 					<ul class="navbar-nav mx-auto">
-						<li class="nav-item"><a class="nav-link" href="#">Home</a>
+						<li class="nav-item"><a class="nav-link" href="index.php">Home</a>
 						</li>
 						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">Loker</a>
 							<ul class="dropdown-menu">
-								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="indexloker.php">Index Loker</a>
+								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="dashloker.php">Menu Utama</a>
 								</li>
-								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="loker.php">Loker</a>
+								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="loker.php">Main Loker</a>
 								</li>
 							</ul>
 						</li>
-						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="kursus.php">Kursus</a>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">Kursus</a>
 							<ul class="dropdown-menu">
-								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="kursus.php">Kursus</a>
+								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="kursus.php">Menu</a>
 								</li>
 								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="cekTempat.php">Cek Tempat</a>
 								</li>
@@ -67,11 +67,11 @@
 										<li class="nav-item"><a class="dropdown-item" href="fullstackwebdevelopment.php">Full Stack Web Development</a></li>
 									</ul>
 								</li>
-								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="about.html">About</a>
+								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="about.php">About</a>
 								</li>
 							</ul>
 						</li>
-						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="profil.php">Profile</a>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="profil.php">Profil</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="#!" style="padding-left: 15rem;">Login</a>
 						</li>
@@ -392,9 +392,9 @@
 
 		<!-- Free Trial -->
 		<div class="container inner pt-10">
-			<div id="banner" class="container"></div>
-			<div class="space30"></div>
-			<div class="text-center black"><a href="#" class="btn btn-violet" data-toggle="modal" data-target="#modal-06">Free Trial</a></div>
+			<figure class="cover"><img src="multimedia/image/concept/masihbingung.png" alt="" /></figure>
+			<div class="space25"></div>
+			<div class="text-center"><a href="#" class="btn" data-toggle="modal" data-target="#modal-06">Free Trial</a></div>
 			<div class="modal fade" id="modal-06" tabindex="-1" role="dialog" aria-labelledby="modal-06" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
 					<div class="modal-content">
@@ -404,19 +404,19 @@
 						<div class="box bg-white p-40 text-center">
 							<div class="row">
 								<div class="col-md-8 offset-md-2">
-									<figure class="mb-30"><img src="multimedia/image.concept/masihbingung.png" srcset="multimedia/image/concept/concept19.png 1x, multimedia/image/concept/concept19@2x.png 2x" alt="" /></figure>
+									<figure class="mb-30"><img src="#" srcset="style/images/concept/concept19.png 1x, style/images/concept/concept19@2x.png 2x" alt="" /></figure>
 								</div>
 								<!-- /column -->
 							</div>
 							<!-- /.row -->
-							<h3>Gabung Free Trial 3 Hari GRATIS!!!</h3>
+							<h3>Daftarkan email kamu untuk mendapat FREE TRIAL 3 HARI GRATISSS!!!</h3>
 							<div class="newsletter-wrapper">
 								<div class="row">
 									<div class="col-md-10 offset-md-1">
-										<form action="" method="post" id="" name="" class="validate" target="_blank" novalidate>
-											<div id="" class="input-group">
+										<form action="#" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+											<div id="mc_embed_signup_scroll2" class="input-group">
 												<input type="email" value="" name="EMAIL" class="email form-control mb-0 mr-2 mb-sm-0" id="mce-EMAIL2" placeholder="Email Address" required>
-												<button type="submit" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-rounded btn-purple mr-0 mb-0 pull-right">Join</button>
+												<button type="submit" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">Join</button>
 												<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 												<div style="position: absolute; left: -5000px;" aria-hidden="true">
 													<input type="text" name="b_ddc180777a163e0f9f66ee014_056957de28" tabindex="-1" value="">
