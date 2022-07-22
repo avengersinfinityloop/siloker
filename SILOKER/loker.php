@@ -2,7 +2,7 @@
 
 <?php
   session_start();
-  $_SESSION['nik'] = $shareNIK;
+  $_SESSION['username'] = $shareUsername;
 ?>
 
 <html lang="en">
