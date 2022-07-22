@@ -1,3 +1,11 @@
+<?php
+
+//PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
+session_start();
+$shareUsername = $_SESSION['username'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
