@@ -103,7 +103,7 @@
                     <b class="me-2">
                         <?php 
                             if ($shareUsername != '') {
-                                echo $shareUsername .' - '.$nik;
+                                echo $shareUsername;
                             } else {
                                 echo "<a href='index.php' class=''>LOGIN</a>";
                             }
