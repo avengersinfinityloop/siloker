@@ -30,8 +30,8 @@
 .jpageCon1 .highlight {
     background-color: lightgray;
     margin-bottom: 15px;
-    height: 450px;
-    width: 100%;
+    height: 550px;
+    width: auto;
 }
 .jpageCon1 .tableDaftar {
     margin-left: auto;

@@ -30,9 +30,14 @@
     $query1 = mysqli_query($conn, "SELECT * FROM pasang_iklan WHERE idIklan='$idIklan'"); //query menampilkan informasi detail berdasarkan id iklan
     $result1 = mysqli_fetch_array($query1);
     //CONTENT SUBMIT AREA >>> AUTO GENERATE NO ID DAFTAR BARU
+    $date=date("Y");
     $cekmaxID = mysqli_query($conn, "SELECT MAX(idDaftar) FROM daftar_kursus"); //mengecek IDDAFTAR paling tinggi untuk di buatkan ID baru
     $result2 = mysqli_fetch_array($cekmaxID); //memasukan query ke dalam variable
-    $nextID = intval($result2[0]) + 1; //rumus mendapatkan ID baru
+    if ($result2[0] == null) {
+        $nextID = 10001;
+    } else {
+        $nextID = intval($result2[0]) + 1;
+    }
     $idDaftar=$nextID; //variable untuk daftar ID baru
     //CONTENT SUBMIT AREA >>> MENCARI INFORMASI DARIDATABASE APAKAH IKLAN YANG MAU DI DAFTARKAN SUDAH ADA ATAU BELUM BERDASARKAN ID USER YANG SEDANG LOGIN
     $query3 = mysqli_query($conn, "SELECT idIklan FROM daftar_kursus WHERE (idIklan = $idIklan AND nik = $nik)"); // search apa id iklan sudah terdaftar di user tersebut
@@ -178,7 +183,7 @@
                         <td>nik</td>
                         <td>: <?php echo $result1['nik']?></td>
                     </tr>
-                    <tr height="100px">
+                    <tr height="50px">
                         <td>
                             <form method="POST" class="my-auto" id="myForm">
                                 <input type="submit" name="daftar" value="DAFTAR" class="btn btn-outline-secondary">
