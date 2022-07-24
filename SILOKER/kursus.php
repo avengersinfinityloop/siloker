@@ -99,7 +99,7 @@
                     <b class="me-2">
                         <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
-                            <?php echo $shareUsername." - "; ?>
+                            <?php echo $shareUsername; ?>
                             <a href='index.php' class="btn">LOGOUT</a>
                         <?php else : ?>
                             <a href='index.php' class="btn">LOGIN</a>
@@ -114,16 +114,11 @@
 <div class="">
     <!-- HIGHLIGHT -->
     <div class="jpageCon1">
-        <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
+        <div id="carousel" class=" carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner text-center">
                 <div class="carousel-item active" data-bs-interval="5000">
                     <?php echo "<img src='$image[1]' class='highlight'>"; ?>
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class=" carousel-caption d-none d-md-block">
                         <?php if ($link[1] != '') : ?>
                             <h1><a href="submit.php?idIklan=<?=$link[1]?>">DAFTAR <?=$nama[1]?></a></h1>
                         <?php else : ?>

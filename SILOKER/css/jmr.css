@@ -23,6 +23,7 @@
     font-size: 15px;
 }
 .jpageHeader b {
+    text-shadow: 3px 3px #C5C6C7;
     font-size: 18px;
 }
 
@@ -37,14 +38,18 @@
 /* CONTENT PERTAMA */
 .jpageCon1 .highlight {
     background-color: lightgray;
-    margin-bottom: 15px;
-    height: 550px;
+    margin-bottom: 8px;
+    height: 630px;
     width: auto;
 }
 .jpageCon1 .tableDaftar {
     margin-left: auto;
     margin-right: auto;
     width: 700px;
+}
+.jpageCon1 .carousel-indicators {
+    background-color: gainsboro;
+    border: 1px solid #1F2833;
 }
 
 /* CONTENT KEDUA */

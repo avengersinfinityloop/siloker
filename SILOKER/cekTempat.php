@@ -113,7 +113,7 @@
                     <b class="me-2">
                         <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
-                            <?php echo $shareUsername." - "; ?>
+                            <?php echo $shareUsername; ?>
                             <a href='index.php' class="btn">LOGOUT</a>
                         <?php else : ?>
                             <a href='index.php' class="btn">LOGIN</a>
