@@ -47,9 +47,9 @@
 <!-- HEADER -->
 <div class="">
     <div class=" jpageHeader fixed-top">
-        <nav class="container navbar navbar-expand-lg bg-light">
+        <nav class="container navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php"><b>SILOKER</b></a>
+                <a class="navbar-brand" href=""><b>SILOKER</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -100,9 +100,9 @@
                         <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
                             <?php echo $shareUsername." - "; ?>
-                            <a href='index.php'>LOGOUT</a>
+                            <a href='index.php' class="btn">LOGOUT</a>
                         <?php else : ?>
-                            <a href='index.php'>LOGIN</a>
+                            <a href='index.php' class="btn">LOGIN</a>
                         <?php endif ?>
                     </b>
                 </div>
