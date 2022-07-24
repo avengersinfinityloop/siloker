@@ -76,7 +76,7 @@
     <div class=" jpageHeader fixed-top">
         <nav class="container navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><b>SILOKER</b></a>
+                <a class="navbar-brand" href="index.php"><b>SILOKER</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -122,19 +122,15 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form> -->
                 <div class="d-flex">
                     <b class="me-2">
-                        <?php 
-                            if ($shareUsername != '') {
-                                echo $shareUsername ;
-                            } else {
-                                echo "<a href='index.php' class=''>LOGIN</a>";
-                            }
-                        ?>
+                        <?php echo $tes; ?>
+                        <?php if ($shareUsername != '') : ?>
+                            <?php echo $shareUsername." - "; ?>
+                            <a href='index.php'>LOGOUT</a>
+                        <?php else : ?>
+                            <a href='index.php'>LOGIN</a>
+                        <?php endif ?>
                     </b>
                 </div>
             </div>
