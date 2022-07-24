@@ -23,7 +23,11 @@
     //CONTENT FORM >>> AUTO GENERATE NO ID PASANG IKLAN DAN NAMA FILE GAMBAR SESUAI DENGAN ID PASANG IKLAN
     $cekmaxID = mysqli_query($conn, "SELECT MAX(idIklan) FROM pasang_iklan"); //mengecek IDIKLAN paling tinggi untuk di buatkan ID baru
     $result = mysqli_fetch_array($cekmaxID); //memasukan query ke dalam variable
-    $nextID = intval($result[0]) + 1; //rumus mendapatkan ID baru
+    if ($result2[0] == null) {
+        $nextID = 20001;
+    } else {
+        $nextID = intval($result2[0]) + 1;
+    }
     $idIklan = $nextID; //variable untuk daftar ID baru
     $imageRegister ='multimedia/image/LibraryImage/' . $nextID . '.jpg'; //variable untuk path image baru pada ID baru
     //CONTENT FORM >>> DENGAN MENGGUNAKAN BUTTON PASANG MAKA IKLAN AKAN TERDAFTAR DI DATABASE
