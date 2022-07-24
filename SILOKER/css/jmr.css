@@ -3,8 +3,8 @@
     background: linear-gradient( white, #C5C6C7);
     margin-top: 5px;
     margin-bottom: 5px;
-    border-top: 1px solid #1F2833;
-    border-bottom: 1px solid #1F2833;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
 }
 .jpageHeader .navbar-brand{
     text-shadow: 3px 3px #C5C6C7;
@@ -30,35 +30,42 @@
 /* CONTENT */
 .jpageCon1 {
     background-color: white;
-    margin-top: 70px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
+    padding-top: 75px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
     min-height: 550px;
 }
 /* CONTENT PERTAMA */
 .jpageCon1 .highlight {
-    background-color: lightgray;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     height: 630px;
     width: auto;
+    box-shadow: 10px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 20px;
 }
 .jpageCon1 .tableDaftar {
     margin-left: auto;
     margin-right: auto;
     width: 700px;
 }
-.jpageCon1 .carousel-indicators {
-    background-color: gainsboro;
-    border: 1px solid #1F2833;
+.jpageCon1 .carousel-caption a:link {
+    font-size: 250px;
+    color: transparent;
+    text-decoration: none;
+}
+.jpageCon1 .carousel-caption a:hover {
+    font-size: 250px;
+    color: #C5C6C7;
+    text-shadow: 5px 5px black;
+    text-decoration: none;
 }
 
 /* CONTENT KEDUA */
 .jpageCon2{
-    background-color: white;
-    margin-top: 20px;
-    margin-bottom: 0px;
+    background-color: whitesmoke;
+    padding-top: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
 }
 .jpageCon2 .columns {
     width: 350px;
@@ -102,8 +109,8 @@
 /* FOOTER */
 .jpageFooter {
     background-color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
 }
 .jpageFooter iframe {

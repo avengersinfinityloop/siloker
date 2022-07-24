@@ -49,7 +49,10 @@
     <div class=" jpageHeader fixed-top">
         <nav class="container navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href=""><b>SILOKER</b></a>
+                <div class="justify-content-start">
+                    <img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="align-text-top">
+                    <a class="navbar-brand" href=""><b>SILOKER</b></a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -116,31 +119,31 @@
     <div class="jpageCon1">
         <div id="carousel" class=" carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner text-center">
-                <div class="carousel-item active" data-bs-interval="5000">
+                <div class="carousel-item active" data-bs-interval="3000">
                     <?php echo "<img src='$image[1]' class='highlight'>"; ?>
-                    <div class=" carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-none d-md-block">
                         <?php if ($link[1] != '') : ?>
-                            <h1><a href="submit.php?idIklan=<?=$link[1]?>">DAFTAR <?=$nama[1]?></a></h1>
+                            <p><a href="submit.php?idIklan=<?=$link[1]?>">DAFTAR</a></p>
                         <?php else : ?>
                             <h1>EMPTY</h1>
                         <?php endif ?>
                     </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="5000">
+                <div class="carousel-item" data-bs-interval="3000">
                     <?php echo "<img src='$image[2]' class='highlight'>"; ?>
                     <div class="carousel-caption d-none d-md-block">
                         <?php if ($link[2] != '') : ?>
-                            <h1><a href="submit.php?idIklan=<?=$link[2]?>">DAFTAR <?=$nama[2]?></a></h1>
+                            <p><a href="submit.php?idIklan=<?=$link[2]?>">DAFTAR</a></p>
                         <?php else : ?>
                             <h1>EMPTY</h1>
                         <?php endif ?>
                     </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="5000">
+                <div class="carousel-item" data-bs-interval="3000">
                     <?php echo "<img src='$image[3]' class='highlight'>"; ?>
                     <div class="carousel-caption d-none d-md-block">
                         <?php if ($link[3] != '') : ?>
-                            <h1><a href="submit.php?idIklan=<?=$link[3]?>">DAFTAR <?=$nama[3]?></a></h1>
+                            <p><a href="submit.php?idIklan=<?=$link[3]?>">DAFTAR</a></p>
                         <?php else : ?>
                             <h1>EMPTY</h1>
                         <?php endif ?>
