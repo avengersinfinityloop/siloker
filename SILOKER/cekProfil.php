@@ -1,3 +1,16 @@
+<!-- 
+    Created by :
+    Nama : Muhamad Sidik Nur Rizki
+    NIM : 10121901
+    Kelas : IF-9
+
+    Created on : 20220720
+    page name: profil.php
+    total line : ....line
+    logs : v0.1.20220720
+
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +22,7 @@
 </head>
 <body>
     <?php
-        require("koneksi.php");
+        require("fungsi.php");
         $sql = "SELECT * FROM profil";
      ?>
     <center>
