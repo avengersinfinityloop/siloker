@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-md-20 login-form">
                     <h3>Daftar Akun Baru SILOKER</h3>
-                    <form action="" method="post">
+                    <form action="simpanAkun.php" method="post">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Username *" name="username"><br>
                         </div>
