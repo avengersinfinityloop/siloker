@@ -1,51 +1,71 @@
 /* HEADER */
 .jpageHeader {
-    background-color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    background: linear-gradient( white, #C5C6C7);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
 }
 .jpageHeader .navbar-brand{
-    margin-right: 100px;
-    font-size: 25px;
+    text-shadow: 3px 3px #C5C6C7;
+    margin-right: 50px;
+}
+.jpageHeader .navbar-brand b{
+    font-size: 20px;
 }
 .jpageHeader .nav-item{
     margin-right: 15px;
-    font-size: 20px;
+    font-size: 15px;
 }
 .jpageHeader .dropdown-menu{
+    margin-top: 50px;
+    background: linear-gradient( white, #C5C6C7);
     font-size: 15px;
+}
+.jpageHeader b {
+    text-shadow: 3px 3px #C5C6C7;
+    font-size: 18px;
 }
 
 /* CONTENT */
 .jpageCon1 {
     background-color: white;
-    margin-top: 90px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
+    padding-top: 75px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
     min-height: 550px;
 }
 /* CONTENT PERTAMA */
 .jpageCon1 .highlight {
-    background-color: lightgray;
-    margin-bottom: 15px;
-    height: 550px;
+    margin-bottom: 10px;
+    height: 630px;
     width: auto;
+    box-shadow: 10px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 20px;
 }
 .jpageCon1 .tableDaftar {
     margin-left: auto;
     margin-right: auto;
     width: 700px;
 }
+.jpageCon1 .carousel-caption a:link {
+    font-size: 250px;
+    color: transparent;
+    text-decoration: none;
+}
+.jpageCon1 .carousel-caption a:hover {
+    font-size: 250px;
+    color: #C5C6C7;
+    text-shadow: 5px 5px black;
+    text-decoration: none;
+}
 
 /* CONTENT KEDUA */
 .jpageCon2{
-    background-color: white;
-    margin-top: 20px;
-    margin-bottom: 0px;
+    background-color: whitesmoke;
+    padding-top: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
 }
 .jpageCon2 .columns {
     width: 350px;
@@ -89,8 +109,8 @@
 /* FOOTER */
 .jpageFooter {
     background-color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
 }
 .jpageFooter iframe {

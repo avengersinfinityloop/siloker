@@ -73,9 +73,12 @@
 <!-- HEADER -->
 <div class="">
     <div class=" jpageHeader fixed-top">
-        <nav class="container navbar navbar-expand-lg bg-light">
+        <nav class="container navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php"><b>SILOKER</b></a>
+                <div class="justify-content-start">
+                    <img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="align-text-top">
+                    <a class="navbar-brand" href=""><b>SILOKER</b></a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -125,10 +128,10 @@
                     <b class="me-2">
                         <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
-                            <?php echo $shareUsername." - "; ?>
-                            <a href='index.php'>LOGOUT</a>
+                            <?php echo $shareUsername; ?>
+                            <a href='index.php' class="btn">LOGOUT</a>
                         <?php else : ?>
-                            <a href='index.php'>LOGIN</a>
+                            <a href='index.php' class="btn">LOGIN</a>
                         <?php endif ?>
                     </b>
                 </div>
@@ -145,43 +148,43 @@
             <h5 class="text-center"><?php echo $info; ?></h5>
             <?php if ($hide != 1) :?>
             <div>
-                <img class="highlight" src="<?php echo $result1['imageRegister']?>" alt="">
-                <table cellpadding="1">
+                <div class="text-center"><img class="highlight" src="<?php echo $result1['imageRegister']?>" alt=""></div>
+                <table cellpadding="2" style="margin-left: 200px;">
                     <tr>
                         <td>idIklan</td>
-                        <td>: <?php echo $result1['idIklan']?></td>
+                        <td style="padding-left: 50px;">: <?php echo $result1['idIklan']?></td>
                     </tr>
                     <tr>
                         <td>tanggal</td>
-                        <td>: <?php echo $result1['tanggal']?></td>
+                        <td style="padding-left: 50px;">: <?php echo $result1['tanggal']?></td>
                     </tr>
                     <tr>
                         <td>namaKursus</td>
-                        <td>: <?php echo $result1['namaKursus']?></td>
+                        <td style="padding-left: 50px;">: <?php echo $result1['namaKursus']?></td>
                     </tr>
                     <tr>
                         <td>bidang</td>
-                        <td>: <?php echo $result1['bidang']?></td>
+                        <td style="padding-left: 50px;">: <?php echo $result1['bidang']?></td>
                     </tr>
                     <tr>
                         <td>harga</td>
-                        <td>: <?php echo $result1['harga']?></td>
+                        <td style="padding-left: 50px;">: <?php echo $result1['harga']?></td>
                     </tr>
                     <tr>
                         <td>wilayah</td>
-                        <td>: <?php echo $result1['wilayah']?></td>
+                        <td style="padding-left: 50px;">: <?php echo $result1['wilayah']?></td>
                     </tr>
                     <tr>
                         <td>onlineOffline</td>
-                        <td>: <?php echo $result1['onlineOffline']?></td>
+                        <td style="padding-left: 50px;">: <?php echo $result1['onlineOffline']?></td>
                     </tr>
                     <tr>
                         <td>imageRegister</td>
-                        <td>: <?php echo $result1['imageRegister']?></td>
+                        <td style="padding-left: 50px;">: <?php echo $result1['imageRegister']?></td>
                     </tr>
                     <tr>
                         <td>nik</td>
-                        <td>: <?php echo $result1['nik']?></td>
+                        <td style="padding-left: 50px;">: <?php echo $result1['nik']?></td>
                     </tr>
                     <tr height="50px">
                         <td>

@@ -74,9 +74,12 @@
 <!-- HEADER -->
 <div class="">
     <div class=" jpageHeader fixed-top">
-        <nav class="container navbar navbar-expand-lg bg-light">
+        <nav class="container navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php"><b>SILOKER</b></a>
+                <div class="justify-content-start">
+                    <img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="align-text-top">
+                    <a class="navbar-brand" href=""><b>SILOKER</b></a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -126,10 +129,10 @@
                     <b class="me-2">
                         <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
-                            <?php echo $shareUsername." - "; ?>
-                            <a href='index.php'>LOGOUT</a>
+                            <?php echo $shareUsername; ?>
+                            <a href='index.php' class="btn">LOGOUT</a>
                         <?php else : ?>
-                            <a href='index.php'>LOGIN</a>
+                            <a href='index.php' class="btn">LOGIN</a>
                         <?php endif ?>
                     </b>
                 </div>
@@ -146,7 +149,7 @@
             <h5 class="text-center"><?php echo $info; ?></h5>
             <?php if ($hide != 1) :?>
             <div>
-                <img class="highlight" src="<?php echo $imageRegister1?>" alt="">
+                <div class="text-center"><img class="highlight" src="<?php echo $imageRegister1?>" alt=""></div>
                 <form method="post" class="tableDaftar" enctype="multipart/form-data" action="#">
                 <table class="table">
                     <tr>
