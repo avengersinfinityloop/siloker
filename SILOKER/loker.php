@@ -335,7 +335,7 @@
     $sql = "SELECT * FROM loker";
   } else $sql = "SELECT * FROM loker WHERE " . implode(" and ",$filter);
 
-
+  
   if($result = mysqli_query($conn, $sql)){
       if(mysqli_num_rows($result) > 0){
         $col = 0;
