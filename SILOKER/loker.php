@@ -6,11 +6,36 @@
 <!doctype html>
 <html lang="en">
 
-<!--  Created by  : Indi Bagus Prasetyo
+<!--  
+      Created By  : Indi Bagus Prasetyo
       NIM         : 10121902
-      Logs        : 22/07/2022 ; 12:22 AM    
+      Kelas       : IF-9K/S1/II
+      Matkul      : Pemrograman Web 2
+      Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
+      Created File On v27072022:1113 (v.1.1)
 -->
       
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- MetaData -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="indibagusprasetyo">
+        <meta name="description" content="siloker,lowongankerja">
+        <!-- Title -->
+        <title>SILOKER - Loker</title>
+        <!-- Links -->
+        <base href="loker.php">
+        <link rel="icon" href="multimedia/image/siloker.png" type="image/icon type">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/d13b076ab0.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    </head>   
+-->
+    
     <head>
         <!-- MetaData -->
         <meta charset="utf-8">
@@ -35,9 +60,10 @@
     <div class="container">
     <div class="container-fluid">
       <a class="navbar-brand" href="dashloker.php">SILOKER</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <!-- Navbar Collapse -->
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -87,9 +113,9 @@
     </div>
 
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-light" href="index.php">
-    Masuk
-  </button>
+    <button type="button" class="btn btn-light" href="index.php">
+      Masuk
+    </button>
 
             <!-- Modal -->
             <!-- <div class="modal fade modalfix" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -152,166 +178,167 @@
             </div>
           </div>
       </div>
-  </div> -->
-  </div>
-</nav>
+    </div> --> 
+    </div>
+  </nav>
 
 
-        <br>
-        <br>
-        <br>
+<br>
+<br>
+<br>
 
-    <!-- Main Filter -->
-        <div class="container">
-            <div class="row">
-                <h2>LOWONGAN PEKERJAAN</h2>
+<!-- Main Filter -->
+<div class="container">
+    <div class="row">
+        <h2>LOWONGAN PEKERJAAN</h2>
+    </div>
+    <div class="row">
+    <form action="loker.php" method="POST">
+
+        <div class="col">
+            <p>Bidang</p>
+            <select name="bidang_kerja" class="form-select" aria-label="Default select example">
+              <option value="" selected>Pilih Bidang Kerja</option>
+                <option value="ARSITEKTUR" >Arsitektur</option>
+                <option value="TENAGA AHLI">Tenaga Ahli</option>
+            </select>
+        </div>
+
+        <div class="col">
+            <p>Lulusan</p>
+            <select name="lulusan_min" class="form-select" aria-label="Default select example">
+                <option value="" selected>Pilih Lulusan</option>
+                <option value="S1">S1 / D4 (Strata 1/DIPLOMA 4)</option>
+                <option value="S2">S2 / Strata 2 (Magister)</option>
+                <option value="S3">S3 / Strata 3 (Doktoral)</option>
+                <option value="D1">D1 / DIPLOMA 1</option>
+                <option value="D2">D2 / DIPLOMA 2</option>
+                <option value="D3">D3 / DIPLOMA 3</option>
+                <option value="SMA/K/MA">SMA/K/MA</option>
+                <option value="SMP">SMP</option>
+                <option value="SD">SD</option>
+              </select>
+        </div>
+
+        <div class="col">
+            <p>Gender</p>
+            <select name="gender" class="form-select" aria-label="Default select example">
+                <option selected>Pria</option>
+                <option value="1">Wanita</option>
+              </select>
+        </div>
+
+        <div class="col-sm-1">
+            <p>Usia</p>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Usia
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li>
+                        <div class="form-check">
+                            <input name="usia" class="form-check-input" type="checkbox" value="" id="u18">
+                            <label class="form-check-label" for="flexCheckDefault">Usia > 18 Tahun</label>
+                        </div>
+                    </li>
+                  <li>
+                    <div class="form-check">
+                        <input name="usia" class="form-check-input" type="checkbox" value="" id="u25">
+                        <label class="form-check-label" for="flexCheckDefault">Usia < 25 Tahun</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                        <input name="usia" class="form-check-input" type="checkbox" value="" id="u35">
+                        <label class="form-check-label" for="flexCheckDefault">Usia < 35 Tahun</label>
+                    </div>
+                  </li>
+                </ul>
             </div>
-            <div class="row">
-            <form action="loker.php" method="POST">
-
-                <div class="col">
-                    <p>Bidang</p>
-                    <select name="bidang_kerja" class="form-select" aria-label="Default select example">
-                      <option value="" selected>Pilih Bidang Kerja</option>
-                        <option value="ARSITEKTUR" >Arsitektur</option>
-                        <option value="TENAGA AHLI">Tenaga Ahli</option>
-                    </select>
-                </div>
-
-                <div class="col">
-                    <p>Lulusan</p>
-                    <select name="lulusan_min" class="form-select" aria-label="Default select example">
-                        <option value="" selected>Pilih Lulusan</option>
-                        <option value="S1">S1 / D4 (Strata 1/DIPLOMA 4)</option>
-                        <option value="S2">S2 / Strata 2 (Magister)</option>
-                        <option value="S3">S3 / Strata 3 (Doktoral)</option>
-                        <option value="D1">D1 / DIPLOMA 1</option>
-                        <option value="D2">D2 / DIPLOMA 2</option>
-                        <option value="D3">D3 / DIPLOMA 3</option>
-                        <option value="SMA/K/MA">SMA/K/MA</option>
-                        <option value="SMP">SMP</option>
-                        <option value="SD">SD</option>
-                      </select>
-                </div>
-
-                <div class="col">
-                    <p>Gender</p>
-                    <select name="gender" class="form-select" aria-label="Default select example">
-                        <option selected>Pria</option>
-                        <option value="1">Wanita</option>
-                      </select>
-                </div>
-
-                <div class="col-sm-1">
-                    <p>Usia</p>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                          Usia
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li>
-                                <div class="form-check">
-                                    <input name="usia" class="form-check-input" type="checkbox" value="" id="u18">
-                                    <label class="form-check-label" for="flexCheckDefault">Usia > 18 Tahun</label>
-                                </div>
-                            </li>
-                          <li>
-                            <div class="form-check">
-                                <input name="usia" class="form-check-input" type="checkbox" value="" id="u25">
-                                <label class="form-check-label" for="flexCheckDefault">Usia < 25 Tahun</label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check">
-                                <input name="usia" class="form-check-input" type="checkbox" value="" id="u35">
-                                <label class="form-check-label" for="flexCheckDefault">Usia < 35 Tahun</label>
-                            </div>
-                          </li>
-                        </ul>
+        </div>
+        
+        <div class="col-sm-1">
+            <p>Durasi Kerja</p>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Waktu
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li>
+                        <div class="form-check">
+                            <input name="durasi" class="form-check-input" type="checkbox" value="" id="fulltime">
+                            <label class="form-check-label" for="flexCheckDefault">Full Time</label>
+                        </div>
+                    </li>
+                  <li>
+                    <div class="form-check">
+                        <input name="durasi" class="form-check-input" type="checkbox" value="" id="parttime">
+                        <label class="form-check-label" for="flexCheckDefault">Part Time</label>
                     </div>
-                </div>
-                
-                <div class="col-sm-1">
-                    <p>Durasi Kerja</p>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                          Waktu
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li>
-                                <div class="form-check">
-                                    <input name="durasi" class="form-check-input" type="checkbox" value="" id="fulltime">
-                                    <label class="form-check-label" for="flexCheckDefault">Full Time</label>
-                                </div>
-                            </li>
-                          <li>
-                            <div class="form-check">
-                                <input name="durasi" class="form-check-input" type="checkbox" value="" id="parttime">
-                                <label class="form-check-label" for="flexCheckDefault">Part Time</label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check">
-                                <input name="durasi" class="form-check-input" type="checkbox" value="" id="freelance">
-                                <label class="form-check-label" for="flexCheckDefault">Freelance</label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check">
-                                <input name="durasi" class="form-check-input" type="checkbox" value="" id="magang">
-                                <label class="form-check-label" for="flexCheckDefault">Magang</label>
-                            </div>
-                          </li>
-                        </ul>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                        <input name="durasi" class="form-check-input" type="checkbox" value="" id="freelance">
+                        <label class="form-check-label" for="flexCheckDefault">Freelance</label>
                     </div>
-                </div>
-                
-                  <div class="col">
-                    <p>Lokasi</p>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                          Lokasi
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li>
-                                <div class="form-check">
-                                    <input name="lokasi" class="form-check-input" type="checkbox" value="" id="fulltime">
-                                    <label class="form-check-label" for="flexCheckDefault">Seluruh Wilayah</label>
-                                </div>
-                            </li>
-                          <li>
-                            <div class="form-check">
-                                <input name="lokasi" class="form-check-input" type="checkbox" value="" id="parttime">
-                                <label class="form-check-label" for="flexCheckDefault">Bandung</label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check">
-                                <input name="lokasi" class="form-check-input" type="checkbox" value="" id="freelance">
-                                <label class="form-check-label" for="flexCheckDefault">Jakarta</label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="magang">
-                                <label class="form-check-label" for="flexCheckDefault">Surabaya</label>
-                            </div>
-                          </li>
-                        </ul>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                        <input name="durasi" class="form-check-input" type="checkbox" value="" id="magang">
+                        <label class="form-check-label" for="flexCheckDefault">Magang</label>
                     </div>
-                  </div>
-                  <div class="col">
-                  
-                      <button type="submit" class="btn btn-light">Cari</button>
+                  </li>
+                </ul>
+            </div>
+        </div>
+        
+          <div class="col">
+            <p>Lokasi</p>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Lokasi
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li>
+                        <div class="form-check">
+                            <input name="lokasi" class="form-check-input" type="checkbox" value="" id="fulltime">
+                            <label class="form-check-label" for="flexCheckDefault">Seluruh Wilayah</label>
+                        </div>
+                    </li>
+                  <li>
+                    <div class="form-check">
+                        <input name="lokasi" class="form-check-input" type="checkbox" value="" id="parttime">
+                        <label class="form-check-label" for="flexCheckDefault">Bandung</label>
                     </div>
-              </div>
-            </form>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                        <input name="lokasi" class="form-check-input" type="checkbox" value="" id="freelance">
+                        <label class="form-check-label" for="flexCheckDefault">Jakarta</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="magang">
+                        <label class="form-check-label" for="flexCheckDefault">Surabaya</label>
+                    </div>
+                  </li>
+                </ul>
+            </div>
           </div>
+          <div class="col">
+          
+              <button type="submit" class="btn btn-light">Cari</button>
+            </div>
+      </div>
+    </form>
+  </div>
         
 <br/>
 <br/>
 <br/>
 
+<!-- Main Card Loker -->
 <?php
   include("koneksidb.php");
   $filter=[];
@@ -400,69 +427,69 @@
   mysqli_close($conn);
 ?>
 
-
-
 <br/>
 <br/>
 <br/>
 
 <!-- Table of Content-->
-    <div class="container">
-      <div class="row">
-        <h2>Pekerjaan Yang Paling diminati di 2022</h2>
-      </div>
-        <div class="container mt-5">
-          <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Bidang</th>
-                  <th scope="col">Pelatihan Khusus</th>
-                  <th scope="col">Total Minat (%)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Data Analyst</td>
-                  <td>Programming Language</td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75% Peminat</div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Data Scientist</td>
-                  <td>Database and SCM</td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">70% Peminat</div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Software Engineer</td>
-                  <td>Computer Management</td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">65% Peminat</div>
-                    </div>
-                  </tr>
-                </tr>
-              </tbody>
-            </table>
-      </div>
-    </div>
-        
-    <br/>
-    <br/>
-    <br/>
+<div class="container">
+  <div class="row">
+    <h2>Pekerjaan Yang Paling diminati di 2022</h2>
+  </div>
+    <div class="container mt-5">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Bidang</th>
+              <th scope="col">Pelatihan Khusus</th>
+              <th scope="col">Total Minat (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Data Analyst</td>
+              <td>Programming Language</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75% Peminat</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Data Scientist</td>
+              <td>Database and SCM</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">70% Peminat</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Software Engineer</td>
+              <td>Computer Management</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">65% Peminat</div>
+                </div>
+              </tr>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>
+    
+<br/>
+<br/>
+<br/>
 
 <!-- Footer -->
-       <iframe src="footer.html" width="1280" height="480"></iframe>
-
+    <div class="container">
+        <iframe src="footer.html" width="1280" height="480"></iframe>
+    </div>
+       
     </body>
 </html>

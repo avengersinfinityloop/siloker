@@ -1,7 +1,27 @@
-<link rel="stylesheet"  href="New folder/bootstrap.min.css">
+<!-- 
+    Created by :
+    Nama : Muhamad Sidik Nur Rizki
+    NIM : 10121901
+    Kelas : IF-9
+
+    Created on : 20220630
+    page name: simpanprofil.php
+    total line : ....line
+    logs : v0.1.20220630
+         : v0.2.20220705
+         : v0.3.20220726
+
+ -->
+
+<?php
+    session_start();
+    $shareUsername = $_SESSION['username'];
+?>
+
+<link rel="stylesheet"  href="css/bootstrap.min.css">
 <html>
 <?php
-require("koneksi.php");
+require("fungsi.php");
 // Data Diri
 $nik = $_POST['nik'];
 $username = $_POST['username'];
@@ -65,5 +85,5 @@ else
     <a href="profil.php" class="btn btn-primary btn-lg">Kembali</a>
     <a href="cekProfil.php" class="btn btn-success btn-lg">Cek Data</a>
 </center>
-<h1>SI</h1><img src="multimedia/image/loker.jpeg" alt="test">
+<h1>SI</h1><img src="multimedia/image/logo/silokerlogo.png" alt="test">
 </html>

@@ -3,9 +3,13 @@
   $shareUsername = $_SESSION['username'];
 ?>
 
-<!--  Created by  : Indi Bagus Prasetyo
+<!--  
+      Created By  : Indi Bagus Prasetyo
       NIM         : 10121902
-      Logs        : 20/07/2022 ; 12:22 AM    
+      Kelas       : IF-9K/S1/II
+      Matkul      : Pemrograman Web 2
+      Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
+      Created File On v27072022:1113 (v.0.5)
 -->
       
 <!doctype html>
@@ -31,65 +35,66 @@
 
     <body>
 <!-- Navbar (Brands) -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="dashloker.php">SILOKER</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">BERANDA</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            KURSUS
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
-            <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
-            <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            LOKER
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="dashloker.php">MENU UTAMA</a></li>
-            <li><a class="dropdown-item" href="loker.php">MAIN LOKER</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            BOOTCAMP
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="about.php">ABOUT</a></li>
-            <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
-            <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
-            <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
-            <li><a class="dropdown-item" href="uiUx.php">UI UX</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="profil.php">PROFIL</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" style="padding-left: 15rem;">
-            <p>Helo, <strong><?php echo $_SESSION['username']; ?></strong></p>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="dashloker.php">SILOKER</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar Collapse -->
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.php">BERANDA</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  KURSUS
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
+                  <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
+                  <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  LOKER
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="dashloker.php">MENU UTAMA</a></li>
+                  <li><a class="dropdown-item" href="loker.php">MAIN LOKER</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  BOOTCAMP
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="about.php">ABOUT</a></li>
+                  <li><a class="dropdown-item" href="digitalMarketing.php">DIGITAL MARKETING</a></li>
+                  <li><a class="dropdown-item" href="fullStackWebDevelopment.php">FULL STACK WEB DEVELOPMENT</a></li>
+                  <li><a class="dropdown-item" href="indexBootcamp.php">INDEX BOOTCAMP</a></li>
+                  <li><a class="dropdown-item" href="uiUx.php">UI UX</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="profil.php">PROFIL</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="padding-left: 15rem;">
+                  <p>Helo, <strong><?php echo $_SESSION['username']; ?></strong></p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-light" href="index.php">
-    Masuk
-  </button>
+    <button type="button" class="btn btn-light" href="index.php">
+      Masuk
+    </button>
 
             <!-- Modal -->
             <!-- <div class="modal fade modalfix" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -154,9 +159,7 @@
       </div>
   </div> -->
   </div>
-</nav>
-
-
+  </nav>
 
 <br>
 <br>
@@ -212,13 +215,10 @@
             <p class="lead">
               Bersama SILOKER anda dapat meningkatkan kinerja dan produktivitas menjadi lebih baik, mulai dari training, bootcamp, dan lowongan pekerjaan kami sediakan untuk anda
             </p>
-
             <hr/>
-
             <p class="lead">
               Bergabung untuk mendapatkan lebih.
             </p>
-            
             <a href="#" class="btn btn-primary btn-md">Pelajari Lebih Lanjut</a>
             <a href="#" class="btn btn-success btn-md">Daftar</a>
         </div>
@@ -227,58 +227,58 @@
 
 
 <!-- Cards -->
-        <div class="container p-5">
-          <div class="row">
-            <h2>Kategori Lowongan Untuk Anda</h2>
-          </div>
-    
-          <div class="row">
-            <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="multimedia/image/dashloker/carousel3.jpg" class="card-img-top" alt="agriculture">
-                <div class="card-body">
-                  <h5 class="card-title">Agrobisnis</h5>
-                  <p class="card-text">Teknik Agrobisnis, meliputi dunia Pertanian yang siap anda jelajahi. Agrobisnis adalah usaha yang cocok untuk anda yang senang dengan pertanian.</p>
-                  <a href="loker.php" class="btn btn-primary">Jelajahi</a>
-                </div>
-              </div>
+    <div class="container p-5">
+      <div class="row">
+        <h2>Kategori Lowongan Untuk Anda</h2>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="multimedia/image/dashloker/carousel3.jpg" class="card-img-top" alt="agriculture">
+            <div class="card-body">
+              <h5 class="card-title">Agrobisnis</h5>
+              <p class="card-text">Teknik Agrobisnis, meliputi dunia Pertanian yang siap anda jelajahi. Agrobisnis adalah usaha yang cocok untuk anda yang senang dengan pertanian.</p>
+              <a href="loker.php" class="btn btn-primary">Jelajahi</a>
             </div>
-    
-            <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="multimedia/image/dashloker/industriemp.jpg" class="card-img-top" alt="industry-employee">
-                <div class="card-body">
-                  <h5 class="card-title">Teknik</h5>
-                  <p class="card-text">Mungkin cocok untuk kamu yang mempunyai keahlian Teknik tertentu.</p>
-                  <a href="loker.php" class="btn btn-primary">Jelajahi</a>
-                </div>
-              </div> 
-            </div>
-    
-            <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="multimedia/image/dashloker/bankemp.jpg" class="card-img-top" alt="banks">
-                <div class="card-body">
-                  <h5 class="card-title">Keuangan</h5>
-                  <p class="card-text">Dunia Keuangan meliputi badan usaha keuangan ,akuntansi ,perkantoran, dan masih banyak lagi.</p>
-                  <a href="loker.php" class="btn btn-primary">Jelajahi</a>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="multimedia/image/dashloker/konstruksiemp.jpg" class="card-img-top" alt="construction-employee">
-                <div class="card-body">
-                  <h5 class="card-title">Konstruksi</h5>
-                  <p class="card-text">Konstruksi adalah sebuah bidang usaha mengenai susunan dan pembangunan suatu benda / bangunan yang akan menjadi mobilitas masyarakat maupun instansi.</p>
-                  <a href="loker.php" class="btn btn-primary">Jelajahi</a>
-                </div>
-              </div>
-            </div>
-    
           </div>
         </div>
+
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="multimedia/image/dashloker/industriemp.jpg" class="card-img-top" alt="industry-employee">
+            <div class="card-body">
+              <h5 class="card-title">Teknik</h5>
+              <p class="card-text">Mungkin cocok untuk kamu yang mempunyai keahlian Teknik tertentu.</p>
+              <a href="loker.php" class="btn btn-primary">Jelajahi</a>
+            </div>
+          </div> 
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="multimedia/image/dashloker/bankemp.jpg" class="card-img-top" alt="banks">
+            <div class="card-body">
+              <h5 class="card-title">Keuangan</h5>
+              <p class="card-text">Dunia Keuangan meliputi badan usaha keuangan ,akuntansi ,perkantoran, dan masih banyak lagi.</p>
+              <a href="loker.php" class="btn btn-primary">Jelajahi</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="multimedia/image/dashloker/konstruksiemp.jpg" class="card-img-top" alt="construction-employee">
+            <div class="card-body">
+              <h5 class="card-title">Konstruksi</h5>
+              <p class="card-text">Konstruksi adalah sebuah bidang usaha mengenai susunan dan pembangunan suatu benda / bangunan yang akan menjadi mobilitas masyarakat maupun instansi.</p>
+              <a href="loker.php" class="btn btn-primary">Jelajahi</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
 <!-- Accordion (FAQ) -->
     <div class="container p-5">
