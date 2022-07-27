@@ -1,7 +1,20 @@
-<link rel="stylesheet"  href="New folder/bootstrap.min.css">
+<!-- 
+    Created by :
+    Nama : Muhamad Sidik Nur Rizki
+    NIM : 10121901
+    Kelas : IF-9
+
+    Created on : 20220627
+    page name: profil.php
+    total line : ....line
+    logs : v0.1.20220627
+
+ -->
+
+<link rel="stylesheet"  href="css/bootstrap.min.css">
 <html>
 <?php
-require("koneksi.php");
+require("fungsi.php");
 // Data Diri
 $nik = $_POST['nik'];
 $username = $_POST['username'];

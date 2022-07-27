@@ -30,7 +30,7 @@
             header('location:profil.php');
         }
         else{
-            $error = "Bisa Masuk Gak Sih Bro";
+            echo "<script type='text/javascript'>alert('Maaf email dan password anda tidak sesuai');document.location='index.php';</script>";
         }
     }
 ?>

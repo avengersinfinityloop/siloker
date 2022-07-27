@@ -1,3 +1,16 @@
+<!-- 
+    Created by :
+    Nama : Muhamad Sidik Nur Rizki
+    NIM : 10121901
+    Kelas : IF-9
+
+    Created on : 20220624
+    page name: profil.php
+    total line : ....line
+    logs : v0.1.20220624 
+
+ -->
+
 <?php
     session_start();
     $shareUsername = $_SESSION['username'];
@@ -20,9 +33,6 @@
         <a class="navbar-brand" href="#">
             <img src="multimedia/image/loker.jpeg" alt="no gambar" width="30" height="30">SILOKER
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <!-- Dropdown -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
@@ -60,6 +70,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">LOGIN</a>
                 </li>
+                <li class="nav-item navbar-right">
+                    <a class="nav-link" href="logout.php">LOGOUT</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -87,11 +100,11 @@
                     <legend class="w-auto px-3">Data Diri</legend>
                     <div class="form-group">
                         <label>NIK</label>
-                        <input type="text" class="form-control username" name="username" id="username" onchange="tes()" placeholder="NIK">
+                        <input type="text" class="form-control username" name="nik" id="nik" onchange="tes()" placeholder="NIK">
                     </div>
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control nik" name="nik" value="<?php echo "$shareUsername" ?>" onchange="tes()">
+                        <input type="text" class="form-control nik" name="username" id="username" value="<?php echo "$shareUsername"; ?>">
                     </div>
                     <div class="form-group">
                         <label>Nama</label>
@@ -166,8 +179,6 @@
                     <div class="form-group">
                         <label>Kode Pos</label>
                         <input type="text" name="kode-pos" class="form-control pos" id="pos" placeholder="40123" onchange="tes()">
-                    </div>
-                    <div class="form-group">
                     </div>
                 </fieldset>
             </div>
@@ -367,7 +378,7 @@
     function tes(){
         // Data Diri
         var nik = document.getElementById('nik').value;
-        var username = document.getElementById('username').value;
+        // var username = document.getElementById('username').value;
         var nama = document.getElementById('nama').value;
         var tanggalLahir = document.getElementById('tanggal-lahir').value;
         var jenisKel = document.getElementById('jk').value;
@@ -412,7 +423,7 @@
         var penyelenggara = document.getElementById('penyelenggara').value;
         var tanggalSertif = document.getElementById('tanggal-sertifikat').value;
 
-        if (nik&&username&&nama&&tanggalLahir&&jenisKel&&status&&kebangsaan&&gajiHarap&&
+        if (nik&&nama&&tanggalLahir&&jenisKel&&status&&kebangsaan&&gajiHarap&&
             telepon&&hp&&email&&lokasiTinggal&&alamat&&pos&&
             pendidikan&&sekolah&&jurusan&&prestasi&&lulus&&nilai&&
             perusahaan&&jabatan&&bidang&&lokasiKerja&&pengalaman&&tanggalMulai&&jenisKontrak&&
