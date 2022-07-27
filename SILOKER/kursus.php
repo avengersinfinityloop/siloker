@@ -49,9 +49,8 @@
     <div class=" jpageHeader fixed-top">
         <nav class="container navbar navbar-expand-lg">
             <div class="container-fluid">
-                <div class="justify-content-start">
-                    <img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="align-text-bottom">
-                    <a class="navbar-brand" href=""><b>SILOKER</b></a>
+                <div class="justify-content-start me-3">
+                    <img src="multimedia/image/logo/silokerwithtextlogo.png" alt="" width="100" height="30" class="align-text-bottom">
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -159,12 +158,12 @@
                 <div class="col-md-6 columns">
                     <h2 class="jText1">KURSUS</h2>
                     <p class="jText2">Hanya Dengan Mengikuti Kursus Disini Anda Akan Mendapatkan Bonus Keren. <br> Yuk Belajar!</p>
-                    <p class="jText3"><a class="navbar-brand" href="cekTempat.php"><img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="d-inline-block align-text-top">CEK TEMPAT</a></p>
+                    <p class="jText3"><a class="btn" href="cekTempat.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">CEK TEMPAT</a></p>
                 </div>
                 <div class="col-md-6 columns">
                     <h2 class="jText1">PERUSAHAAN</h2>
                     <p class="jText2">Pasang iklan Kursus agar terhubung dengan orang yang paling potensial. <br> Yuk Pasang!</p>
-                    <p class="jText3"><a class="navbar-brand" href="pasangIklan.php"><img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="d-inline-block align-text-top">PASANG IKLAN</a></p>
+                    <p class="jText3"><a class="btn" href="pasangIklan.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">PASANG IKLAN</a></p>
                 </div>
             </div>
     </div>
