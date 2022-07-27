@@ -155,15 +155,18 @@
     <div class="jpageCon2">
         <div class="container">
             <div class="row justify-content-center text-center">
-                <div class="col-md-6 columns">
+                <div class="col-md-4">
                     <h2 class="jText1">KURSUS</h2>
-                    <p class="jText2">Hanya Dengan Mengikuti Kursus Disini Anda Akan Mendapatkan Bonus Keren. <br> Yuk Belajar!</p>
-                    <p class="jText3"><a class="btn" href="cekTempat.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">CEK TEMPAT</a></p>
+                    <p class="jText2 mb-3">Hanya Dengan Mengikuti Kursus Disini Anda Akan Mendapatkan Bonus Keren. <br> Yuk Belajar!</p>
+                    <p class="jText3"><a class="btn btn-outline-secondary" href="cekTempat.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">CEK TEMPAT</a></p>
                 </div>
-                <div class="col-md-6 columns">
+                <div class="col-md-2 my-3 maskot">
+                    <img src="multimedia/image/concept/maskotsiloker.png" alt="">
+                </div>
+                <div class="col-md-4">
                     <h2 class="jText1">PERUSAHAAN</h2>
-                    <p class="jText2">Pasang iklan Kursus agar terhubung dengan orang yang paling potensial. <br> Yuk Pasang!</p>
-                    <p class="jText3"><a class="btn" href="pasangIklan.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">PASANG IKLAN</a></p>
+                    <p class="jText2 mb-3">Pasang iklan Kursus agar terhubung dengan orang yang paling potensial. <br> Yuk Pasang!</p>
+                    <p class="jText3"><a class="btn btn-outline-secondary" href="pasangIklan.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">PASANG IKLAN</a></p>
                 </div>
             </div>
     </div>
