@@ -12,6 +12,11 @@
 
  -->
 
+<?php
+    session_start();
+    $shareUsername = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

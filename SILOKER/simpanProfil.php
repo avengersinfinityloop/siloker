@@ -13,6 +13,11 @@
 
  -->
 
+<?php
+    session_start();
+    $shareUsername = $_SESSION['username'];
+?>
+
 <link rel="stylesheet"  href="css/bootstrap.min.css">
 <html>
 <?php
