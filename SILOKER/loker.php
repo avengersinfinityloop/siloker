@@ -6,9 +6,34 @@
 <!doctype html>
 <html lang="en">
 
-<!--  Created by  : Indi Bagus Prasetyo
+<!--  
+      Created By  : Indi Bagus Prasetyo
       NIM         : 10121902
-      Logs        : 22/07/2022 ; 12:22 AM    
+      Kelas       : IF-9K/S1/II
+      Matkul      : Pemrograman Web 2
+      Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
+      Created File On v27072022:1113 (v.1.1)
+-->
+      
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- MetaData -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="indibagusprasetyo">
+        <meta name="description" content="siloker,lowongankerja">
+        <!-- Title -->
+        <title>SILOKER - Loker</title>
+        <!-- Links -->
+        <base href="loker.php">
+        <link rel="icon" href="multimedia/image/siloker.png" type="image/icon type">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/d13b076ab0.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    </head>   
 -->
     
     <head>
@@ -335,7 +360,7 @@
     $sql = "SELECT * FROM loker";
   } else $sql = "SELECT * FROM loker WHERE " . implode(" and ",$filter);
 
-  
+
   if($result = mysqli_query($conn, $sql)){
       if(mysqli_num_rows($result) > 0){
         $col = 0;

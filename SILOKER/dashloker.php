@@ -3,9 +3,13 @@
   $shareUsername = $_SESSION['username'];
 ?>
 
-<!--  Created by  : Indi Bagus Prasetyo
+<!--  
+      Created By  : Indi Bagus Prasetyo
       NIM         : 10121902
-      Logs        : 20/07/2022 ; 12:22 AM    
+      Kelas       : IF-9K/S1/II
+      Matkul      : Pemrograman Web 2
+      Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
+      Created File On v27072022:1113 (v.0.5)
 -->
       
 <!doctype html>
