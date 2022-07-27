@@ -5,9 +5,10 @@
     Kelas : IF-9
 
     Created on : 20220720
-    page name: profil.php
+    page name: cekprofil.php
     total line : ....line
     logs : v0.1.20220720
+         : v0.2.20220721
 
  -->
 
@@ -124,8 +125,8 @@
                             <td>$alamat</td>
                             <td>$kodePos</td>
                             <td>
-                                <a href='#' class='btn btn-outline-warning'>Edit</a>
-                                <a href='#' class='btn btn-outline-danger'>Delete</a>
+                                <a href='editProfil.php?nik=$nik' class='btn btn-outline-warning'>Edit</a>
+                                <a href='hapusProfil.php?nik=$nik' class='btn btn-outline-danger'>Delete</a>
                             </td>
                         </tr>";
                     $n++;
@@ -174,8 +175,8 @@
                             <td>$tahunLulus</td>
                             <td>$nilai</td>
                             <td>
-                                <a href='#' class='btn btn-outline-warning'>Edit</a>
-                                <a href='#' class='btn btn-outline-danger'>Delete</a>
+                                <a href='editProfil.php?nik=$nik' class='btn btn-outline-warning'>Edit</a>
+                                <a href='hapusProfil.php?nik=$nik' class='btn btn-outline-danger'>Delete</a>
                             </td>
                         </tr>";
                     $n++;
@@ -226,8 +227,8 @@
                             <td>$tanggalMulai</td>
                             <td>$tipeKontrak</td>
                             <td>
-                                <a href='#' class='btn btn-outline-warning'>Edit</a>
-                                <a href='#' class='btn btn-outline-danger'>Delete</a>
+                                <a href='editProfil.php?nik=$nik' class='btn btn-outline-warning'>Edit</a>
+                                <a href='hapusProfil.php?nik=$nik' class='btn btn-outline-danger'>Delete</a>
                             </td>
                         </tr>";
                     $n++;
@@ -272,8 +273,8 @@
                             <td>$deskripsi</td>
                             <td>$periode</td>
                             <td>
-                                <a href='#' class='btn btn-outline-warning'>Edit</a>
-                                <a href='#' class='btn btn-outline-danger'>Delete</a>
+                                <a href='editProfil.php?nik=$nik' class='btn btn-outline-warning'>Edit</a>
+                                <a href='hapusProfil.php?nik=$nik' class='btn btn-outline-danger'>Delete</a>
                             </td>
                         </tr>";
                     $n++;
