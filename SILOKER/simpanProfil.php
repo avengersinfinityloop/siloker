@@ -4,12 +4,19 @@
     NIM : 10121901
     Kelas : IF-9
 
-    Created on : 20220627
-    page name: profil.php
+    Created on : 20220630
+    page name: simpanprofil.php
     total line : ....line
-    logs : v0.1.20220627
+    logs : v0.1.20220630
+         : v0.2.20220705
+         : v0.3.20220726
 
  -->
+
+<?php
+    session_start();
+    $shareUsername = $_SESSION['username'];
+?>
 
 <link rel="stylesheet"  href="css/bootstrap.min.css">
 <html>

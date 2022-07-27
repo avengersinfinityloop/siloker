@@ -1,3 +1,16 @@
+<!-- 
+    Created by :
+    Nama : Muhamad Sidik Nur Rizki
+    NIM : 10121901
+    Kelas : IF-9
+
+    Created on : 20220710
+    page name: index.php
+    total line : ....line
+    logs : v0.1.20220710
+
+ -->
+
 <?php
     session_start();
     error_reporting(E_ERROR | E_PARSE);
