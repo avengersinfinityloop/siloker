@@ -85,5 +85,5 @@ else
     <a href="profil.php" class="btn btn-primary btn-lg">Kembali</a>
     <a href="cekProfil.php" class="btn btn-success btn-lg">Cek Data</a>
 </center>
-<h1>SI</h1><img src="multimedia/image/loker.jpeg" alt="test">
+<h1>SI</h1><img src="multimedia/image/logo/silokerlogo.png" alt="test">
 </html>
