@@ -66,7 +66,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KURSUS</title>
-    <link rel="icon" href="multimedia/image/icon joy mode.jpeg">
+    <link rel="icon" href="multimedia/image/logo/silokerlogo.png">
     <link rel="stylesheet" href="css/jmr.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
@@ -77,7 +77,7 @@
         <nav class="container navbar navbar-expand-lg">
             <div class="container-fluid">
                 <div class="justify-content-start">
-                    <img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="align-text-top">
+                    <img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="align-text-bottom">
                     <a class="navbar-brand" href=""><b>SILOKER</b></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
