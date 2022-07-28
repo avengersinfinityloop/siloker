@@ -336,7 +336,9 @@
             </tbody>
         </table>
         <div class="d-grid gap-2 col-12 mx-auto">
-            <a herf="#" class="btn btn-outline-primary btn-lg" id="tombolMenu">Menu Utama</a>
+            <a herf="kursus.php" class="btn btn-outline-primary btn-lg" id="tombolMenu">Kursus</a>
+            <a herf="dashloker.php" class="btn btn-outline-primary btn-lg" id="tombolMenu">Loker</a>
+            <a herf="indexBootcamp.php" class="btn btn-outline-primary btn-lg" id="tombolMenu">BootCamp</a>
         </div>
     </center>
 </body>
