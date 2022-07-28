@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $shareUsername = $_SESSION['username'];
+  if ($_SESSION and $_SESSION['username']) $shareUsername = $_SESSION['username']
 ?>
 
 <!doctype html>
@@ -86,7 +86,7 @@
           </li>
           <li class="nav-item">
 							<a class="nav-link" href="#" style="padding-left: 15rem;">
-								<p>Helo, <strong><?php echo $_SESSION['username']; ?></strong></p>
+								<p>Helo, <strong></strong></p>
 							</a>
 						</li>
         </ul>
@@ -470,8 +470,8 @@
 
 <!-- Footer -->
     <div class="container">
-        <iframe src="footer.html" width="1280" height="480"></iframe>
+        <iframe src="footer.html" width="1280" height="480">404</iframe>
     </div>
-       
+
     </body>
 </html>
