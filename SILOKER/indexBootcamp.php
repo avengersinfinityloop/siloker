@@ -77,6 +77,8 @@ $shareUsername = $_SESSION['username'];
 								</li>
 								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="about.php">About</a>
 								</li>
+								<li class="dropdown"><a class="dropdown-item dropdown-toggle" href="tabelPesertaBootcamp.php">Peserta Bootcamp</a>
+								</li>
 							</ul>
 						</li>
 						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="profil.php">Profil</a>
@@ -424,10 +426,10 @@ $shareUsername = $_SESSION['username'];
 							<div class="newsletter-wrapper">
 								<div class="row">
 									<div class="col-md-10 offset-md-1">
-										<form action="#" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+										<form action="insertdb-freetrial.php" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 											<div id="mc_embed_signup_scroll2" class="input-group">
-												<input type="email" value="" name="EMAIL" class="email form-control mb-0 mr-2 mb-sm-0" id="mce-EMAIL2" placeholder="Email Address" required>
-												<button type="submit" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">Join</button>
+												<input type="email" value="" name="email" class="email form-control mb-0 mr-2 mb-sm-0" id="mce-EMAIL2" placeholder="Email Address" required>
+												<button type="submit" name="email" id="mc-embedded-subscribe2" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">Join</button>
 												<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 												<div style="position: absolute; left: -5000px;" aria-hidden="true">
 													<input type="text" name="b_ddc180777a163e0f9f66ee014_056957de28" tabindex="-1" value="">

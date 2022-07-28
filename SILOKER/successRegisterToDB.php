@@ -94,20 +94,7 @@ $shareUsername = $_SESSION['username'];
 		</nav>
 		<!-- Navbar -->
 
-		<figure class="cover"><img src="multimedia/image/concept/figure-about.jpg" alt="" /></figure>
-
-		<!-- Pilihan Bootcamp -->
-		<div id="" class="container inner">
-			<div class="text-center">
-				<h2 class="title-bg bg-violet color-white">Our Stories</h2>
-			</div>
-			<div class="space10"></div>
-			<h3 class="display-3 text-center">
-				Tifa's Bootcamp adalah salah satu pionir lembaga pendidikan di Indonesia yang memiliki fokus di dunia pendidikan teknologi digital. Perjalanan panjang selama 23 tahun telah menjadi bukti dari komitmen kami untuk selalu melakukan yang terbaik. Terbaik dari segalanya, terbaik dari siapapun.
-				Saat ini melalui program pendidikan yang kami miliki, Purwadhika telah melahirkan para talenta-talenta baru di bidang digital yang siap untuk berkontribusi di industri teknologi Indonesia maupun secara global.
-			</h3>
-		</div>
-		<!-- Pilihan Bootcamp -->
+		<figure class="cover"><img src="multimedia/image/concept/successtoredatabase.png" alt="" /></figure>
 
 		<!-- Footer -->
 		<footer class="dark-wrapper inverse-text">

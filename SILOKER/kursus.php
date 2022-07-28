@@ -39,7 +39,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KURSUS</title>
-    <link rel="icon" href="multimedia/image/icon joy mode.jpeg">
+    <link rel="icon" href="multimedia/image/logo/silokerlogo.png">
     <link rel="stylesheet" href="css/jmr.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
@@ -49,9 +49,8 @@
     <div class=" jpageHeader fixed-top">
         <nav class="container navbar navbar-expand-lg">
             <div class="container-fluid">
-                <div class="justify-content-start">
-                    <img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="align-text-top">
-                    <a class="navbar-brand" href=""><b>SILOKER</b></a>
+                <div class="justify-content-start me-3">
+                    <img src="multimedia/image/logo/silokerwithtextlogo.png" alt="" width="100" height="30" class="align-text-bottom">
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -156,15 +155,18 @@
     <div class="jpageCon2">
         <div class="container">
             <div class="row justify-content-center text-center">
-                <div class="col-md-6 columns">
+                <div class="col-md-4">
                     <h2 class="jText1">KURSUS</h2>
-                    <p class="jText2">Hanya Dengan Mengikuti Kursus Disini Anda Akan Mendapatkan Bonus Keren. <br> Yuk Belajar!</p>
-                    <p class="jText3"><a class="navbar-brand" href="cekTempat.php"><img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="d-inline-block align-text-top">CEK TEMPAT</a></p>
+                    <p class="jText2 mb-3">Hanya Dengan Mengikuti Kursus Disini Anda Akan Mendapatkan Bonus Keren. <br> Yuk Belajar!</p>
+                    <p class="jText3"><a class="btn btn-outline-secondary" href="cekTempat.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">CEK TEMPAT</a></p>
                 </div>
-                <div class="col-md-6 columns">
+                <div class="col-md-2 my-3 maskot">
+                    <img src="multimedia/image/concept/maskotsiloker.png" alt="">
+                </div>
+                <div class="col-md-4">
                     <h2 class="jText1">PERUSAHAAN</h2>
-                    <p class="jText2">Pasang iklan Kursus agar terhubung dengan orang yang paling potensial. <br> Yuk Pasang!</p>
-                    <p class="jText3"><a class="navbar-brand" href="pasangIklan.php"><img src="multimedia/image/LibraryImage/switch.png" alt="" width="30" height="24" class="d-inline-block align-text-top">PASANG IKLAN</a></p>
+                    <p class="jText2 mb-3">Pasang iklan Kursus agar terhubung dengan orang yang paling potensial. <br> Yuk Pasang!</p>
+                    <p class="jText3"><a class="btn btn-outline-secondary" href="pasangIklan.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">PASANG IKLAN</a></p>
                 </div>
             </div>
     </div>

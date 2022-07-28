@@ -77,6 +77,8 @@ $shareUsername = $_SESSION['username'];
                 </li>
                 <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="about.php">About</a>
                 </li>
+                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="tabelPesertaBootcamp.php">Peserta Bootcamp</a>
+                </li>
               </ul>
             </li>
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="profil.php">Profil</a>
@@ -407,7 +409,7 @@ $shareUsername = $_SESSION['username'];
                         <div class="box p-50 d-flex">
                           <div class="align-self-left">
                             <h4 class="section-title mb-30">Daftar Bootcamp Full Stack Web Development</h4>
-                            <form id="form_daftar" method="post" action="connecttodatabase.php">
+                            <form id="form_daftar" method="post" action="insertdb-pesertabootcamp.php">
                               <div class="messages"></div>
                               <div class="controls">
                                 <!-- NIK -->
