@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/register.css">
+        <link rel="icon" href="multimedia/image/logo/silokerlogo.png">
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.min.js"></script>
         <title>Login</title>
