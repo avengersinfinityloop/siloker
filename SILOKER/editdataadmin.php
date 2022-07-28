@@ -33,10 +33,10 @@
                   <a class="nav-link" aria-current="page" href="controladmin.html">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="datatabeladmin.html">Data Tabel</a>
+                  <a class="nav-link" href="datatabeladmin.php">Data Tabel</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="editdataadmin.html">Edit/Tambah Data</a>
+                  <a class="nav-link active" href="editdataadmin.php">Edit/Tambah Data</a>
                 </li>
               </ul>
         </div>

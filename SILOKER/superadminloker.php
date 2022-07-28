@@ -78,16 +78,14 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#" style="padding-left: 15rem;">
-                        <p>Helo, <strong><?php echo $_SESSION['username']; ?></strong></p>
+                        <p>Helo, <strong></strong></p>
                       </a>
                     </li>
                     </ul>
                 </div>
             </div>
 
-            <button type="button" class="btn btn-light" href="index.php">
-                Masuk
-            </button>
+            <a href="index.php" class="btn btn-light">Masuk</a>
 
             </div>
         </nav>

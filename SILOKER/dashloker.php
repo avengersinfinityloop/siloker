@@ -92,9 +92,7 @@
         </div>
 
   <!-- Button trigger modal -->
-    <button type="button" class="btn btn-light" href="index.php">
-      Masuk
-    </button>
+    <a href="superadminloker.php" class="btn btn-light">Masuk</a>
 
             <!-- Modal -->
             <!-- <div class="modal fade modalfix" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
