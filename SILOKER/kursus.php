@@ -18,6 +18,10 @@
     session_start();
     $shareUsername = $_SESSION['username'];
     $nik = cekNik($shareUsername);
+    if ($nik == 0) {
+        $infoNik = ' = NIK Tidak Ada';
+        $hideMenu = 1;
+    }
 
     //CONTENT HIGHLIGHT
     $query1 = mysqli_query($conn, "SELECT namaKursus,imageRegister,idIklan FROM pasang_iklan ORDER BY RAND() LIMIT 3"); //query tampil 3 row by RANDOM
@@ -63,8 +67,10 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
+                            <?php if($hideMenu != 1) :?>
                             <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
                             <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
+                            <?php endif ?>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -101,7 +107,7 @@
                     <b class="me-2">
                         <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
-                            <?php echo $shareUsername; ?>
+                            <?php echo $shareUsername.$infoNik; ?>
                             <a href='index.php' class="btn">LOGOUT</a>
                         <?php else : ?>
                             <a href='index.php' class="btn">LOGIN</a>
@@ -122,7 +128,9 @@
                     <?php echo "<img src='$image[1]' class='highlight'>"; ?>
                     <div class="carousel-caption d-none d-md-block">
                         <?php if ($link[1] != '') : ?>
-                            <p><a href="submit.php?idIklan=<?=$link[1]?>">DAFTAR</a></p>
+                            <?php if($hideMenu != 1) :?>
+                                <p><a href="submit.php?idIklan=<?=$link[1]?>">DAFTAR</a></p>
+                            <?php endif ?>
                         <?php else : ?>
                             <h1>EMPTY</h1>
                         <?php endif ?>
@@ -132,7 +140,9 @@
                     <?php echo "<img src='$image[2]' class='highlight'>"; ?>
                     <div class="carousel-caption d-none d-md-block">
                         <?php if ($link[2] != '') : ?>
-                            <p><a href="submit.php?idIklan=<?=$link[2]?>">DAFTAR</a></p>
+                            <?php if($hideMenu != 1) :?>
+                                <p><a href="submit.php?idIklan=<?=$link[2]?>">DAFTAR</a></p>
+                            <?php endif ?>
                         <?php else : ?>
                             <h1>EMPTY</h1>
                         <?php endif ?>
@@ -142,7 +152,9 @@
                     <?php echo "<img src='$image[3]' class='highlight'>"; ?>
                     <div class="carousel-caption d-none d-md-block">
                         <?php if ($link[3] != '') : ?>
-                            <p><a href="submit.php?idIklan=<?=$link[3]?>">DAFTAR</a></p>
+                            <?php if($hideMenu != 1) :?>
+                                <p><a href="submit.php?idIklan=<?=$link[3]?>">DAFTAR</a></p>
+                            <?php endif ?>
                         <?php else : ?>
                             <h1>EMPTY</h1>
                         <?php endif ?>
@@ -158,7 +170,9 @@
                 <div class="col-md-4">
                     <h2 class="jText1">KURSUS</h2>
                     <p class="jText2 mb-3">Hanya Dengan Mengikuti Kursus Disini Anda Akan Mendapatkan Bonus Keren. <br> Yuk Belajar!</p>
+                    <?php if($hideMenu != 1) :?>
                     <p class="jText3"><a class="btn btn-outline-secondary" href="cekTempat.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">CEK TEMPAT</a></p>
+                    <?php endif ?>
                 </div>
                 <div class="col-md-2 my-3 maskot">
                     <img src="multimedia/image/concept/maskotsiloker.png" alt="">
@@ -166,7 +180,9 @@
                 <div class="col-md-4">
                     <h2 class="jText1">PERUSAHAAN</h2>
                     <p class="jText2 mb-3">Pasang iklan Kursus agar terhubung dengan orang yang paling potensial. <br> Yuk Pasang!</p>
+                    <?php if($hideMenu != 1) :?>
                     <p class="jText3"><a class="btn btn-outline-secondary" href="pasangIklan.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">PASANG IKLAN</a></p>
+                    <?php endif ?>
                 </div>
             </div>
     </div>

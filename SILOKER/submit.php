@@ -17,6 +17,9 @@
     session_start();
     $shareUsername = $_SESSION['username'];
     $nik = cekNik($shareUsername);
+    if ($nik == 0) {
+        $infoNik = ' = NIK Tidak Ada';
+    }
     if(isset($_GET['idIklan'])){ //mendapatkan informasi dari page cekTempat.php untuk idIklan
         $idIklan    =$_GET['idIklan']; //menyimpan informasi di variable
     }
@@ -127,7 +130,7 @@
                     <b class="me-2">
                         <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
-                            <?php echo $shareUsername; ?>
+                            <?php echo $shareUsername.$infoNik; ?>
                             <a href='index.php' class="btn">LOGOUT</a>
                         <?php else : ?>
                             <a href='index.php' class="btn">LOGIN</a>

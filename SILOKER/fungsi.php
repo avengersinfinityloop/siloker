@@ -20,7 +20,11 @@ function cekNik($username) {
     global $conn;
     $queryNik = mysqli_query($conn, "SELECT nik FROM profil WHERE username = '$username' ");
     $resultNik = mysqli_fetch_array($queryNik);
-    $nik = $resultNik['nik'];
+    if ($resultNik != null) {
+        $nik = $resultNik['nik'];
+    } else {
+        $nik = 0;
+    }
     return $nik;
 }
 
