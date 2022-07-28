@@ -32,7 +32,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <a class="navbar-brand" href="#">
-            <img src="multimedia/image/logo/maskotsiloker.png" alt="no gambar" width="30" height="30">SILOKER
+            <img src="multimedia/image/logo/silokerlogo.png" alt="no gambar" width="30" height="30">SILOKER
         </a>
         <!-- Dropdown -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -66,13 +66,14 @@
                     <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
                     <div class="dropdown-menu" aria-labelledby="NavbarDrop">
                         <a class="dropdown-item" href="profil.php">Profil</a>
+                        <a class="dropdown-item" href="cekProfil.php">Edit Profil</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">LOGIN</a>
                 </li>
                 <li class="nav-item navbar-right">
-                    <a class="nav-link" href="logout.php">LOGOUT</a>
+                    <a class="nav-link" style="margin-right: 15px" href="index.php">LOGOUT</a>
                 </li>
             </ul>
         </div>
@@ -88,7 +89,7 @@
             height: 1px;
             background: #333;
             background-image: linear-gradient(to right, #ccc, #333, #ccc);">
-        <img src="multimedia/image/logo/silokerlogo.png" alt="no gambar" style="width: 90px; height: 100px; border-radius:100px">
+        <img src="multimedia/image/concept/maskotsiloker.png" alt="no gambar" style="width: 90px; height: 100px; border-radius:100px">
         <br><br>
     </center>
     <br>
