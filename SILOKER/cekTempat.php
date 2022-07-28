@@ -20,7 +20,7 @@
     if ($nik == 0) {
         $infoNik = ' = NIK Tidak Ada';
     }
-    
+
     //CONTENT IKLAN
     $RowPerHalIklan = 10;
     $RowIklan = mysqli_num_rows(mysqli_query($conn,"SELECT * from pasang_iklan"));
@@ -160,8 +160,8 @@
                     <th>BIDANG</th>
                     <th>HARGA</td>
                     <th>WILAYAH</th>
-                    <th>IDIKLAN</th>
-                    <th width="80px">Action</th>
+                    <th width="80px">IDIKLAN</th>
+                    <th width="80px">ACTION</th>
                 </tr>
                 <tr class="spacer table-group-divider"><td colspan="100"></td></tr>
                 <?php
