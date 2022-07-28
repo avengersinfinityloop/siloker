@@ -15,7 +15,8 @@
     
     //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
-    $shareUsername = $_SESSION['username'];
+    // $shareUsername = $_SESSION['username'];
+    $shareUsername = 'Ganteng123';
     $nik = cekNik($shareUsername);
 
     //CONTENT IKLAN
@@ -151,16 +152,17 @@
                     <a class="page-link" href="" >Next</a>
                 <?php endif; ?>
             </div>
-            <table class="table table-bordered table-striped tableIklan">
+            <table class="table jtable table-hover">
                 <tr>
-                    <th width="50px">No</th>
-                    <th>namaKursus</th>
-                    <th>bidang</th>
-                    <th>harga</td>
-                    <th>wilayah</th>
-                    <th>idIklan</th>
+                    <th width="50px">NO</th>
+                    <th>NAMAKURSUS</th>
+                    <th>BIDANG</th>
+                    <th>HARGA</td>
+                    <th>WILAYAH</th>
+                    <th>IDIKLAN</th>
                     <th width="80px">Action</th>
                 </tr>
+                <tr class="spacer table-group-divider"><td colspan="100"></td></tr>
                 <?php
                 while($result    =mysqli_fetch_array($query)){
                 $noIklan++
@@ -172,7 +174,7 @@
                     <td><?php echo $result['harga']?></td>
                     <td><?php echo $result['wilayah']?></td>
                     <td><?php echo $result['idIklan']?></td>
-                    <td><a href="submit.php?idIklan=<?=$result['idIklan']?>">DAFTAR</a></td>
+                    <td><a href="submit.php?idIklan=<?=$result['idIklan']?>" class="btn btn-outline-secondary">DAFTAR</a></td>
                 </tr>
                 <?php
                 }

@@ -126,3 +126,8 @@
     height: 1000px;
     width: 100%;
 }
+
+.jtable th {
+    font-size: 25px;
+    
+}
