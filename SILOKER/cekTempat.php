@@ -15,8 +15,7 @@
     
     //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
     session_start();
-    // $shareUsername = $_SESSION['username'];
-    $shareUsername = 'Ganteng123';
+    $shareUsername = $_SESSION['username'];
     $nik = cekNik($shareUsername);
 
     //CONTENT IKLAN
