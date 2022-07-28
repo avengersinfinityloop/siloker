@@ -23,6 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="css/bootstrap.min.css">
+    <link rel="icon" href="multimedia/image/logo/silokerlogo.png">
     <script src="js/bootstrap.bundle.min.js"></script>
     <title>Profil Akun</title>
 </head>
@@ -31,7 +32,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <a class="navbar-brand" href="#">
-            <img src="multimedia/image/loker.jpeg" alt="no gambar" width="30" height="30">SILOKER
+            <img src="multimedia/image/logo/maskotsiloker.png" alt="no gambar" width="30" height="30">SILOKER
         </a>
         <!-- Dropdown -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -87,7 +88,7 @@
             height: 1px;
             background: #333;
             background-image: linear-gradient(to right, #ccc, #333, #ccc);">
-        <img src="multimedia/image/loker.jpeg" alt="no gambar" style="width: 90px; height: 100px; border-radius:100px">
+        <img src="multimedia/image/logo/silokerlogo.png" alt="no gambar" style="width: 90px; height: 100px; border-radius:100px">
         <br><br>
     </center>
     <br>

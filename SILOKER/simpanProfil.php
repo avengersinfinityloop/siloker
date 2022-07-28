@@ -19,6 +19,7 @@
 ?>
 
 <link rel="stylesheet"  href="css/bootstrap.min.css">
+<link rel="icon" href="multimedia/image/logo/silokerlogo.png">
 <html>
 <?php
 require("fungsi.php");
