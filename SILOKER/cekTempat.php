@@ -17,10 +17,12 @@
     session_start();
     $shareUsername = $_SESSION['username'];
     $nik = cekNik($shareUsername);
-
+    if ($nik == 0) {
+        $infoNik = ' = NIK Tidak Ada';
+    }
+    
     //CONTENT IKLAN
     $RowPerHalIklan = 10;
-    // $RowIklan = count(cekRow("SELECT * from pasang_iklan"));
     $RowIklan = mysqli_num_rows(mysqli_query($conn,"SELECT * from pasang_iklan"));
     $HalPerPageIklan = ceil($RowIklan / $RowPerHalIklan);
     $halAktifIklan = (isset($_GET["halIklan"])) ? $_GET["halIklan"] : 1;
@@ -115,7 +117,7 @@
                     <b class="me-2">
                         <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
-                            <?php echo $shareUsername; ?>
+                            <?php echo $shareUsername.$infoNik; ?>
                             <a href='index.php' class="btn">LOGOUT</a>
                         <?php else : ?>
                             <a href='index.php' class="btn">LOGIN</a>
@@ -152,7 +154,7 @@
                 <?php endif; ?>
             </div>
             <table class="table jtable table-hover">
-                <tr>
+                <tr style="background-color: #C5C6C7;">
                     <th width="50px">NO</th>
                     <th>NAMAKURSUS</th>
                     <th>BIDANG</th>
