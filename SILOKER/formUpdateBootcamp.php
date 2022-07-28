@@ -298,8 +298,13 @@ $shareUsername = $_SESSION['username'];
                             <!-- Pilih Bootcamp -->
                             <div class="form-row">
                               <div class="col-md-6">
-                                <div class="form-group">
-                                  <input id="form_namaBootcamp" class="custom-select" type="text" name="namaBootcamp" value="Digital Marketing" readonly>
+                                <div class="form-group custom-select-wrapper">
+                                  <select id="form_namaBootcamp" class="custom-select" type="text" name="namaBootcamp" placeholder="Pilih Bootcamp *" required="required" data-error="Nama Bootcamp is required.">
+                                    <option selected>Pilih Bootcamp</option>
+                                    <option>Digital Marketing</option>
+                                    <option>UI/UX Designer</option>
+                                    <option>Full Stack Web Development</option>
+                                  </select>
                                 </div>
                               </div>
                               <div class="col-md-6">
