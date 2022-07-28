@@ -20,7 +20,7 @@
         <title>SILOKER - Loker</title>
         <!-- Links -->
         <base href="superadminloker.php">
-        <link rel="icon" href="multimedia/image/siloker.png" type="image/icon type">
+        <link rel="icon" href="multimedia/image/logo/silokerlogo.png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/d13b076ab0.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -78,36 +78,38 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#" style="padding-left: 15rem;">
-                        <p>Helo, <strong><?php echo $_SESSION['username']; ?></strong></p>
+                        <p>Helo, <strong></strong></p>
                       </a>
                     </li>
                     </ul>
                 </div>
             </div>
 
-            <button type="button" class="btn btn-light" href="index.php">
-                Masuk
-            </button>
+            <a href="index.php" class="btn btn-light">Masuk</a>
 
             </div>
         </nav>
 
         <br>
-        <br>
-        <br>
+
  <!-- Heading -->
         <div class="container">
             <h2>Selamat datang Admin !!!</h2>
         </div>
 
         <br>
-        <div class="alert alert-danger" role="alert">
+        <div class="container">
+          <div class="alert alert-danger" role="alert">
             Peringatan! Mengubah Berarti Menghapus! Pastikan jika ingin merubah untuk mengecek kembali data!
+        </div>
         </div>
 
         <div class="container">
             <iframe src="controladmin.html" width="1280" height="480"></iframe>
-          </div>
+        </div>
+
+        <br>
+        <br>
         
         <div class="container">
             <h2>Solusi Skill dan Jenjangi Dirimu!</h2>

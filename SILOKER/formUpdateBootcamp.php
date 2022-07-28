@@ -1,3 +1,19 @@
+<?php
+
+//PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
+session_start();
+$shareUsername = $_SESSION['username'];
+
+?>
+
+<!-- 
+	Created by:
+	NIM			: 10121918
+	Nama		: Ahmad Nasir
+	Kelas		: IF9
+	Kelompok	: AIL
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,257 +90,249 @@
           </li>
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="profil.php">Profil</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!" style="padding-left: 15rem;">
-              <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-            </a>
-          </li>
         </ul>
+        <div class="d-inline">
+          <?php if ($shareUsername != '') : ?>
+            <?php echo $shareUsername; ?>
+            <a href='index.php' class="btn btn-sm">Logout</a>
+          <?php else : ?>
+            <a href='index.php' class="btn btn-sm">Login</a>
+          <?php endif ?>
+        </div>
       </div>
     </div>
   </nav>
   <!-- Navbar -->
+
   <!-- Modal Form -->
   <div class="container inner">
-    <div class="text-center"><a href="#" class="btn" data-toggle="modal" data-target="#modal-03">Update</a></div>
-    <div class="modal fade" id="modal-03" tabindex="-1" role="dialog" aria-labelledby="modal-03" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="container-fluid boxed p-0">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="image-block-wrapper">
-              <div class="image-block col-lg-6">
-                <div class="image-block-bg bg-image" data-image-src="multimedia/image/concept/formimage-updatedatabase.png"></div>
-              </div>
-              <!--/.image-block -->
-              <div>
-                <div class="row no-gutters">
-                  <div class="col-lg-6 offset-lg-6">
-                    <div class="box p-50 d-flex">
-                      <div class="align-self-left">
-                        <h4 class="section-title mb-30">Form Update</h4>
-                        <form id="form_daftar" method="post" action="updatedb-pesertabootcamp.php">
-                          <div class="messages"></div>
-                          <div class="controls">
-                            <!-- NIK -->
-                            <div class="form-row">
-                              <div class="col-12">
-                                <div class="form-group">
-                                  <input id="form_nik" type="number" name="nik" class="form-control" placeholder="NIK*" required="required" data-error="NIK is required.">
-                                  <div class="help-block with-errors"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Nama Lengkap -->
-                            <div class="form-row">
-                              <div class="col-12">
-                                <div class="form-group">
-                                  <input id="form_namaLengkap" type="text" name="namaLengkap" class="form-control" placeholder="Nama Lengkap *" required="required" data-error="Full Name is required.">
-                                  <div class="help-block with-errors"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Email -->
-                            <div class="form-row">
-                              <div class="col-12">
-                                <div class="form-group">
-                                  <input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" required="required" data-error="Email is required.">
-                                  <div class="help-block with-errors"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- No. Handphone -->
-                            <div class="form-row">
-                              <div class="col-12">
-                                <div class="form-group">
-                                  <input id="form_noHP" type="number" name="noHP" class="form-control" placeholder="No.Handphone *" required="required" data-error="Nomor Handphone is required.">
-                                  <div class="help-block with-errors"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Kota Tinggal -->
-                            <div class="form-row">
-                              <div class="col-md-12">
-                                <div class="form-group custom-select-wrapper">
-                                  <select id="form_kota" class="custom-select" type="text" name="kota" placeholder="Kota Tinggal *" required="required" data-error="Kota Tinggal is required.">
-                                    <option selected>Kota</option>
-                                    <option>Ambon</option>
-                                    <option>Balikpapan</option>
-                                    <option>Banda Aceh</option>
-                                    <option>Bandar Lampung</option>
-                                    <option>Bandung</option>
-                                    <option>Banjar</option>
-                                    <option>Banjar Baru</option>
-                                    <option>Banjarmasin</option>
-                                    <option>Batam</option>
-                                    <option>Batu</option>
-                                    <option>Baubau</option>
-                                    <option>Bekasi</option>
-                                    <option>Bengkulu</option>
-                                    <option>Bima</option>
-                                    <option>Binjai</option>
-                                    <option>Bitung</option>
-                                    <option>Blitar</option>
-                                    <option>Bogor</option>
-                                    <option>Bontang</option>
-                                    <option>Bukittinggi</option>
-                                    <option>Cilegon</option>
-                                    <option>Cimahi</option>
-                                    <option>Cirebon</option>
-                                    <option>Denpasar</option>
-                                    <option>Depok</option>
-                                    <option>Dumai</option>
-                                    <option>Gorontalo</option>
-                                    <option>Gunungsitoli</option>
-                                    <option>Jakarta</option>
-                                    <option>Jambi</option>
-                                    <option>Jayapura</option>
-                                    <option>Kediri</option>
-                                    <option>Kendari</option>
-                                    <option>Kotamobagu</option>
-                                    <option>Kupang</option>
-                                    <option>Langsa</option>
-                                    <option>Lhokseumawe</option>
-                                    <option>Lubuklinggau</option>
-                                    <option>Madiun</option>
-                                    <option>Magelang</option>
-                                    <option>Makassar</option>
-                                    <option>Malang</option>
-                                    <option>Manado</option>
-                                    <option>Mataram</option>
-                                    <option>Medan</option>
-                                    <option>Metro</option>
-                                    <option>Mojokerto</option>
-                                    <option>Padang</option>
-                                    <option>Padang Panjang</option>
-                                    <option>Padang Sidempuan</option>
-                                    <option>Pagar Alam</option>
-                                    <option>Palangka Raya</option>
-                                    <option>Palembang</option>
-                                    <option>Palopo</option>
-                                    <option>Palu</option>
-                                    <option>Pangkalpinang</option>
-                                    <option>Parepare</option>
-                                    <option>Pariaman</option>
-                                    <option>Pasuruan</option>
-                                    <option>Payakumbuh</option>
-                                    <option>Pekalongan</option>
-                                    <option>Pekanbaru</option>
-                                    <option>Pematangsiantar</option>
-                                    <option>Pontianak</option>
-                                    <option>Prabumulih</option>
-                                    <option>Probolinggo</option>
-                                    <option>Sabang</option>
-                                    <option>Salatiga</option>
-                                    <option>Samarinda</option>
-                                    <option>Sawahlunto</option>
-                                    <option>Semarang</option>
-                                    <option>Serang</option>
-                                    <option>Sibolga</option>
-                                    <option>Singkawang</option>
-                                    <option>Solok</option>
-                                    <option>Sorong</option>
-                                    <option>Subulussalam</option>
-                                    <option>Sukabumi</option>
-                                    <option>Sungai Penuh</option>
-                                    <option>Surabaya</option>
-                                    <option>Surakarta</option>
-                                    <option>Tangerang Selatan</option>
-                                    <option>Tangerang</option>
-                                    <option>Tanjungbalai</option>
-                                    <option>Tanjungpinang</option>
-                                    <option>Tarakan</option>
-                                    <option>Tasikmalaya</option>
-                                    <option>Tebing Tinggi</option>
-                                    <option>Tegal</option>
-                                    <option>Ternate</option>
-                                    <option>Tidore Kepulauan</option>
-                                    <option>Tomohon</option>
-                                    <option>Tual</option>
-                                    <option>Yogyakarta</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Alamat -->
-                            <div class="form-row">
-                              <div class="col-12">
-                                <div class="form-group">
-                                  <input id="form_alamat" type="text" name="alamat" class="form-control" placeholder="Alamat *" required="required" data-error="Alamat is required.">
-                                  <div class="help-block with-errors"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Pekerjaan -->
-                            <div class="form-row">
-                              <div class="col-md-12">
-                                <div class="form-group custom-select-wrapper">
-                                  <select id="form_pekerjaan" class="custom-select" type="text" name="pekerjaan" placeholder="Pekerjaan *" required="required" data-error="Pekerjaan is required.">
-                                    <option selected>Pilih Pekerjaan</option>
-                                    <option>Siswa/Mahasiswa</option>
-                                    <option>Karyawan Perusahaan</option>
-                                    <option>Freelance</option>
-                                    <option>Pengusaha</option>
-                                    <option>Youtuber</option>
-                                    <option>Tiktokers</option>
-                                    <option>Fulltime Interview</option>
-                                    <option>Fulltime Nganggur</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Pilih Bootcamp -->
-                            <div class="form-row">
-                              <div class="col-md-6">
-                                <div class="form-group">
-                                  <input id="form_namaBootcamp" class="custom-select" type="text" name="namaBootcamp" value="Digital Marketing" readonly>
-                                </div>
-                              </div>
-                              <div class="col-md-6">
-                                <div class="form-group custom-select-wrapper">
-                                  <select id="form_metode" class="custom-select" type="text" name="metode" placeholder="Pilih Metode *" required="required" data-error="Metode Belajar is required.">
-                                    <option selected>Pilih Metode</option>
-                                    <option>On Campus</option>
-                                    <option>Online</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="col-md-12">
-                                <input type="submit" class="btn btn-send" value="Submit">
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="col-md-12">
-                                <p class="text-muted"><strong>*</strong> These fields are required.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                        <!-- /form -->
-                      </div>
-                      <!-- /div -->
-                    </div>
-                    <!-- /.box -->
-                  </div>
-                  <!--/column -->
-                </div>
-                <!--/.row -->
-              </div>
-              <!--/div -->
-            </div>
-            <!--/.image-block-wrapper -->
-          </div>
-          <!--/.boxed -->
-        </div>
-        <!--/.modal-content -->
+    <div class="image-block-wrapper">
+      <div class="image-block col-lg-6">
+        <div class="image-block-bg bg-image" data-image-src="multimedia/image/concept/formimage-updatedatabasev2.png"></div>
       </div>
-      <!--/.modal-dialog -->
+      <!--/.image-block -->
+      <div>
+        <div class="row no-gutters">
+          <div class="col-lg-6 offset-lg-6">
+            <div class="box p-50 d-flex">
+              <div class="align-self-left">
+                <h4 class="section-title mb-30">Form Update</h4>
+                <form id="form_daftar" method="post" action="updatedb-pesertabootcamp.php">
+                  <div class="messages"></div>
+                  <div class="controls">
+                    <!-- NIK -->
+                    <div class="form-row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input id="form_nik" type="number" name="nik" class="form-control" placeholder="NIK*" required="required" data-error="NIK is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Nama Lengkap -->
+                    <div class="form-row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input id="form_namaLengkap" type="text" name="namaLengkap" class="form-control" placeholder="Nama Lengkap *" required="required" data-error="Full Name is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="form-row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" required="required" data-error="Email is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- No. Handphone -->
+                    <div class="form-row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input id="form_noHP" type="number" name="noHP" class="form-control" placeholder="No.Handphone *" required="required" data-error="Nomor Handphone is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Kota Tinggal -->
+                    <div class="form-row">
+                      <div class="col-md-12">
+                        <div class="form-group custom-select-wrapper">
+                          <select id="form_kota" class="custom-select" type="text" name="kota" placeholder="Kota Tinggal *" required="required" data-error="Kota Tinggal is required.">
+                            <option selected>Kota</option>
+                            <option>Ambon</option>
+                            <option>Balikpapan</option>
+                            <option>Banda Aceh</option>
+                            <option>Bandar Lampung</option>
+                            <option>Bandung</option>
+                            <option>Banjar</option>
+                            <option>Banjar Baru</option>
+                            <option>Banjarmasin</option>
+                            <option>Batam</option>
+                            <option>Batu</option>
+                            <option>Baubau</option>
+                            <option>Bekasi</option>
+                            <option>Bengkulu</option>
+                            <option>Bima</option>
+                            <option>Binjai</option>
+                            <option>Bitung</option>
+                            <option>Blitar</option>
+                            <option>Bogor</option>
+                            <option>Bontang</option>
+                            <option>Bukittinggi</option>
+                            <option>Cilegon</option>
+                            <option>Cimahi</option>
+                            <option>Cirebon</option>
+                            <option>Denpasar</option>
+                            <option>Depok</option>
+                            <option>Dumai</option>
+                            <option>Gorontalo</option>
+                            <option>Gunungsitoli</option>
+                            <option>Jakarta</option>
+                            <option>Jambi</option>
+                            <option>Jayapura</option>
+                            <option>Kediri</option>
+                            <option>Kendari</option>
+                            <option>Kotamobagu</option>
+                            <option>Kupang</option>
+                            <option>Langsa</option>
+                            <option>Lhokseumawe</option>
+                            <option>Lubuklinggau</option>
+                            <option>Madiun</option>
+                            <option>Magelang</option>
+                            <option>Makassar</option>
+                            <option>Malang</option>
+                            <option>Manado</option>
+                            <option>Mataram</option>
+                            <option>Medan</option>
+                            <option>Metro</option>
+                            <option>Mojokerto</option>
+                            <option>Padang</option>
+                            <option>Padang Panjang</option>
+                            <option>Padang Sidempuan</option>
+                            <option>Pagar Alam</option>
+                            <option>Palangka Raya</option>
+                            <option>Palembang</option>
+                            <option>Palopo</option>
+                            <option>Palu</option>
+                            <option>Pangkalpinang</option>
+                            <option>Parepare</option>
+                            <option>Pariaman</option>
+                            <option>Pasuruan</option>
+                            <option>Payakumbuh</option>
+                            <option>Pekalongan</option>
+                            <option>Pekanbaru</option>
+                            <option>Pematangsiantar</option>
+                            <option>Pontianak</option>
+                            <option>Prabumulih</option>
+                            <option>Probolinggo</option>
+                            <option>Sabang</option>
+                            <option>Salatiga</option>
+                            <option>Samarinda</option>
+                            <option>Sawahlunto</option>
+                            <option>Semarang</option>
+                            <option>Serang</option>
+                            <option>Sibolga</option>
+                            <option>Singkawang</option>
+                            <option>Solok</option>
+                            <option>Sorong</option>
+                            <option>Subulussalam</option>
+                            <option>Sukabumi</option>
+                            <option>Sungai Penuh</option>
+                            <option>Surabaya</option>
+                            <option>Surakarta</option>
+                            <option>Tangerang Selatan</option>
+                            <option>Tangerang</option>
+                            <option>Tanjungbalai</option>
+                            <option>Tanjungpinang</option>
+                            <option>Tarakan</option>
+                            <option>Tasikmalaya</option>
+                            <option>Tebing Tinggi</option>
+                            <option>Tegal</option>
+                            <option>Ternate</option>
+                            <option>Tidore Kepulauan</option>
+                            <option>Tomohon</option>
+                            <option>Tual</option>
+                            <option>Yogyakarta</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Alamat -->
+                    <div class="form-row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input id="form_alamat" type="text" name="alamat" class="form-control" placeholder="Alamat *" required="required" data-error="Alamat is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Pekerjaan -->
+                    <div class="form-row">
+                      <div class="col-md-12">
+                        <div class="form-group custom-select-wrapper">
+                          <select id="form_pekerjaan" class="custom-select" type="text" name="pekerjaan" placeholder="Pekerjaan *" required="required" data-error="Pekerjaan is required.">
+                            <option selected>Pilih Pekerjaan</option>
+                            <option>Siswa/Mahasiswa</option>
+                            <option>Karyawan Perusahaan</option>
+                            <option>Freelance</option>
+                            <option>Pengusaha</option>
+                            <option>Youtuber</option>
+                            <option>Tiktokers</option>
+                            <option>Fulltime Interview</option>
+                            <option>Fulltime Nganggur</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Pilih Bootcamp -->
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-group custom-select-wrapper">
+                          <select id="form_namaBootcamp" class="custom-select" type="text" name="namaBootcamp" placeholder="Pilih Bootcamp *" required="required" data-error="Nama Bootcamp is required.">
+                            <option selected>Pilih Bootcamp</option>
+                            <option>Digital Marketing</option>
+                            <option>UI/UX Designer</option>
+                            <option>Full Stack Web Development</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group custom-select-wrapper">
+                          <select id="form_metode" class="custom-select" type="text" name="metode" placeholder="Pilih Metode *" required="required" data-error="Metode Belajar is required.">
+                            <option selected>Pilih Metode</option>
+                            <option>On Campus</option>
+                            <option>Online</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-md-12">
+                        <input type="submit" class="btn btn-send" value="Submit">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-md-12">
+                        <p class="text-muted"><strong>*</strong> These fields are required.</p>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <!-- /form -->
+              </div>
+              <!-- /div -->
+            </div>
+            <!-- /.box -->
+          </div>
+          <!--/column -->
+        </div>
+        <!--/.row -->
+      </div>
+      <!--/div -->
     </div>
-    <!--/.modal -->
   </div>
   <!-- Modal Form -->
 

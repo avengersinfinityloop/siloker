@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $shareUsername = $_SESSION['username'];
+  if ($_SESSION and $_SESSION['username']) $shareUsername = $_SESSION['username']
 ?>
 
 <!doctype html>
@@ -28,31 +28,12 @@
         <title>SILOKER - Loker</title>
         <!-- Links -->
         <base href="loker.php">
-        <link rel="icon" href="multimedia/image/siloker.png" type="image/icon type">
+        <link rel="icon" href="multimedia/image/logo/silokerlogo.png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/d13b076ab0.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     </head>   
--->
-    
-    <head>
-        <!-- MetaData -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="indibagusprasetyo">
-        <meta name="description" content="siloker,lowongankerja">
-        <!-- Title -->
-        <title>Siloker - Main Loker</title>
-        <!-- Links -->
-        <base href="loker.php">
-        <link rel="icon" href="multimedia/image/siloker.png" type="image/icon type">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/d13b076ab0.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    </head>
 
     <body>
     <!-- Navbar (Brands) -->
@@ -105,7 +86,7 @@
           </li>
           <li class="nav-item">
 							<a class="nav-link" href="#" style="padding-left: 15rem;">
-								<p>Helo, <strong><?php echo $_SESSION['username']; ?></strong></p>
+								<p>Helo, <strong></strong></p>
 							</a>
 						</li>
         </ul>
@@ -113,9 +94,7 @@
     </div>
 
   <!-- Button trigger modal -->
-    <button type="button" class="btn btn-light" href="index.php">
-      Masuk
-    </button>
+  <a href="index.php" class="btn btn-light">Masuk</a>
 
             <!-- Modal -->
             <!-- <div class="modal fade modalfix" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -225,6 +204,7 @@
             <select name="gender" class="form-select" aria-label="Default select example">
                 <option selected>Pria</option>
                 <option value="1">Wanita</option>
+                <option value="2">All Gender</option>
               </select>
         </div>
 
@@ -488,8 +468,8 @@
 
 <!-- Footer -->
     <div class="container">
-        <iframe src="footer.html" width="1280" height="480"></iframe>
+        <iframe src="footer.html" width="1280" height="480">404</iframe>
     </div>
-       
+
     </body>
 </html>
