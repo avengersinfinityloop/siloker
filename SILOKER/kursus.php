@@ -128,7 +128,9 @@
                     <?php echo "<img src='$image[1]' class='highlight'>"; ?>
                     <div class="carousel-caption d-none d-md-block">
                         <?php if ($link[1] != '') : ?>
-                            <p><a href="submit.php?idIklan=<?=$link[1]?>">DAFTAR</a></p>
+                            <?php if($hideMenu != 1) :?>
+                                <p><a href="submit.php?idIklan=<?=$link[1]?>">DAFTAR</a></p>
+                            <?php endif ?>
                         <?php else : ?>
                             <h1>EMPTY</h1>
                         <?php endif ?>
@@ -138,7 +140,9 @@
                     <?php echo "<img src='$image[2]' class='highlight'>"; ?>
                     <div class="carousel-caption d-none d-md-block">
                         <?php if ($link[2] != '') : ?>
-                            <p><a href="submit.php?idIklan=<?=$link[2]?>">DAFTAR</a></p>
+                            <?php if($hideMenu != 1) :?>
+                                <p><a href="submit.php?idIklan=<?=$link[2]?>">DAFTAR</a></p>
+                            <?php endif ?>
                         <?php else : ?>
                             <h1>EMPTY</h1>
                         <?php endif ?>
@@ -148,7 +152,9 @@
                     <?php echo "<img src='$image[3]' class='highlight'>"; ?>
                     <div class="carousel-caption d-none d-md-block">
                         <?php if ($link[3] != '') : ?>
-                            <p><a href="submit.php?idIklan=<?=$link[3]?>">DAFTAR</a></p>
+                            <?php if($hideMenu != 1) :?>
+                                <p><a href="submit.php?idIklan=<?=$link[3]?>">DAFTAR</a></p>
+                            <?php endif ?>
                         <?php else : ?>
                             <h1>EMPTY</h1>
                         <?php endif ?>
