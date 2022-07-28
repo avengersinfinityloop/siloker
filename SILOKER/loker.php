@@ -225,6 +225,7 @@
             <select name="gender" class="form-select" aria-label="Default select example">
                 <option selected>Pria</option>
                 <option value="1">Wanita</option>
+                <option value="2">All Gender</option>
               </select>
         </div>
 
