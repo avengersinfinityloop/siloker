@@ -66,6 +66,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
                     <div class="dropdown-menu" aria-labelledby="NavbarDrop">
                         <a class="dropdown-item" href="profil.php">Profil</a>
+                        <a class="dropdown-item" href="cekProfil.php">Edit Profil</a>
                     </div>
                 </li>
                 <li class="nav-item">
