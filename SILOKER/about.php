@@ -9,6 +9,14 @@ $shareUsername = $_SESSION['username'];
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- 
+	Created by:
+	NIM			: 10121918
+	Nama		: Ahmad Nasir
+	Kelas		: IF9
+	Kelompok	: AIL
+ -->
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,12 +91,15 @@ $shareUsername = $_SESSION['username'];
 						</li>
 						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="profil.php">Profil</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#!" style="padding-left: 15rem;">
-								<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-							</a>
-						</li>
 					</ul>
+					<div class="d-inline">
+						<?php if ($shareUsername != '') : ?>
+							<?php echo $shareUsername; ?>
+							<a href='index.php' class="btn btn-sm">Logout</a>
+						<?php else : ?>
+							<a href='index.php' class="btn btn-sm">Login</a>
+						<?php endif ?>
+					</div>
 				</div>
 			</div>
 		</nav>
