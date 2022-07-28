@@ -1,8 +1,20 @@
+<!-- 
+    Created by :
+    Nama : Muhamad Sidik Nur Rizki
+    NIM : 10121901
+    Kelas : IF-9
+
+    Created on : 20220623
+    page name: editprofil.php
+    total line : ....line
+    logs : v0.1.20220623
+         : v0.2.20220624
+
+ -->
+
 <?php
-// session_start();
-// if (!isset($_SESSION['username'])){
-//     header("location: loginp.php");
-// }
+    session_start();
+    $shareUsername = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -12,13 +24,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="css/bootstrap.min.css">
+    <link rel="icon" href="multimedia/image/logo/silokerlogo.png">
     <script src="js/bootstrap.bundle.min.js"></script>
     <title>Profil Akun</title>
 </head>
 <script src="bar.js"></script>
 <body>
     <?php
-        include 'koneksi.php';
+        require("koneksi.php");
         $nik = $_GET['nik'];
         $sql = "SELECT * FROM profil WHERE nik = '$nik'";
         $query = mysqli_query($conn,$sql);
@@ -28,11 +41,20 @@
         $jenisKelamin = array('Pria','Wanita');
         $status = array('Lajang','Menikah','Janda/Duda');
         $kebangsaan = array('Indonesia','Asing');
+        $lokasiTinggal = array('Bandung','Jakarta','Surabaya','Medan','Solo');
+        $pendidikan = array('SD','SMP','SMA/SMK','Diploma/D1','Sarjana/S1','Master/S2','Doktor/S3');
+        $jurusan = array('Elektro','Komputer','Industri','Manajemen','Matematika','Fisika','Teknik-Nuklir');
+        $lulus = array('2016','2017','2018','2019','2020','2021','2022');
+        $jabatan = array('Direktur','Manager','Supervisor','CEO','Vice-Presiden');
+        $bidang = array('Admin','Ilmuan','Fotografer','Hukum','Komputer');
+        $lokasiKerja = array('Bandung','Jakarta','Surabaya','Medan','Solo');
+        $kontrak = array('Purna','Paruh','Magang','Sementara','Kontrak');
+        $periode = array('2016','2017','2018','2019','2020','2021','2022');
     ?>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <a class="navbar-brand" href="#">
-            <img src="multimedia/image/loker.jpeg" alt="no gambar" width="30" height="30">SILOKER
+            <img src="multimedia/image/logo/silokerlogo.png" alt="no gambar" width="30" height="30">SILOKER
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -84,12 +106,12 @@
             height: 1px;
             background: #333;
             background-image: linear-gradient(to right, #ccc, #333, #ccc);">
-        <img src="multimedia/image/loker.jpeg" alt="no gambar" style="width: 90px; height: 100px; border-radius:100px">
+        <img src="multimedia/image/concept/maskotsiloker.png" alt="no gambar" style="width: 90px; height: 100px; border-radius:100px">
         <br><br>
     </center>
     <br>
     <!-- From Pengisian Profil Data Diri -->
-    <form action="simpanProfil.php" method="post">
+    <form action="updateProfil.php" method="post">
         <div class="row">
             <div class="col-md-6">
                 <!-- Data Diri -->
@@ -97,28 +119,28 @@
                     <legend class="w-auto px-3">Data Diri</legend>
                     <div class="form-group">
                         <label>NIK</label>
-                        <input type="text" class="form-control username" name="username" value="<?php echo $row['nik']?>" onchange="tes()" placeholder="NIK">
+                        <input type="text" class="form-control username" name="nik" value="<?php echo $row['nik'];?>" onchange="tes()" placeholder="NIK">
                     </div>
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control nik" name="username" value="<?php echo $row['username']?>" onchange="tes()">
+                        <input type="text" class="form-control nik" name="username" value="<?php echo $row['username'];?>">
                     </div>
                     <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" class="form-control nama" name="nama" value="<?php echo $row['nama']?>" onchange="tes()" placeholder="Nama">
+                        <input type="text" class="form-control nama" name="nama" value="<?php echo $row['nama'];?>" onchange="tes()" placeholder="Nama">
                     </div>
                     <div class="form-group">
                         <label>Tanggal Lahir</label>
-                        <input type="date" class="form-control tanggal" name="tanggal-lahir" value="<?php echo $row['tanggal-lahir']?>" onchange="tes()" id="tanggal-lahir">
+                        <input type="date" class="form-control tanggal" name="tanggal_lahir" value="<?php echo $row['tanggal_lahir'];?>" onchange="tes()" id="tanggal-lahir">
                     </div>
                     <div class="form-group">
                         <label>Jenis Kelamin</label>
-                        <select name="jenis-kelamin" id="jk" class="form-control kelamin" onchange="tes()">
+                        <select name="jenis_kelamin" id="jk" class="form-control kelamin" onchange="tes()">
                             <?php
                                 foreach($jenisKelamin as $jk){
-                                    echo "<option value='$jk'>";
-                                    echo $row['jenis-kelamin']==$j'selected="selected"':'';
-                                    echo ">$j</option>";
+                                    echo "<option value='$jk'";
+                                    echo $row['jenis_kelamin']==$jk?'selected="selected"':'';
+                                    echo ">$jk</option>";
                                 }
                             ?>
                         </select>
@@ -128,8 +150,8 @@
                         <select name="status" id="status" class="form-control status" onchange="tes()">
                             <?php
                                 foreach($status as $st){
-                                    echo "<option value='$st'>";
-                                    echo $row['status']==$st'selected="selected"':'';
+                                    echo "<option value='$st'";
+                                    echo $row['status']==$st?'selected="selected"':'';
                                     echo ">$st</option>";
                                 }
                             ?>
@@ -140,8 +162,8 @@
                         <select name="kebangsaan" id="kebangsaan" class="form-control kebangsaan" onchange="tes()">
                             <?php
                                 foreach($kebangsaan as $kb){
-                                    echo "<option value='$kb'>";
-                                    echo $row['kebangsaan']==$j'selected="selected"':'';
+                                    echo "<option value='$kb'";
+                                    echo $row['kebangsaan']==$kb?'selected="selected"':'';
                                     echo ">$kb</option>";
                                 }
                             ?>
@@ -149,7 +171,7 @@
                     </div>
                     <div class="form-group">
                         <label>Gaji Yang Diharapkan</label>
-                        <input type="text" name="gaji-harapan" class="form-control gaji-harapan" onchange="tes()" value="<?php echo $row['gaji-harapan']?>" placeholder="Rp.">
+                        <input type="text" name="gaji_harapan" class="form-control gaji-harapan" onchange="tes()" value="<?php echo $row['gaji_harapan'];?>" placeholder="Rp.">
                     </div>
                 </fieldset>
             </div>
@@ -159,36 +181,35 @@
                     <legend class="w-auto px-3">Kontak</legend>
                     <div class="form-group">
                         <label>Nomor Telepon (Opsional)</label>
-                        <input type="text" class="form-control telepon" name="telepon" id="telepon" onchange="tes()" placeholder="(022)xxxxx">
+                        <input type="text" class="form-control telepon" name="telepon" id="telepon" value="<?php echo $row['telepon'];?>" onchange="tes()" placeholder="(022)xxxxx">
                     </div>
                     <div class="form-group">
                         <label>Nomor ponsel</label>
-                        <input type="text" name="hp" class="form-control ponsel" id="hp" placeholder="08123xxxxxx" onchange="tes()">
+                        <input type="text" name="hp" class="form-control ponsel" id="hp" value="<?php echo $row['hp'];?>" placeholder="08123xxxxxx" onchange="tes()">
                     </div>
                     <div class="form-group">
                         <label>Alamat Email</label>
-                        <input type="email" name="email" class="form-control email" id="email" placeholder="andi@gmail.com" onchange="tes()">
+                        <input type="email" name="email" class="form-control email" id="email" value="<?php echo $row['email'];?>" placeholder="andi@gmail.com" onchange="tes()">
                     </div>
                     <div class="form-group">
                         <label>Lokasi</label>
                         <select name="lokasi" id="lokasi-tinggal" class="form-control lokasi" onchange="tes()">
-                            <option value=""></option>
-                            <option value="bandung">Bandung</option>
-                            <option value="jakarta">Jakarta</option>
-                            <option value="surabaya">Surabaya</option>
-                            <option value="medan">Medan</option>
-                            <option value="solo">Solo</option>
+                            <?php
+                                foreach($lokasiTinggal as $LTinggal){
+                                    echo "<option value='$LTinggal' ";
+                                    echo $row['lokasi']==$LTinggal?'selected="selected"':'';
+                                    echo ">$LTinggal</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Alamat</label>
-                        <textarea name="alamat" id="alamat" class="form-control alamat" rows="3" placeholder="Alamat" onchange="tes()"></textarea>
+                        <textarea name="alamat" id="alamat" class="form-control alamat" rows="3" placeholder="Alamat" onchange="tes()"><?php echo $row['alamat'];?></textarea>
                     </div>
                     <div class="form-group">
                         <label>Kode Pos</label>
-                        <input type="text" name="kode-pos" class="form-control pos" id="pos" placeholder="40123" onchange="tes()">
-                    </div>
-                    <div class="form-group">
+                        <input type="text" name="kode_pos" class="form-control pos" id="pos" value="<?php echo $row['kode_pos'];?>" placeholder="40123" onchange="tes()">
                     </div>
                 </fieldset>
             </div>
@@ -201,53 +222,50 @@
                     <div class="form-group">
                         <label>Pendidikan Terakhir</label>
                         <select name="pendidikan" id="pendidikan" onchange="tes()" class="form-control tanggal">
-                            <option></option>
-                            <option value="sd">SD</option>
-                            <option value="smp">SMP</option>
-                            <option value="sederajat">SMA/SMK</option>
-                            <option value="diploma">D1/Diploma</option>
-                            <option value="sarjana">S1/Sarjana</option>
-                            <option value="master">S2/Master</option>
-                            <option value="doktor">S3/Doktor</option>
+                            <?php
+                                foreach($pendidikan as $p){
+                                    echo "<option value='$p'";
+                                    echo $row['pendidikan']==$p?'selected="selected"':'';
+                                    echo ">$p</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Nama Sekolah</label>
-                        <input type="text" name="nama-sekolah" class="form-control sekolah" id="sekolah" onchange="tes()" placeholder="SMA Ceria Selalu">
+                        <input type="text" name="nama_sekolah" class="form-control sekolah" id="sekolah" value="<?php echo $row['nama_sekolah']; ?>" onchange="tes()" placeholder="SMA Ceria Selalu">
                     </div>
                     <div class="form-group">
                         <label>Jurusan</label>
                         <select name="jurusan" id="jurusan" onchange="tes()" class="form-control jurusan">
-                            <option value=""></option>
-                            <option value="elektro">Elektro</option>
-                            <option value="komputer">Teknologi Informatika</option>
-                            <option value="industri">Industri</option>
-                            <option value="manajemen">Manajemen</option>
-                            <option value="matematika">Matematika</option>
-                            <option value="fisika">Fisika</option>
-                            <option value="teknik-nuklir">Teknik Nuklir</option>
+                            <?php
+                                foreach($jurusan as $j){
+                                    echo "<option value='$j'";
+                                    echo $row['jurusan']==$j?'selected="selected"':'';
+                                    echo ">$j</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Prestasi Akademik (Opsional)</label>
-                        <textarea name="prestasi" class="form-control prestasi" id="prestasi" onchange="tes()" rows="3"></textarea>
+                        <textarea name="prestasi" class="form-control prestasi" id="prestasi" onchange="tes()" rows="3"><?php echo $row['prestasi']; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label>Tahun Lulus</label>
-                        <select name="tahun-lulus" id="lulus" onchange="tes()" class="form-control lulus">
-                            <option value=""></option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
+                        <select name="tahun_lulus" id="lulus" onchange="tes()" class="form-control lulus">
+                            <?php
+                                foreach($lulus as $l){
+                                    echo "<option value='$l'";
+                                    echo $row['tahun_lulus']==$l?'selected="selected"':'';
+                                    echo ">$l</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>IPK/Rata-rata Nilai Ujian</label>
-                        <input type="text" name="nilai" class="form-control ipk" id="nilai" onchange="tes()" placeholder="0.00">
+                        <input type="text" name="nilai" class="form-control ipk" id="nilai" value="<?php echo $row['nilai']; ?>" onchange="tes()" placeholder="0.00">
                     </div>
                     <div class="form-group">
                     </div>
@@ -258,58 +276,62 @@
                     <legend class="w-auto px-3">Pengalaman Kerja</legend>
                     <div class="form-group">
                         <label>Nama Perusahaan</label>
-                        <input type="text" name="nama-perusahaan" class="form-control nama-perusahaan" id="perusahaan" onchange="tes()" placeholder="PT.Unikom">
+                        <input type="text" name="nama_perusahaan" class="form-control nama-perusahaan" id="perusahaan" value="<?php echo $row['nama_perusahaan']; ?>" onchange="tes()" placeholder="PT.Unikom">
                     </div>
                     <div class="form-group">
                         <label>Jabatan</label>
                         <select name="jabatan" id="jabatan" onchange="tes()" class="form-control jabatan">
-                            <option value=""></option>
-                            <option value="direktur">Direktur</option>
-                            <option value="manager">Manager</option>
-                            <option value="supervisior">Supervisior</option>
-                            <option value="ceo">Presiden Direktur - CEO</option>
-                            <option value="vice-presiden">Vice Presiden</option>
+                            <?php
+                                foreach ($jabatan as $jb){
+                                echo "<option value='$jb' ";
+                                echo $row['jabatan']==$jb?'selected="selected"':'';
+                                echo ">$jb</option>";
+                            }
+                        ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Bidang Pekerjaan</label>
                         <select name="bidang" id="bidang" onchange="tes()" class="form-control jabatan">
-                            <option value=""></option>
-                            <option value="admin">Administrasi</option>
-                            <option value="ilmuwan">Ilmuwan</option>
-                            <option value="fotografer">Fotografer</option>
-                            <option value="hukum">Hukum</option>
-                            <option value="komputer">Teknologi Informatisi</option>
+                            <?php
+                                foreach ($bidang as $b){
+                                echo "<option value='$b' ";
+                                echo $row['bidang']==$b?'selected="selected"':'';
+                                echo ">$b</option>";
+                            }
+                        ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Lokasi</label>
-                        <select name="lokasi-kerja" id="lokasi-kerja" onchange="tes()" class="form-control lokasi">
-                            <option value=""></option>
-                            <option value="bandung">Bandung</option>
-                            <option value="jakarta">Jakarta</option>
-                            <option value="surabaya">Surabaya</option>
-                            <option value="medan">Medan</option>
-                            <option value="solo">Solo</option>
+                        <select name="lokasi_kerja" id="lokasi-kerja" onchange="tes()" class="form-control lokasi">
+                            <?php
+                                foreach ($lokasiKerja as $LKerja){
+                                echo "<option value='$LKerja' ";
+                                echo $row['lokasi_kerja']==$LKerja?'selected="selected"':'';
+                                echo ">$LKerja</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Gaji</label>
-                        <input type="text" name="gaji-pengalaman" class="form-control gaji" id="pengalaman" onchange="tes()" placeholder="Rp.">
+                        <input type="text" name="gaji_pengalaman" class="form-control gaji" id="pengalaman" value="<?php echo $row['gaji_pengalaman']; ?>" onchange="tes()" placeholder="Rp.">
                     </div>
                     <div class="form-group">
                         <label>Tanggal Mulai</label>
-                        <input type="date" name="tanggal-mulai" class="form-control tanggal-mulai" id="tanggal-mulai" onchange="tes()">
+                        <input type="date" name="tanggal_mulai" class="form-control tanggal-mulai" id="tanggal-mulai" value="<?php echo $row['tanggal_mulai']; ?>" onchange="tes()">
                     </div>
                     <div class="form-group">
                         <label>Jenis Kontrak</label>
-                        <select name="tipe-kontrak" id="jenis-kontrak" onchange="tes()" class="form-control jenis-kontrak">
-                            <option value=""></option>
-                            <option value="purna">Purna Waktu</option>
-                            <option value="paruh">Paruh Waktu</option>
-                            <option value="magang">Magang</option>
-                            <option value="sementara">Sementara</option>
-                            <option value="kontrak">Kontrak</option>
+                        <select name="tipe_kontrak" id="jenis-kontrak" onchange="tes()" class="form-control jenis-kontrak">
+                            <?php
+                                foreach ($kontrak as $kn){
+                                echo "<option value='$kn' ";
+                                echo $row['tipe_kontrak']==$kn?'selected="selected"':'';
+                                echo ">$kn</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">
@@ -324,27 +346,26 @@
                     <legend class="w-auto px-3">Pengalaman Organisasi</legend>
                     <div class="form-group">
                         <label>Nama Organisasi</label>
-                        <input type="text" name="nama-organisasi" class="form-control organisasi" id="organisasi" onchange="tes()" placeholder="Osis/Unikom Organization">
+                        <input type="text" name="nama_organisasi" class="form-control organisasi" id="organisasi" value="<?php echo $row['nama_organisasi']; ?>" onchange="tes()" placeholder="Osis/Unikom Organization">
                     </div>
                     <div class="form-group">
                         <label>Posisi</label>
-                        <input type="text" name="posisi" class="form-control posisi" id="posisi" onchange="tes()" placeholder="Wakil Ketua">
+                        <input type="text" name="posisi" class="form-control posisi" id="posisi" value="<?php echo $row['posisi']; ?>" onchange="tes()" placeholder="Wakil Ketua">
                     </div>
                     <div class="form-group">
                         <label>Deskripsi (Opsional)</label>
-                        <textarea name="deskripsi" class="form-control deskripsi" id="deskripsi" onchange="tes()" rows="5"></textarea>
+                        <textarea name="deskripsi" class="form-control deskripsi" id="deskripsi" onchange="tes()" rows="5"><?php echo $row['deskripsi']; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label>Periode Waktu</label>
                         <select name="periode" id="periode" onchange="tes()" class="form-control periode">
-                            <option value=""></option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
+                            <?php
+                                foreach($periode as $pr){
+                                    echo "<option value='$l' ";
+                                    echo $row['periode']==$pr?'selected="selected"':'';
+                                    echo ">$pr</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">
@@ -357,38 +378,38 @@
                     <legend class="w-auto px-3">Pelatihan/Sertifikasi</legend>
                     <div class="form-group">
                         <label>Nama Pelatihan</label>
-                        <input type="text" class="form-control pelatihan" name="pelatihan" id="pelatihan" onchange="tes()" placeholder="Bootcamp Big Data">
+                        <input type="text" class="form-control pelatihan" name="pelatihan" id="pelatihan" value="<?php echo $row['pelatihan']; ?>" onchange="tes()" placeholder="Bootcamp Big Data">
                     </div>
                     <div class="form-group">
                         <label>Deskripsi (Opsional)</label>
-                        <textarea name="deskripsi-pelatihan" class="form-control deskripsi" id="deskripsi-pelatihan" onchange="tes()" rows="5"></textarea>
+                        <textarea name="deskripsi_pelatihan" class="form-control deskripsi" id="deskripsi-pelatihan" onchange="tes()" rows="5"><?php echo $row['deskripsi_pelatihan']; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label>Dikeluarkan Oleh</label>
-                        <input type="text" class="form-control penyelenggara" name="penyelenggara" id="penyelenggara" onchange="tes()" placeholder="PT.Unikom">
+                        <input type="text" class="form-control penyelenggara" name="penyelenggara" id="penyelenggara" value="<?php echo $row['penyelenggara']; ?>" onchange="tes()" placeholder="PT.Unikom">
                     </div>
                     <div class="form-group">
                         <label>Dikeluarkan Tanggal</label>
-                        <input type="date" name="tanggal-keluar" class="form-control tanggal-keluar-sertifikat" id="tanggal-sertifikat" onchange="tes()">
+                        <input type="date" name="tanggal_keluar" class="form-control tanggal-keluar-sertifikat" id="tanggal-sertifikat" value="<?php echo $row['tanggal_keluar']; ?>" onchange="tes()">
                     </div>
                     <div>
                         <label class="form-label">Sertifikat Pelatihan</label>
-                        <input type="file" class="form-control" name="sertifikat" id="sertifikat">
+                        <input type="file" class="form-control" name="sertifikat" value="<?php echo $row['serifikat']; ?>" id="sertifikat">
                     </div>
                 </fieldset>
             </div>
         </div>
         <div class="d-grid gap-2 col-12 mx-auto">
-            <input type="submit" class="btn btn-outline-success btn-lg btn-block" id="tombol" value="Simpan" disabled><br>
+            <input type="submit" class="btn btn-outline-success btn-lg btn-block" id="tombol" value="Simpan"><br>
             <input type="reset" class="btn btn-outline-danger btn-lg btn-block" value="Reset">
         </div>
     </form>
 </body>
-<script>
+<!-- <script>
     function tes(){
         // Data Diri
         var nik = document.getElementById('nik').value;
-        var username = document.getElementById('username').value;
+        // var username = document.getElementById('username').value;
         var nama = document.getElementById('nama').value;
         var tanggalLahir = document.getElementById('tanggal-lahir').value;
         var jenisKel = document.getElementById('jk').value;
@@ -433,7 +454,7 @@
         var penyelenggara = document.getElementById('penyelenggara').value;
         var tanggalSertif = document.getElementById('tanggal-sertifikat').value;
 
-        if (nik&&username&&nama&&tanggalLahir&&jenisKel&&status&&kebangsaan&&gajiHarap&&
+        if (nik&&nama&&tanggalLahir&&jenisKel&&status&&kebangsaan&&gajiHarap&&
             telepon&&hp&&email&&lokasiTinggal&&alamat&&pos&&
             pendidikan&&sekolah&&jurusan&&prestasi&&lulus&&nilai&&
             perusahaan&&jabatan&&bidang&&lokasiKerja&&pengalaman&&tanggalMulai&&jenisKontrak&&
@@ -445,5 +466,5 @@
             document.getElementById('tombol').disabled = true;
         }
     }
-</script>
+</script> -->
 </html>

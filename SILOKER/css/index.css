@@ -15,7 +15,7 @@
 }
 .btnSubmit
 {
-    width: 50%;
+    width: 40%;
     border-radius: 1rem;
     padding: 1.5%;
     border: none;
@@ -25,4 +25,17 @@
     font-weight: 600;
     color: #fff;
     background-color: #0062cc;
+}
+.btnRegis
+{
+    width: 40%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form .btnRegis{
+    font-weight: 600;
+    color: #fff;
+    background-color: #33d41e;
 }

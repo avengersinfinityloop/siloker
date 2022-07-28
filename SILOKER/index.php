@@ -60,8 +60,9 @@
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Password *" name="password"><br>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group text-center">
                         <input type="submit" name="submit" class="btnSubmit" value="Login" />
+                        <button class="btnRegis"><a href="register.php" style="color: white; text-decoration: none">Register</a></button>
                     </div>
                 </form>
             </div>
