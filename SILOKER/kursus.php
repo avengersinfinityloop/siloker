@@ -122,40 +122,40 @@
         <div id="carousel" class=" carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner text-center">
                 <div class="carousel-item active" data-bs-interval="3000">
-                    <?php echo "<img src='$image[1]' class='highlight'>"; ?>
-                    <div class="carousel-caption d-none d-md-block">
-                        <?php if ($link[1] != '') : ?>
+                    <?php if ($link[1] != '') : ?>
+                        <?php echo "<img src='$image[1]' class='highlight'>"; ?>
+                        <div class="carousel-caption d-none d-md-block">
                             <?php if($hideMenu != 1) :?>
                                 <p><a href="submit.php?idIklan=<?=$link[1]?>">DAFTAR</a></p>
                             <?php endif ?>
-                        <?php else : ?>
-                            <h1>EMPTY</h1>
-                        <?php endif ?>
-                    </div>
+                        </div>
+                    <?php else : ?>
+                        <img src="multimedia/image/LibraryImage/default.jpg" alt="" class="highlight">
+                    <?php endif ?>
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <?php echo "<img src='$image[2]' class='highlight'>"; ?>
-                    <div class="carousel-caption d-none d-md-block">
-                        <?php if ($link[2] != '') : ?>
+                    <?php if ($link[2] != '') : ?>
+                        <?php echo "<img src='$image[2]' class='highlight'>"; ?>
+                        <div class="carousel-caption d-none d-md-block">
                             <?php if($hideMenu != 1) :?>
                                 <p><a href="submit.php?idIklan=<?=$link[2]?>">DAFTAR</a></p>
                             <?php endif ?>
-                        <?php else : ?>
-                            <h1>EMPTY</h1>
-                        <?php endif ?>
-                    </div>
+                        </div>
+                    <?php else : ?>
+                        <img src="multimedia/image/LibraryImage/default.jpg" alt="" class="highlight">
+                    <?php endif ?>
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <?php echo "<img src='$image[3]' class='highlight'>"; ?>
-                    <div class="carousel-caption d-none d-md-block">
-                        <?php if ($link[3] != '') : ?>
+                    <?php if ($link[3] != '') : ?>
+                        <?php echo "<img src='$image[3]' class='highlight'>"; ?>
+                        <div class="carousel-caption d-none d-md-block">
                             <?php if($hideMenu != 1) :?>
                                 <p><a href="submit.php?idIklan=<?=$link[3]?>">DAFTAR</a></p>
                             <?php endif ?>
-                        <?php else : ?>
-                            <h1>EMPTY</h1>
-                        <?php endif ?>
-                    </div>
+                        </div>
+                    <?php else : ?>
+                        <img src="multimedia/image/LibraryImage/default.jpg" alt="" class="highlight">
+                    <?php endif ?>
                 </div>
             </div>
         </div>
