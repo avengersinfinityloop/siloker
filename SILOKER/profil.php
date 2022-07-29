@@ -114,11 +114,11 @@
                     </div>
                     <div class="form-group">
                         <label>Tanggal Lahir</label>
-                        <input type="date" class="form-control tanggal" name="tanggal-lahir" onchange="tes()" id="tanggal-lahir">
+                        <input type="date" class="form-control tanggal" name="tanggal_lahir" onchange="tes()" id="tanggal-lahir">
                     </div>
                     <div class="form-group">
                         <label>Jenis Kelamin</label>
-                        <select name="jenis-kelamin" id="jk" class="form-control kelamin" onchange="tes()">
+                        <select name="jenis_kelamin" id="jk" class="form-control kelamin" onchange="tes()">
                             <option value=""></option>
                             <option value="Pria">Pria</option>
                             <option value="Wanita">Wanita</option>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="form-group">
                         <label>Gaji Yang Diharapkan</label>
-                        <input type="text" name="gaji-harapan" class="form-control gaji-harapan" onchange="tes()" id="gaji-harapan" placeholder="Rp.">
+                        <input type="text" name="gaji_harapan" class="form-control gaji_harapan" onchange="tes()" id="gaji-harapan" placeholder="Rp.">
                     </div>
                 </fieldset>
             </div>
@@ -167,11 +167,11 @@
                         <label>Lokasi</label>
                         <select name="lokasi" id="lokasi-tinggal" class="form-control lokasi" onchange="tes()">
                             <option value=""></option>
-                            <option value="bandung">Bandung</option>
-                            <option value="jakarta">Jakarta</option>
-                            <option value="surabaya">Surabaya</option>
-                            <option value="medan">Medan</option>
-                            <option value="solo">Solo</option>
+                            <option value="Bandung">Bandung</option>
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Medan">Medan</option>
+                            <option value="Solo">Solo</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -180,7 +180,7 @@
                     </div>
                     <div class="form-group">
                         <label>Kode Pos</label>
-                        <input type="text" name="kode-pos" class="form-control pos" id="pos" placeholder="40123" onchange="tes()">
+                        <input type="text" name="kode_pos" class="form-control pos" id="pos" placeholder="40123" onchange="tes()">
                     </div>
                 </fieldset>
             </div>
@@ -194,30 +194,30 @@
                         <label>Pendidikan Terakhir</label>
                         <select name="pendidikan" id="pendidikan" onchange="tes()" class="form-control tanggal">
                             <option></option>
-                            <option value="sd">SD</option>
-                            <option value="smp">SMP</option>
-                            <option value="sederajat">SMA/SMK</option>
-                            <option value="diploma">D1/Diploma</option>
-                            <option value="sarjana">S1/Sarjana</option>
-                            <option value="master">S2/Master</option>
-                            <option value="doktor">S3/Doktor</option>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA/SMK">SMA/SMK</option>
+                            <option value="Diploma/D1">Diploma/D1</option>
+                            <option value="Sarjana/S1">Sarjana/S1</option>
+                            <option value="Master/S2">Master/S2</option>
+                            <option value="Doktor">Doktor/Doktor</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Nama Sekolah</label>
-                        <input type="text" name="nama-sekolah" class="form-control sekolah" id="sekolah" onchange="tes()" placeholder="SMA Ceria Selalu">
+                        <input type="text" name="nama_sekolah" class="form-control sekolah" id="sekolah" onchange="tes()" placeholder="SMA Ceria Selalu">
                     </div>
                     <div class="form-group">
                         <label>Jurusan</label>
                         <select name="jurusan" id="jurusan" onchange="tes()" class="form-control jurusan">
                             <option value=""></option>
-                            <option value="elektro">Elektro</option>
-                            <option value="komputer">Teknologi Informatika</option>
-                            <option value="industri">Industri</option>
-                            <option value="manajemen">Manajemen</option>
-                            <option value="matematika">Matematika</option>
-                            <option value="fisika">Fisika</option>
-                            <option value="teknik-nuklir">Teknik Nuklir</option>
+                            <option value="Elektro">Elektro</option>
+                            <option value="Komputer">Teknologi Informatika</option>
+                            <option value="Industri">Industri</option>
+                            <option value="Manajemen">Manajemen</option>
+                            <option value="Matematika">Matematika</option>
+                            <option value="Fisika">Fisika</option>
+                            <option value="Teknik-Nuklir">Teknik Nuklir</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -226,7 +226,7 @@
                     </div>
                     <div class="form-group">
                         <label>Tahun Lulus</label>
-                        <select name="tahun-lulus" id="lulus" onchange="tes()" class="form-control lulus">
+                        <select name="tahun_lulus" id="lulus" onchange="tes()" class="form-control lulus">
                             <option value=""></option>
                             <option value="2016">2016</option>
                             <option value="2017">2017</option>
@@ -250,58 +250,58 @@
                     <legend class="w-auto px-3">Pengalaman Kerja</legend>
                     <div class="form-group">
                         <label>Nama Perusahaan</label>
-                        <input type="text" name="nama-perusahaan" class="form-control nama-perusahaan" id="perusahaan" onchange="tes()" placeholder="PT.Unikom">
+                        <input type="text" name="nama_perusahaan" class="form-control nama-perusahaan" id="perusahaan" onchange="tes()" placeholder="PT.Unikom">
                     </div>
                     <div class="form-group">
                         <label>Jabatan</label>
                         <select name="jabatan" id="jabatan" onchange="tes()" class="form-control jabatan">
                             <option value=""></option>
-                            <option value="direktur">Direktur</option>
-                            <option value="manager">Manager</option>
-                            <option value="supervisior">Supervisior</option>
-                            <option value="ceo">Presiden Direktur - CEO</option>
-                            <option value="vice-presiden">Vice Presiden</option>
+                            <option value="Direktur">Direktur</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Supervisior">Supervisior</option>
+                            <option value="CEO">Presiden Direktur - CEO</option>
+                            <option value="Vice-Presiden">Vice Presiden</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Bidang Pekerjaan</label>
                         <select name="bidang" id="bidang" onchange="tes()" class="form-control jabatan">
                             <option value=""></option>
-                            <option value="admin">Administrasi</option>
-                            <option value="ilmuwan">Ilmuwan</option>
-                            <option value="fotografer">Fotografer</option>
-                            <option value="hukum">Hukum</option>
-                            <option value="komputer">Teknologi Informatisi</option>
+                            <option value="Admin">Administrasi</option>
+                            <option value="Ilmuwan">Ilmuwan</option>
+                            <option value="Fotografer">Fotografer</option>
+                            <option value="Hukum">Hukum</option>
+                            <option value="Komputer">Teknologi Informatisi</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Lokasi</label>
-                        <select name="lokasi-kerja" id="lokasi-kerja" onchange="tes()" class="form-control lokasi">
+                        <select name="lokasi_kerja" id="lokasi-kerja" onchange="tes()" class="form-control lokasi">
                             <option value=""></option>
-                            <option value="bandung">Bandung</option>
-                            <option value="jakarta">Jakarta</option>
-                            <option value="surabaya">Surabaya</option>
-                            <option value="medan">Medan</option>
-                            <option value="solo">Solo</option>
+                            <option value="Bandung">Bandung</option>
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Medan">Medan</option>
+                            <option value="Solo">Solo</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Gaji</label>
-                        <input type="text" name="gaji-pengalaman" class="form-control gaji" id="pengalaman" onchange="tes()" placeholder="Rp.">
+                        <input type="text" name="gaji_pengalaman" class="form-control gaji" id="pengalaman" onchange="tes()" placeholder="Rp.">
                     </div>
                     <div class="form-group">
                         <label>Tanggal Mulai</label>
-                        <input type="date" name="tanggal-mulai" class="form-control tanggal-mulai" id="tanggal-mulai" onchange="tes()">
+                        <input type="date" name="tanggal_mulai" class="form-control tanggal-mulai" id="tanggal-mulai" onchange="tes()">
                     </div>
                     <div class="form-group">
                         <label>Jenis Kontrak</label>
-                        <select name="tipe-kontrak" id="jenis-kontrak" onchange="tes()" class="form-control jenis-kontrak">
+                        <select name="tipe_kontrak" id="jenis-kontrak" onchange="tes()" class="form-control jenis-kontrak">
                             <option value=""></option>
-                            <option value="purna">Purna Waktu</option>
-                            <option value="paruh">Paruh Waktu</option>
-                            <option value="magang">Magang</option>
-                            <option value="sementara">Sementara</option>
-                            <option value="kontrak">Kontrak</option>
+                            <option value="Purna">Purna Waktu</option>
+                            <option value="Paruh">Paruh Waktu</option>
+                            <option value="Magang">Magang</option>
+                            <option value="Sementara">Sementara</option>
+                            <option value="Kontrak">Kontrak</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -316,7 +316,7 @@
                     <legend class="w-auto px-3">Pengalaman Organisasi</legend>
                     <div class="form-group">
                         <label>Nama Organisasi</label>
-                        <input type="text" name="nama-organisasi" class="form-control organisasi" id="organisasi" onchange="tes()" placeholder="Osis/Unikom Organization">
+                        <input type="text" name="nama_organisasi" class="form-control organisasi" id="organisasi" onchange="tes()" placeholder="Osis/Unikom Organization">
                     </div>
                     <div class="form-group">
                         <label>Posisi</label>
@@ -353,7 +353,7 @@
                     </div>
                     <div class="form-group">
                         <label>Deskripsi (Opsional)</label>
-                        <textarea name="deskripsi-pelatihan" class="form-control deskripsi" id="deskripsi-pelatihan" onchange="tes()" rows="5"></textarea>
+                        <textarea name="deskripsi_pelatihan" class="form-control deskripsi" id="deskripsi-pelatihan" onchange="tes()" rows="5"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Dikeluarkan Oleh</label>
@@ -361,7 +361,7 @@
                     </div>
                     <div class="form-group">
                         <label>Dikeluarkan Tanggal</label>
-                        <input type="date" name="tanggal-keluar" class="form-control tanggal-keluar-sertifikat" id="tanggal-sertifikat" onchange="tes()">
+                        <input type="date" name="tanggal_keluar" class="form-control tanggal-keluar-sertifikat" id="tanggal-sertifikat" onchange="tes()">
                     </div>
                     <div>
                         <label class="form-label">Sertifikat Pelatihan</label>
