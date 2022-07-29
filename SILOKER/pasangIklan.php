@@ -351,13 +351,10 @@
         </div>
     </div>
     <?php else : ?>
-    <div class="jpageCon1">
-        <div class="container">
-            <div class="row">
-                <div class="justify-content-center align-items-center">
-                    <h1><b>Please Fill In The Complete Bio, Especially NIK!</b></h1>
-                    <h1><b>Please Fill In The Complete Bio, Especially NIK!</b></h1>
-                </div>
+    <div class="jpageCon1 text-center ">
+        <div class="row warningNoNik">
+            <div class="col align-self-center">
+                BELUM ADA NIK. <br> TOLONG! <br> LENGKAPI BIODATA TERLEBIHI DAHULU <br> DI MENU PROFILE.
             </div>
         </div>
     </div>

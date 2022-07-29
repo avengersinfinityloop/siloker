@@ -74,6 +74,11 @@ logs                    :v1.0 20220623 - create file
     text-shadow: 5px 5px black;
     text-decoration: none;
 }
+.jpageCon1 .warningNoNik {
+    height: 500px;
+    font-size: 50px;
+    font-weight: bolder;
+}
 
 /* CONTENT KEDUA */
 .jpageCon2{
