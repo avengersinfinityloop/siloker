@@ -19,6 +19,7 @@
     $nik = cekNik($shareUsername);
     if ($nik == 0) {
         $infoNik = ' = NIK Tidak Ada';
+        $hideMenu = 1;
     }
 
     //CONTENT FORM
@@ -179,6 +180,7 @@
 <!-- CONTENT -->
 <div class="">
     <!-- FORM -->
+    <?php if ($hideMenu != 1) : ?>
     <div class="jpageCon1">
         <div class="container">
             <div class="row">
@@ -348,6 +350,18 @@
             </table>
         </div>
     </div>
+    <?php else : ?>
+    <div class="jpageCon1">
+        <div class="container">
+            <div class="row">
+                <div class="justify-content-center align-items-center">
+                    <h1><b>Please Fill In The Complete Bio, Especially NIK!</b></h1>
+                    <h1><b>Please Fill In The Complete Bio, Especially NIK!</b></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif ?>
 </div>
 <!-- FOOTER -->
 <div class="jpageFooter">

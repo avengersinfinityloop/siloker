@@ -67,10 +67,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
-                            <?php if($hideMenu != 1) :?>
                             <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
                             <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
-                            <?php endif ?>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -105,7 +103,6 @@
                 </ul>
                 <div class="d-flex">
                     <b class="me-2">
-                        <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
                             <?php echo $shareUsername.$infoNik; ?>
                             <a href='index.php' class="btn">LOGOUT</a>
@@ -170,9 +167,7 @@
                 <div class="col-md-4">
                     <h2 class="jText1">KURSUS</h2>
                     <p class="jText2 mb-3">Hanya Dengan Mengikuti Kursus Disini Anda Akan Mendapatkan Bonus Keren. <br> Yuk Belajar!</p>
-                    <?php if($hideMenu != 1) :?>
                     <p class="jText3"><a class="btn btn-outline-secondary" href="cekTempat.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">CEK TEMPAT</a></p>
-                    <?php endif ?>
                 </div>
                 <div class="col-md-2 my-3 maskot">
                     <img src="multimedia/image/concept/maskotsiloker.png" alt="">
@@ -180,9 +175,7 @@
                 <div class="col-md-4">
                     <h2 class="jText1">PERUSAHAAN</h2>
                     <p class="jText2 mb-3">Pasang iklan Kursus agar terhubung dengan orang yang paling potensial. <br> Yuk Pasang!</p>
-                    <?php if($hideMenu != 1) :?>
                     <p class="jText3"><a class="btn btn-outline-secondary" href="pasangIklan.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">PASANG IKLAN</a></p>
-                    <?php endif ?>
                 </div>
             </div>
     </div>

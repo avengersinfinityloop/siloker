@@ -19,6 +19,7 @@
     $nik = cekNik($shareUsername);
     if ($nik == 0) {
         $infoNik = ' = NIK Tidak Ada';
+        $hideMenu = 1;
     }
 
     //CONTENT IKLAN
@@ -175,7 +176,11 @@
                     <td><?php echo $result['harga']?></td>
                     <td><?php echo $result['wilayah']?></td>
                     <td><?php echo $result['idIklan']?></td>
-                    <td><a href="submit.php?idIklan=<?=$result['idIklan']?>" class="btn btn-outline-secondary">DAFTAR</a></td>
+                    <td>
+                        <?php if ($hideMenu != 1) : ?>
+                            <a href="submit.php?idIklan=<?=$result['idIklan']?>" class="btn btn-outline-secondary">DAFTAR</a>
+                        <?php endif ?>
+                    </td>
                 </tr>
                 <?php
                 }
@@ -187,6 +192,7 @@
         </div>
     </div>
     <!-- LIST DAFTAR -->
+    <?php if ($hideMenu != 1) : ?>
     <div class="jpageCon2">
         <div class="container">
             <h2 align="center">INFORMASI LIST YANG SUDAH DAFTAR  <br> BY ID USER <?php echo $nik ?></h2><br><br>
@@ -253,6 +259,7 @@
             </div>
         </div>
     </div>
+    <?php endif ?>
 </div>
 <!-- FOOTER -->
 <div class="jpageFooter">
