@@ -38,7 +38,7 @@
     $halAktifDaftar = (isset($_GET["halDaftar"])) ? $_GET["halDaftar"] : 1;
     $awalDataDaftar = ($RowPerHalDaftar * $halAktifDaftar)-$RowPerHalDaftar;
     $noDaftar=$awalDataDaftar; //tampilan nomor pada table LIST DAFTAR
-    $query2 = mysqli_query($conn, "SELECT * FROM `daftar_kursus` WHERE nik = $nik ORDER BY tanggal LIMIT $awalDataDaftar, $RowPerHalDaftar "); //query pada table LIST DAFTAR
+    $query2 = mysqli_query($conn, "SELECT daftar_kursus.idDaftar,daftar_kursus.nik,daftar_kursus.idIklan,daftar_kursus.tanggal,pasang_iklan.imageRegister FROM daftar_kursus INNER JOIN pasang_iklan on daftar_kursus.idIklan = pasang_iklan.idIklan WHERE daftar_kursus.nik = $nik ORDER BY tanggal LIMIT $awalDataDaftar, $RowPerHalDaftar "); //query pada table LIST DAFTAR
     $query3 = mysqli_query($conn, "SELECT idDaftar FROM `daftar_kursus` WHERE nik = $nik"); //query untuk tampilan select dan di DELETE
     //CONTENT LIST DAFTAR >>> DENGAN MENGGUNAKAN BUTTON DELETE MAKA AKAN DELETE ROW DI DATABASE
     if(isset($_POST['delete'])){ //berjalan ketika FORM di delete
@@ -48,7 +48,12 @@
         $query2 = mysqli_query($conn, "SELECT * FROM `daftar_kursus` WHERE nik = $nik ORDER BY tanggal");
         $query3 = mysqli_query($conn, "SELECT idDaftar FROM `daftar_kursus` WHERE nik = $nik");
     }
+    //CONTENT HIDE IF NO ROW
+    if (mysqli_num_rows($query2) <= 0) {
+        $hideMenu = 1;
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -133,36 +138,37 @@
 <div class="">
     <!-- IKLAN -->
     <div class="jpageCon1">
-        <div class="container">
+        <div class="container jlist">
             <!-- navigasi -->
             <div class="pagination mb-3">
                 <?php if($halAktifIklan > 1) : ?>
-                    <a class="page-link" href="? halIklan=<?= $halAktifIklan - 1 ?>" >Previous</a>
+                    <a class="jpagination" href="? halIklan=<?= $halAktifIklan - 1 ?>" >Previous</a>
                 <?php else : ?>
-                    <a class="page-link" href="" >Previous</a>
+                    <a class="jpagination" href="" >Previous</a>
                 <?php endif; ?>
                 <?php for($i = 1; $i <= $HalPerPageIklan; $i++) :?>
                     <?php if( $i == $halAktifIklan) : ?>
-                        <a class="page-link" href="?halIklan=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                        <a class="jpagination" href="?halIklan=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
                     <?php else : ?>
-                        <a class="page-link" href="?halIklan=<?= $i  ?>"><?= $i  ?></a>
+                        <a class="jpagination" href="?halIklan=<?= $i  ?>"><?= $i  ?></a>
                     <?php endif ; ?>
                 <?php endfor; ?>
                 <?php if($halAktifIklan < $HalPerPageIklan) : ?>
-                    <a class="page-link" href="?halIklan=<?= $halAktifIklan + 1; ?>">Next</a>
+                    <a class="jpagination" href="?halIklan=<?= $halAktifIklan + 1; ?>">Next</a>
                 <?php else : ?>
-                    <a class="page-link" href="" >Next</a>
+                    <a class="jpagination" href="" >Next</a>
                 <?php endif; ?>
             </div>
             <table class="table jtable table-hover">
                 <tr style="background-color: #C5C6C7;">
                     <th width="50px">NO</th>
+                    <th width="110px">ID IKLAN</th>
                     <th>NAMAKURSUS</th>
                     <th>BIDANG</th>
                     <th>HARGA</td>
                     <th>WILAYAH</th>
-                    <th width="80px">IDIKLAN</th>
-                    <th width="80px">ACTION</th>
+                    <th width="100px">BANNER</th>
+                    <th width="100px">ACTION</th>
                 </tr>
                 <tr class="spacer table-group-divider"><td colspan="100"></td></tr>
                 <?php
@@ -171,11 +177,12 @@
                 ?>
                 <tr>
                     <td><?php echo $noIklan?></td>
+                    <td><?php echo $result['idIklan']?></td>
                     <td><?php echo $result['namaKursus']?></td>
                     <td><?php echo $result['bidang']?></td>
                     <td><?php echo $result['harga']?></td>
                     <td><?php echo $result['wilayah']?></td>
-                    <td><?php echo $result['idIklan']?></td>
+                    <td><img src="<?php echo $result['imageRegister']?>" height="40px" width="auto"></td>
                     <td>
                         <?php if ($hideMenu != 1) : ?>
                             <a href="submit.php?idIklan=<?=$result['idIklan']?>" class="btn btn-outline-secondary">DAFTAR</a>
@@ -195,34 +202,35 @@
     <?php if ($hideMenu != 1) : ?>
     <div class="jpageCon2">
         <div class="container">
-            <h2 align="center">INFORMASI LIST YANG SUDAH DAFTAR  <br> BY ID USER <?php echo $nik ?></h2><br><br>
+            <h2 align="center" class="mt-3">LIST IKLAN YANG SUDAH TERDAFTAR</h2><br><br>
             <!-- navigasi -->
             <div class="pagination mb-3">
                 <?php if($halAktifDaftar > 1) : ?>
-                    <a class="page-link" href="? halDaftar=<?= $halAktifDaftar - 1 ?>" >Previous</a>
+                    <a class="jpagination" href="? halDaftar=<?= $halAktifDaftar - 1 ?>" >Previous</a>
                 <?php else : ?>
-                    <a class="page-link" href="" >Previous</a>
+                    <a class="jpagination" href="" >Previous</a>
                 <?php endif; ?>
                 <?php for($i = 1; $i <= $HalPerPageDaftar; $i++) :?>
                     <?php if( $i == $halAktifDaftar) : ?>
-                        <a class="page-link" href="?halDaftar=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                        <a class="jpagination" href="?halDaftar=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
                     <?php else : ?>
-                        <a class="page-link" href="?halDaftar=<?= $i  ?>"><?= $i  ?></a>
+                        <a class="jpagination" href="?halDaftar=<?= $i  ?>"><?= $i  ?></a>
                     <?php endif ; ?>
                 <?php endfor; ?>
                 <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
-                    <a class="page-link" href="?halDaftar=<?= $halAktifDaftar + 1; ?>">Next</a>
+                    <a class="jpagination" href="?halDaftar=<?= $halAktifDaftar + 1; ?>">Next</a>
                 <?php else : ?>
-                    <a class="page-link" href="" >Next</a>
+                    <a class="jpagination" href="" >Next</a>
                 <?php endif; ?>
             </div>
-            <table class="table table-bordered table-striped tableIklan">
-                <tr>
-                    <th width="50px">No</th>
-                    <th>idDaftar</td>
-                    <th>nik</td>
-                    <th>idIklan</th>
-                    <th width="100px">tanggal</th>
+            <table class="table table-bordered border-secondary table-light">
+                <tr class="table-dark">
+                    <th width="50px">NO</th>
+                    <th>ID DAFTAR</td>
+                    <th>NIK</td>
+                    <th>ID IKLAN</th>
+                    <th width="100px">TANGGAL DAFTAR</th>
+                    <th width="100px">BANNER</th>
                 </tr>
                 <?php
                 while($result2 = mysqli_fetch_array($query2)){
@@ -234,17 +242,19 @@
                     <td><?php echo $result2['nik']?></td>
                     <td><?php echo $result2['idIklan']?></td>
                     <td><?php echo $result2['tanggal']?></td>
+                    <td><img src="<?php echo $result2['imageRegister']?>" height="40px" width="auto"></td>
                 </tr>
                 <?php
                 }
                 ?>
                 <tr>
-                    <td colspan="5" align="right"><div class="me-5">DELETE BY ID</div></td>
+                    <td colspan="6" align="right"><div class="me-5">DELETE BY ID</div></td>
                 </tr>
                 <tr>
                 <form method="post">
-                    <td colspan="5" align="right">
+                    <td colspan="6" align="right">
                     <select name="selectDel">
+                            <option value="">PILIH</option>
                         <?php while($result3 = mysqli_fetch_array($query3)) : ?>
                             <option value="<?php echo $result3['idDaftar']?>"><?php echo $result3['idDaftar']?></option>
                         <?php endwhile ?>

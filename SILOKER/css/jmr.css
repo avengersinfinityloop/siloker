@@ -148,3 +148,19 @@ logs                    :v1.0 20220623 - create file
 .jtable td {
     font-size: 15px;
 }
+
+.jlist {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.jpagination {
+    color: black;
+    margin-right: 10px;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    text-decoration: none;
+}

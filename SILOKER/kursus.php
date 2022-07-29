@@ -36,6 +36,7 @@
     }
     while ($result1 = mysqli_fetch_row($query1));
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
