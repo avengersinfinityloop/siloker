@@ -50,7 +50,7 @@
     }
     //CONTENT HIDE IF NO ROW
     if (mysqli_num_rows($query2) <= 0) {
-        $hideMenu = 1;
+        $hideMenu1 = 1;
     }
 ?>
 
@@ -138,7 +138,7 @@
 <div class="">
     <!-- IKLAN -->
     <div class="jpageCon1">
-        <div class="container jlist">
+        <div class="container jIklan">
             <!-- navigasi -->
             <div class="pagination mb-3">
                 <?php if($halAktifIklan > 1) : ?>
@@ -159,11 +159,11 @@
                     <a class="jpagination" href="" >Next</a>
                 <?php endif; ?>
             </div>
-            <table class="table jtable table-hover">
+            <table class="table table-hover">
                 <tr style="background-color: #C5C6C7;">
                     <th width="50px">NO</th>
                     <th width="110px">ID IKLAN</th>
-                    <th>NAMAKURSUS</th>
+                    <th>NAMA KURSUS</th>
                     <th>BIDANG</th>
                     <th>HARGA</td>
                     <th>WILAYAH</th>
@@ -199,73 +199,89 @@
         </div>
     </div>
     <!-- LIST DAFTAR -->
-    <?php if ($hideMenu != 1) : ?>
+    <?php if ($hideMenu1 != 1) : ?>
     <div class="jpageCon2">
-        <div class="container">
-            <h2 align="center" class="mt-3">LIST IKLAN YANG SUDAH TERDAFTAR</h2><br><br>
-            <!-- navigasi -->
-            <div class="pagination mb-3">
-                <?php if($halAktifDaftar > 1) : ?>
-                    <a class="jpagination" href="? halDaftar=<?= $halAktifDaftar - 1 ?>" >Previous</a>
-                <?php else : ?>
-                    <a class="jpagination" href="" >Previous</a>
-                <?php endif; ?>
-                <?php for($i = 1; $i <= $HalPerPageDaftar; $i++) :?>
-                    <?php if( $i == $halAktifDaftar) : ?>
-                        <a class="jpagination" href="?halDaftar=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
-                    <?php else : ?>
-                        <a class="jpagination" href="?halDaftar=<?= $i  ?>"><?= $i  ?></a>
-                    <?php endif ; ?>
-                <?php endfor; ?>
-                <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
-                    <a class="jpagination" href="?halDaftar=<?= $halAktifDaftar + 1; ?>">Next</a>
-                <?php else : ?>
-                    <a class="jpagination" href="" >Next</a>
-                <?php endif; ?>
-            </div>
-            <table class="table table-bordered border-secondary table-light">
-                <tr class="table-dark">
-                    <th width="50px">NO</th>
-                    <th>ID DAFTAR</td>
-                    <th>NIK</td>
-                    <th>ID IKLAN</th>
-                    <th width="100px">TANGGAL DAFTAR</th>
-                    <th width="100px">BANNER</th>
-                </tr>
-                <?php
-                while($result2 = mysqli_fetch_array($query2)){
-                $noDaftar++
-                ?>
-                <tr>
-                    <td><?php echo $noDaftar?></td>
-                    <td><?php echo $result2['idDaftar']?></td>
-                    <td><?php echo $result2['nik']?></td>
-                    <td><?php echo $result2['idIklan']?></td>
-                    <td><?php echo $result2['tanggal']?></td>
-                    <td><img src="<?php echo $result2['imageRegister']?>" height="40px" width="auto"></td>
-                </tr>
-                <?php
-                }
-                ?>
-                <tr>
-                    <td colspan="6" align="right"><div class="me-5">DELETE BY ID</div></td>
-                </tr>
-                <tr>
-                <form method="post">
-                    <td colspan="6" align="right">
-                    <select name="selectDel">
-                            <option value="">PILIH</option>
-                        <?php while($result3 = mysqli_fetch_array($query3)) : ?>
-                            <option value="<?php echo $result3['idDaftar']?>"><?php echo $result3['idDaftar']?></option>
-                        <?php endwhile ?>
-                    </select>
-                        <input type="submit" name="delete" value="DELETE" class="btn btn-outline-secondary mx-3">
-                    </td>
-                </form>
-                </tr>
-            </table>
-            <div class="text-end">
-                <a href="kursus.php"><input class="me-3 btn btn-outline-secondary" type="button" value="KEMBALI KE LAPTOP"></a>
+        <div class="container jdaftarIklan text-center">
+            <h2 align="center" class="mt-3">DAFTAR IKLAN "<?php echo $shareUsername; ?>"</h2><br>
+            <div class="row justify-content-center">
+                <div class="col-xl-2">
+                    <div class="maskot2 mb-5">
+                        <img src="multimedia/image/concept/maskotsiloker.png" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <table class="table">
+                        <tr>
+                            <td colspan="7" align="left">
+                                <!-- navigasi -->
+                                <div class="pagination">
+                                    <?php if($halAktifDaftar > 1) : ?>
+                                        <a class="jpagination" href="? halDaftar=<?= $halAktifDaftar - 1 ?>" >Previous</a>
+                                    <?php else : ?>
+                                        <a class="jpagination" href="" >Previous</a>
+                                    <?php endif; ?>
+                                    <?php for($i = 1; $i <= $HalPerPageDaftar; $i++) :?>
+                                        <?php if( $i == $halAktifDaftar) : ?>
+                                            <a class="jpagination" href="?halDaftar=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                                        <?php else : ?>
+                                            <a class="jpagination" href="?halDaftar=<?= $i  ?>"><?= $i  ?></a>
+                                        <?php endif ; ?>
+                                    <?php endfor; ?>
+                                    <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
+                                        <a class="jpagination" href="?halDaftar=<?= $halAktifDaftar + 1; ?>">Next</a>
+                                    <?php else : ?>
+                                        <a class="jpagination" href="" >Next</a>
+                                    <?php endif; ?>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="table-dark">
+                            <th width="50px">NO</th>
+                            <th>ID DAFTAR</td>
+                            <th>NIK</td>
+                            <th>ID IKLAN</th>
+                            <th width="120px">TANGGAL DAFTAR</th>
+                            <th width="100px">BANNER</th>
+                            <th width="100px">ACTION</th>
+                        </tr>
+                        <?php
+                        while($result2 = mysqli_fetch_array($query2)){
+                        $noDaftar++
+                        ?>
+                        <tr>
+                            <td><?php echo $noDaftar?></td>
+                            <td><?php echo $result2['idDaftar']?></td>
+                            <td><?php echo $result2['nik']?></td>
+                            <td><?php echo $result2['idIklan']?></td>
+                            <td><?php echo $result2['tanggal']?></td>
+                            <td><img src="<?php echo $result2['imageRegister']?>" height="40px" width="auto"></td>
+                            <td>
+                                <?php if ($hideMenu != 1) : ?>
+                                    <a href="submit.php?idIklan=<?=$result2['idIklan']?>" class="btn btn-outline-secondary">VIEW</a>
+                                <?php endif ?>
+                            </td>
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                        <tr>
+                            <td colspan="7" align="right"><div class="me-3">DELETE BY ID</div></td>
+                        </tr>
+                        <tr>
+                        <form method="post">
+                            <td colspan="7" align="right">
+                            <select name="selectDel">
+                                    <option value="">PILIH</option>
+                                <?php while($result3 = mysqli_fetch_array($query3)) : ?>
+                                    <option value="<?php echo $result3['idDaftar']?>"><?php echo $result3['idDaftar']?></option>
+                                <?php endwhile ?>
+                            </select>
+                                <input type="submit" name="delete" value="DELETE" class="btn btn-outline-secondary mx-3">
+                            </td>
+                        </form>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

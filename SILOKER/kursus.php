@@ -158,6 +158,12 @@
                         <img src="multimedia/image/LibraryImage/default.jpg" alt="" class="highlight">
                     <?php endif ?>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev" class="btn btn-outline-secondary">
+                    <img src="multimedia/image/icons/left.png" height="100px" alt="">
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <img src="multimedia/image/icons/right.png" height="100px" alt="">
+                </button>
             </div>
         </div>
     </div>
@@ -179,6 +185,7 @@
                     <p class="jText3"><a class="btn btn-outline-secondary" href="pasangIklan.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">PASANG IKLAN</a></p>
                 </div>
             </div>
+        </div>
     </div>
 </div>
 <!-- FOOTER -->

@@ -58,7 +58,7 @@ logs                    :v1.0 20220623 - create file
     box-shadow: 10px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     border-radius: 20px;
 }
-.jpageCon1 .tableDaftar {
+.jpageCon1 .tableForm {
     margin-left: auto;
     margin-right: auto;
     width: 700px;
@@ -109,22 +109,6 @@ logs                    :v1.0 20220623 - create file
     border: 2px solid black;
     padding: 5px 20px 5px 20px;
 }
-.jpageCon2 .iklanInfo{
-    height: auto;
-}
-.jpageCon2 .iklanInfo img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    width: 1250px;
-}
-.jpageCon2 .iklanInfo table {
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    height: auto;
-}
 .jpageCon2 select {
     width: 100px;
 }
@@ -141,20 +125,35 @@ logs                    :v1.0 20220623 - create file
     width: 100%;
 }
 
-.jtable th {
-    font-size: 20px;
-}
-
-.jtable td {
-    font-size: 15px;
-}
-
-.jlist {
+/* IKLAN */
+.jIklan {
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     border-radius: 5px;
     padding: 10px;
 }
+.jIklan th {
+    font-size: 20px;
+}
+.jIklan td {
+    font-size: 15px;
+}
 
+/*IKLAN TERDAFTAR*/
+.jdaftarIklan {
+    font-family: 'Times New Roman', Times, serif;
+}
+.jdaftarIklan table {
+    width: 800px;
+    margin: 0px auto 0px auto;
+    background-color: white;
+}
+.maskot2 img{
+    height: 300px;
+    width: 200px;
+    margin: auto auto auto auto;
+}
+
+/* lain-lain */
 .jpagination {
     color: black;
     margin-right: 10px;
