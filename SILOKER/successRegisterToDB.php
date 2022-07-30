@@ -22,7 +22,7 @@ $shareUsername = $_SESSION['username'];
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- buat icon -->
 	<link rel="shortcut icon" href="multimedia/image/logo//silokerlogo.png">
-	<title>About</title>
+	<title>Berhasil Daftar</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrapv2/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/plugins.css">
 	<link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
