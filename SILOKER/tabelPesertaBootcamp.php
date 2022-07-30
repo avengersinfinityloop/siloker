@@ -54,14 +54,6 @@ $shareUsername = $_SESSION['username'];
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="index.php">Home</a>
                         </li>
-                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">Loker</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="dashloker.php">Menu Utama</a>
-                                </li>
-                                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="loker.php">Main Loker</a>
-                                </li>
-                            </ul>
-                        </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">Kursus</a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="kursus.php">Menu</a>
@@ -69,6 +61,14 @@ $shareUsername = $_SESSION['username'];
                                 <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="cekTempat.php">Cek Tempat</a>
                                 </li>
                                 <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="pasangIklan.php">Pasang Iklan</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">Loker</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="dashloker.php">Menu Utama</a>
+                                </li>
+                                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="loker.php">Main Loker</a>
                                 </li>
                             </ul>
                         </li>
@@ -175,6 +175,56 @@ $shareUsername = $_SESSION['username'];
         </table>
         <!-- table -->
     </div>
+
+    <!-- Footer -->
+    <div class="space200"></div>
+    <div class="space200"></div>
+    <footer class="dark-wrapper inverse-text">
+        <div class="space100"></div>
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="dashloker.php" target="_blank">Loker</a></li>
+                        <li><a href="kursus.php" target="_blank">Kursus</a></li>
+                        <li><a href="indexBootcamp.php" target="_blank">Bootcamp</a></li>
+                        <li><a href="profil.php" target="_blank">Profil</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Tentang Kami</h3>
+                    <ul>
+                        <li><a href="#" target="_blank">Hubungi Kami</a></li>
+                        <li><a href="#" target="_blank">FAQ</a></li>
+                        <li><a href="#" target="_blank">Kirim Saran</a></li>
+                        <li><a href="#" target="_blank">Profil Kami</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <img src="multimedia/image/logo/silokerwithtextlogo.png" width="50%"" alt=" siloker">
+                    <p>Cari Lowongan pekerjaan dengan cepat bersama SILOKER.</p>
+                    <br>
+                    <p><strong>Head Office : </strong>Jl.Haji Dharma Yasa, Blok M-8 Ds.Mandalawangi, Kec.Paseh 40383, Kab.Bandung</p>
+                    <p><strong>Jakarta Office : </strong>Jl.Pintu Terbuka, Komplek Gerbang Tertutup,Kec.Sawah Besar,Kota Jakarta Pusat</p>
+                </div>
+                <div class="align-self-center">
+                    <ul>
+                        <li type="none">
+                            <a href="https://www.facebook.com/Siloker-109697025151643/" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/siloker21/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://twitter.com/AvengersLoopIF9" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                            <a href="https://www.linkedin.com/in/ail2022" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="mailto:avengersinfinityloop@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="space10"></div>
+            <p class="text-center">© 2022 Tifa's Bootcamp. All rights reserved.</p>
+            <!-- /.container -->
+    </footer>
+    <!-- Footer -->
 
     <!-- Script -->
     <div>
