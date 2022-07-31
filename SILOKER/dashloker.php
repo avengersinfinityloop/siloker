@@ -1,6 +1,8 @@
 <?php
   session_start();
-  if ($_SESSION and $_SESSION['username']) $shareUsername = $_SESSION['username']
+  //if ($_SESSION and $_SESSION['username']) 
+   $shareUsername = $_SESSION['username'];
+  // var_dump($shareUsername);
 ?>
 
 <!--  
@@ -38,7 +40,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <div class="container-fluid">
-          <a class="navbar-brand" href="dashloker.php">SILOKER</a>
+        <a class="navbar-brand" href="dashloker.php">
+            <img src="multimedia/image/logo/silokerlogo.png" alt="no gambar" width="30" height="30">SILOKER
+        </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -84,80 +88,27 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" style="padding-left: 15rem;">
-                  <p>Helo, <strong></strong></p>
+                  <p>Helo, <strong><?php echo $shareUsername;?></strong></p>
                 </a>
               </li>
             </ul>
+            </div>  
           </div>
-        </div>
+          
 
-  <!-- Button trigger modal -->
-    <a href="superadminloker.php" class="btn btn-light">Masuk</a>
-
-            <!-- Modal -->
-            <!-- <div class="modal fade modalfix" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Masuk Bersama SILOKER</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <section class="vh-20" style="background-color: #170106;">
-                      <div class="container py-5 h-60">
-                        <div class="row d-flex justify-content-center align-items-center h-100">
-                          <div class="col col-xl-10">
-                            <div class="card" style="border-radius: 1rem;">
-                              <div class="row g-0">
-                                <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                  <div class="card-body p-4 p-lg-5 text-black">
-                                    <form>
-                                      <div class="d-flex align-items-center mb-3 pb-1">
-                                        <img class="w-25" src="multimedia/image/siloker.png" alt="siloker">
-                                      </div>
-                    
-                                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Masuk Ke Akun Anda</h5>
-                    
-                                      <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form2Example17">Alamat Surel</label>
-                                      </div>
-                    
-                                      <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form2Example27">Kata Sandi</label>
-                                      </div>
-                    
-                                      <div class="pt-1 mb-4">
-                                        <button class="btn btn-dark btn-lg btn-block" type="button">Masuk</button>
-                                      </div>
-                    
-                                      <a class="small text-muted" href="#!">Lupa Kata Sandi?</a>
-                                      <p class="mb-5 pb-lg-2" style="color: #393f81;">Tidak Punya Akun? <a href="#!"
-                                          style="color: #393f81;">Daftar Disini!</a></p>
-                                      <a href="#!" class="small text-muted">Syarat & Ketentuan .</a>
-                                      <a href="#!" class="small text-muted">Kebijakan Pribadi</a>
-                                    </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Kembali</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-  </div> -->
+  <!-- Button Login -->
+            <?php if( $shareUsername == "superadm") {
+              ?> <a href="superadminloker.php" class="btn btn-light btn-sm " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Masuk Admin</a> &nbsp;&nbsp;&nbsp;
+            <?php 
+            } ?>
+            <!-- Masih sebagai Alternatif bukan kenyataannya -->
+            <?php if( $shareUsername) {
+              ?> <a href="index.php" class="btn btn-light">Keluar</a>
+            <?php 
+            } else {
+              ?><a href="index.php" class="btn btn-light">Masuk</a> <?php } ?>
   </div>
-  </nav>
+</nav>
 
 <br>
 <br>
@@ -190,19 +141,6 @@
             </div>
           </div>
         </div>
-    </div>
-
-<!-- Search Bar -->
-    <div class="col-lg-12 text-center mt-5">
-      <h1>SILOKER - Cari Lowongan Pekerjaan</h1>
-    </div>
-    <div class="col-md-4 offset-md-4 mt-5 border border-success pt-3">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Cari disini..." aria-label="Recipient's username">
-          <div class="input-group-append">
-            <span class="input-group-text"><i class="fa fa-search"></i></span>
-          </div>
-      </div>
     </div>
 
 <!-- JumboTron (Meet's Loker) -->
@@ -335,6 +273,5 @@
         <div class="container">
           <iframe src="footer.html" width="1280" height="480"></iframe>
         </div>
-
   </body>
 </html>
