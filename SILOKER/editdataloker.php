@@ -14,7 +14,7 @@
       Kelas       : IF-9K/S1/II
       Matkul      : Pemrograman Web 2
       Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
-      Created File On v27072022:1113 (v.0.5)
+      Created File On v31072022 (v.1.5)
 -->
 <html lang="en">
     <head>
@@ -48,7 +48,7 @@
                   <a class="nav-link" href="tambahdataloker.php">Tambah Data</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="editdataloker.php">Edit Data</a>
+                  <a class="nav-link active disabled" href="editdataloker.php">Edit Data</a>
                 </li>
               </ul>
         </div>
@@ -100,9 +100,9 @@
               <h4>Gender</h4>
               <label class="form-label" for="gender">Jenis Kelamin</label>
               <select name="gender" value="<?= $row["gender"]; ?>" class="form-select" aria-label="Default select example">
-                <option>Pria</option>
-                <option value="1">Wanita</option>
-                <option value="2">All Gender</option>
+                <option value="Pria">Pria</option>
+                <option value="Wanita">Wanita</option>
+                <option value="All Gender">All Gender</option>
               </select>
             </div>
 
@@ -112,14 +112,14 @@
               <input class="form-control" name="usia_max" value="<?= $row["usia_max"]; ?>" type="number" placeholder="usia_max" aria-label="default input example">
             </div>
 
-              <div class="col">
+            <div class="col">
                 <h4>Tipe Durasi Kerja</h4>
                 <label class="form-label" for="durasi">Jenis Durasi yang ditetapkan</label>
-                <select name="durasi" class="form-select" value="<?= $row["durasi"]; ?>" aria-label="Default select example">
-                  <option>Full Time</option>
-                  <option value="1">Part Time</option>
-                  <option value="2">Freelance</option>
-                  <option value="3">Magang</option>
+                <select name="durasi" class="form-select" aria-label="Default select example">
+                  <option value="Full Time">Full Time</option>
+                  <option value="Part Time">Part Time</option>
+                  <option value="Freelance">Freelance</option>
+                  <option value="Magang">Magang</option>
                 </select>
               </div>
 
@@ -136,16 +136,16 @@
             <div class="col">
               <h4>Lokasi</h4>
               <label class="form-label" for="lokasi">Wilayah Kota Penetapan</label>
-              <select name="lokasi" value="<?= $row["lokasi"]; ?>" class="form-select" aria-label="Default select example">
-                <option>Bandung</option>
-                <option value="1">Jakarta</option>
-                <option value="2">Surabaya</option>
-                <option value="3">Medan</option>
-                <option value="4">Yogyakarta</option>
-                <option value="5">Subang</option>
-                <option value="6">Purwakarta</option>
-                <option value="7">Jabodetabek</option>
-                <option value="8">Tanggerang</option>
+              <select name="lokasi" class="form-select" aria-label="Default select example">
+                <option value="Bandung">Bandung</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Medan">Medan</option>
+                <option value="Yogyakarta">Yogyakarta</option>
+                <option value="Subang">Subang</option>
+                <option value="Purwakarta">Purwakarta</option>
+                <option value="Jabodetabek">Jabodetabek</option>
+                <option value="Tanggerang">Tanggerang</option>
               </select>
             </div>
 

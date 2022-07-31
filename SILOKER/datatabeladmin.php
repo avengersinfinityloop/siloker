@@ -1,4 +1,12 @@
 <?php 
+
+//  Created By  : Indi Bagus Prasetyo
+//  NIM         : 10121902
+//  Kelas       : IF-9K/S1/II
+//  Matkul      : Pemrograman Web 2
+//  Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
+//  Created File On v31072022:2136 (v.1.1)
+
 include "koneksidb.php";
 if( isset($_POST["submit"])) {
    $data = $_POST;
@@ -50,14 +58,6 @@ if( isset($_POST["submit"])) {
 }
 ?>
 <!doctype html>
-<!--  
-      Created By  : Indi Bagus Prasetyo
-      NIM         : 10121902
-      Kelas       : IF-9K/S1/II
-      Matkul      : Pemrograman Web 2
-      Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
-      Created File On v27072022:1113 (v.0.5)
--->
 <html lang="en">
     <head>
         <!-- MetaData -->

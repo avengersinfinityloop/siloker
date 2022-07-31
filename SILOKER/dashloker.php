@@ -122,21 +122,21 @@
               <img src="multimedia/image/dashloker/carousel1.jpg" class="d-block w-100" alt="workshop">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Butuh pekerjaan / keahlian di Bidang Industri?</h5>
-                <p>Klik <a href="#">Disini</a> untuk memulai</p>
+                <p>Klik <a href="index.php">Disini</a> untuk memulai</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src="multimedia/image/dashloker/carousel2.jpg" class="d-block w-100" alt="pharmacy">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Mencari kursus / bootcamp mengenai farmasi?</h5>
-                <p>Klik <a href="#">Disini</a> untuk memulai</p>
+                <p>Klik <a href="index.php">Disini</a> untuk memulai</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src="multimedia/image/dashloker/carousel4.jpg" class="d-block w-100" alt="server-it">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Ingin meningkatkan Skill Komputer kamu?</h5>
-                <p>Klik <a href="#">Disini</a> untuk memulai</p>
+                <p>Klik <a href="index.php">Disini</a> untuk memulai</p>
               </div>
             </div>
           </div>

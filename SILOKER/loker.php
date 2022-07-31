@@ -12,7 +12,7 @@
       Kelas       : IF-9K/S1/II
       Matkul      : Pemrograman Web 2
       Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
-      Created File On v27072022:1113 (v.1.1)
+      Created File On v31072022 (v.1.4)
 -->
       
 <!doctype html>
@@ -105,69 +105,6 @@
     <?php 
     } else {
       ?><a href="index.php" class="btn btn-light">Masuk</a> <?php } ?>
-
-            <!-- Modal -->
-            <!-- <div class="modal fade modalfix" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Masuk Bersama SILOKER</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <section class="vh-20" style="background-color: #170106;">
-                      <div class="container py-5 h-60">
-                        <div class="row d-flex justify-content-center align-items-center h-100">
-                          <div class="col col-xl-10">
-                            <div class="card" style="border-radius: 1rem;">
-                              <div class="row g-0">
-                                <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                  <div class="card-body p-4 p-lg-5 text-black">
-                                    <form>
-                                      <div class="d-flex align-items-center mb-3 pb-1">
-                                        <img class="w-25" src="multimedia/image/siloker.png" alt="siloker">
-                                      </div>
-                    
-                                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Masuk Ke Akun Anda</h5>
-                    
-                                      <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form2Example17">Alamat Surel</label>
-                                      </div>
-                    
-                                      <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form2Example27">Kata Sandi</label>
-                                      </div>
-                    
-                                      <div class="pt-1 mb-4">
-                                        <button class="btn btn-dark btn-lg btn-block" type="button">Masuk</button>
-                                      </div>
-                    
-                                      <a class="small text-muted" href="#!">Lupa Kata Sandi?</a>
-                                      <p class="mb-5 pb-lg-2" style="color: #393f81;">Tidak Punya Akun? <a href="#!"
-                                          style="color: #393f81;">Daftar Disini!</a></p>
-                                      <a href="#!" class="small text-muted">Syarat & Ketentuan .</a>
-                                      <a href="#!" class="small text-muted">Kebijakan Pribadi</a>
-                                    </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Kembali</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div> --> 
     </div>
   </nav>
 
@@ -176,7 +113,7 @@
 <br>
 <br>
 
-<!-- Main Filter -->
+<!-- Main Filter
 <div class="container">
     <div class="row">
         <h2>LOWONGAN PEKERJAAN</h2>
@@ -322,7 +259,7 @@
             </div>
       </div>
     </form>
-  </div>
+  </div> -->
         
 <br/>
 <br/>

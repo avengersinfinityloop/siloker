@@ -5,7 +5,7 @@
       Kelas       : IF-9K/S1/II
       Matkul      : Pemrograman Web 2
       Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
-      Created File On v27072022:1113 (v.0.5)
+      Created File On v31072022:2137 (v.1.6)
 -->
 <html lang="en">
     <head>
@@ -90,10 +90,10 @@
             <div class="col">
               <h4>Gender</h4>
               <label class="form-label" for="gender">Jenis Kelamin</label>
-              <select name="gender" class="form-select" aria-label="Default select example">
-                <option selected>Pria</option>
-                <option value="1">Wanita</option>
-                <option value="2">All Gender</option>
+              <select name="gender" value="<?= $row["gender"]; ?>" class="form-select" aria-label="Default select example">
+                <option value="Pria">Pria</option>
+                <option value="Wanita">Wanita</option>
+                <option value="All Gender">All Gender</option>
               </select>
             </div>
 
@@ -107,10 +107,10 @@
                 <h4>Tipe Durasi Kerja</h4>
                 <label class="form-label" for="durasi">Jenis Durasi yang ditetapkan</label>
                 <select name="durasi" class="form-select" aria-label="Default select example">
-                  <option selected>Full Time</option>
-                  <option value="1">Part Time</option>
-                  <option value="2">Freelance</option>
-                  <option value="3">Magang</option>
+                  <option value="Full Time" selected>Full Time</option>
+                  <option value="Part Time">Part Time</option>
+                  <option value="Freelance">Freelance</option>
+                  <option value="Magang">Magang</option>
                 </select>
               </div>
 
@@ -128,15 +128,15 @@
               <h4>Lokasi</h4>
               <label class="form-label" for="lokasi">Wilayah Kota Penetapan</label>
               <select name="lokasi" class="form-select" aria-label="Default select example">
-                <option selected>Bandung</option>
-                <option value="1">Jakarta</option>
-                <option value="2">Surabaya</option>
-                <option value="3">Medan</option>
-                <option value="4">Yogyakarta</option>
-                <option value="5">Subang</option>
-                <option value="6">Purwakarta</option>
-                <option value="7">Jabodetabek</option>
-                <option value="8">Tanggerang</option>
+                <option value="Bandung" selected>Bandung</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Medan">Medan</option>
+                <option value="Yogyakarta">Yogyakarta</option>
+                <option value="Subang">Subang</option>
+                <option value="Purwakarta">Purwakarta</option>
+                <option value="Jabodetabek">Jabodetabek</option>
+                <option value="Tanggerang">Tanggerang</option>
               </select>
             </div>
 
