@@ -15,7 +15,7 @@
 //KONEKSI DATABASE
 $conn = mysqli_connect("localhost","root","","siloker");
 
-//CEK NIK IN PROFIL TABLE BY USERNAME
+//CEK NIK IN PROFIL TABLE BY USERNAME RETURN 0 apabila tidak ada NIK
 function cekNik($username) {
     global $conn;
     $queryNik = mysqli_query($conn, "SELECT nik FROM profil WHERE username = '$username' ");
