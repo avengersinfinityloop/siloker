@@ -115,7 +115,7 @@
         </div>
 
         <div class="container">
-            <iframe src="controladmin.html" width="1280" height="480"></iframe>
+            <iframe src="controladmin.html" width="1280" height="720"></iframe>
         </div>
 
         <br>

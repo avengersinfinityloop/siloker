@@ -156,8 +156,8 @@ if( isset($_POST["submit"])) {
                 <td nowrap width="10%"><?= $row["desk"]; ?>...</td>
                 <td><a href="<?= $row["link_pt"]; ?>"><?= $row["link_pt"]; ?></a></td>
                 <td><a href="<?= $row["desk_lengkap"]; ?>"><?= $row["desk_lengkap"]; ?></a></td>
-                <td><a href="editdataloker.php?id=<?= $row["idloker"]; ?>">Edit</a></td>
-                <td><a href="hapusdataloker.php?id=<?= $row["idloker"]; ?>">Hapus</a></td>
+                <td><button type="button" class="btn btn-primary"><a style="color:white" href="editdataloker.php?id=<?= $row["idloker"]; ?>">Edit</a></button></td>
+                <td><button type="button" class="btn btn-danger"><a style="color:white;" href="hapusdataloker.php?id=<?= $row["idloker"]; ?>">Hapus</a></button></td>
               </tr>
                 <?php } 
                  }
