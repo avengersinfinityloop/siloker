@@ -3,37 +3,27 @@
                 kelas   :IF9K
 created on              :20220623
 page name               :jmr.css
-total                   :??? pages
 logs                    :v1.0 20220623 - create file
                         :v1.0 20220728 - finish file */
 
-/* HEADER */
+/* HEADER NAVBAR MENU*/
 .jpageHeader {
     background: linear-gradient( white, #C5C6C7);
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px auto 5px auto;
     border-top: 2px solid #ddd;
     border-bottom: 2px solid #ddd;
 }
-.jpageHeader .navbar-brand{
-    text-shadow: 3px 3px #C5C6C7;
-    margin-right: 50px;
-}
-.jpageHeader .navbar-brand b{
-    font-size: 20px;
-}
 .jpageHeader .nav-item{
     margin-right: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
 .jpageHeader .dropdown-menu{
-    margin-top: 50px;
     background: linear-gradient( white, #C5C6C7);
-    font-size: 15px;
 }
 .jpageHeader b {
     text-shadow: 3px 3px #C5C6C7;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /* MASKOT */
@@ -45,9 +35,7 @@ logs                    :v1.0 20220623 - create file
 /* CONTENT */
 .jpageCon1 {
     background-color: white;
-    padding-top: 75px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ddd;
+    padding: 75px 0px 10px 0px;
     min-height: 550px;
 }
 /* CONTENT PERTAMA */
@@ -57,11 +45,6 @@ logs                    :v1.0 20220623 - create file
     width: auto;
     box-shadow: 10px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     border-radius: 20px;
-}
-.jpageCon1 .tableForm {
-    margin-left: auto;
-    margin-right: auto;
-    width: 700px;
 }
 .jpageCon1 .carousel-caption a:link {
     font-size: 250px;
@@ -76,6 +59,7 @@ logs                    :v1.0 20220623 - create file
 }
 .jpageCon1 .warningNoNik {
     height: 500px;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     font-weight: bolder;
 }
@@ -83,13 +67,10 @@ logs                    :v1.0 20220623 - create file
 /* CONTENT KEDUA */
 .jpageCon2{
     background-color: whitesmoke;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    margin-bottom: 10px;
+    padding: 10px 0px 20px 0px;
     border-bottom: 2px solid #ddd;
-}
-.jpageCon2 .columns {
-    width: 350px;
-    margin: 0px 100px 0px 100px;
+    border-top: 2px solid #ddd;
 }
 .jpageCon2 .jText1 {
     font-size: 20px;
@@ -98,8 +79,7 @@ logs                    :v1.0 20220623 - create file
 .jpageCon2 .jText2 {
     font-size: 16px;
     max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto auto auto auto;
     height: 80px;
 }
 .jpageCon2 .jText3 {
@@ -109,43 +89,51 @@ logs                    :v1.0 20220623 - create file
     border: 2px solid black;
     padding: 5px 20px 5px 20px;
 }
-.jpageCon2 select {
-    width: 100px;
-}
 
 /* FOOTER */
 .jpageFooter {
     background-color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0px 10px 0px;
     border-bottom: 1px solid #ddd;
 }
 .jpageFooter iframe {
-    height: 1000px;
+    height: 500px;
     width: 100%;
 }
 
-/* IKLAN */
+/*IKLAN*/
 .jIklan {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     border-radius: 5px;
+    background-color: whitesmoke;
     padding: 10px;
 }
-.jIklan th {
-    font-size: 20px;
-}
-.jIklan td {
-    font-size: 15px;
+.jIklan td .btn{
+    height: 40px;
+    font-size: 16px;
 }
 
 /*IKLAN TERDAFTAR*/
 .jdaftarIklan {
     font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
 }
 .jdaftarIklan table {
-    width: 800px;
+    width: 900px;
     margin: 0px auto 0px auto;
     background-color: white;
+}
+.jdaftarIklan td .btn{
+    height: 40px;
+    font-size: 16px;
+}
+.jdaftarIklan select {
+    border-radius: 5px;
+    height: 25px;
+    width: 80px;
+    text-align: center;
 }
 .maskot2 img{
     height: 300px;
@@ -153,13 +141,72 @@ logs                    :v1.0 20220623 - create file
     margin: auto auto auto auto;
 }
 
+/* FORM IKLAN */
+.jForm {
+    width: 1000px;
+    margin: 20px auto 20px auto;
+    padding: 30px 50px 30px 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+/* FORM UPDATE IKLAN */
+.jForm2 {
+    width: 850px;
+    margin: 20px auto 20px auto;
+    padding: 30px 50px 30px 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+/* PASANG IKLAN TERDAFTAR */
+.jPasangIklan {
+    width: auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+.jPasangIklan .table {
+    margin: 0px auto 0px auto;
+    background-color: white;
+}
+.jPasangIklan td .btn{
+    height: 40px;
+    font-size: 16px;
+}
+
+/* INFO DAFTAR */
+.jInfoDaftar .table{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    width: 500px;
+    height: auto;
+    box-shadow: 10px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 20px;
+    background-color: whitesmoke;
+}
+.jInfoDaftar table th td {
+    border: 1px solid black;
+    padding: 5px;
+}
+.jInfoDaftar img{
+    width: 700px;
+    height: auto;
+    box-shadow: 10px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 20px;
+}
+
 /* lain-lain */
 .jpagination {
     color: black;
     margin-right: 10px;
-    font-size: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 0px 5px 0px 5px;
+    font-size: 16px;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
     text-decoration: none;
 }
