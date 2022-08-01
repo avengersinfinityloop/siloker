@@ -200,7 +200,7 @@
                             <option value="Diploma/D1">Diploma/D1</option>
                             <option value="Sarjana/S1">Sarjana/S1</option>
                             <option value="Master/S2">Master/S2</option>
-                            <option value="Doktor">Doktor/Doktor</option>
+                            <option value="Doktor/S3">Doktor/S3</option>
                         </select>
                     </div>
                     <div class="form-group">
