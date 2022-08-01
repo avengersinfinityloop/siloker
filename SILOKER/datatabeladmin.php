@@ -1,12 +1,63 @@
+<?php 
+
+//  Created By  : Indi Bagus Prasetyo
+//  NIM         : 10121902
+//  Kelas       : IF-9K/S1/II
+//  Matkul      : Pemrograman Web 2
+//  Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
+//  Created File On v31072022:2136 (v.1.1)
+
+include "koneksidb.php";
+if( isset($_POST["submit"])) {
+   $data = $_POST;
+   $logo = htmlspecialchars($data["logo"]);
+   $nama_pt = htmlspecialchars($data["nama_pt"]);
+   $bidang_kerja = htmlspecialchars($data["bidang_kerja"]);
+   $lulusan_min = htmlspecialchars($data["lulusan_min"]);
+   $gender = htmlspecialchars($data["gender"]);
+   $usia_max = htmlspecialchars($data["usia_max"]);
+   $durasi = htmlspecialchars($data["durasi"]);
+   $gaji = htmlspecialchars($data["gaji"]);
+   $lokasi = htmlspecialchars($data["lokasi"]);
+   $deskripsi = htmlspecialchars($data["deskripsi"]);
+   $link_pt = htmlspecialchars($data["link_pt"]);
+   $desk_lengkap = htmlspecialchars($data["desk_lengkap"]);
+
+   // htmlspecialchars digunakan agar element html yang di input tidak bisa dijalankan
+
+    // Query Insert data
+   $query = "INSERT INTO `loker` 
+            (`idloker`, `logo`, `nama_pt`, 
+            `bidang_kerja`, `lulusan_min`, 
+            `gender`, `usia_max`, `durasi`, 
+            `gaji`, `lokasi`, `deskripsi`, 
+            `link_pt`, `desk_lengkap`, `nik`) 
+            VALUES (null,'multimedia/image/mainloker/$logo', '$nama_pt', '$bidang_kerja', '$lulusan_min',
+             '$gender', '$usia_max', '$durasi', '$gaji', '$lokasi',
+              '$deskripsi', '$link_pt', '$desk_lengkap', '9236598235');
+           ";
+
+   mysqli_query($conn, $query);
+   $r = mysqli_affected_rows($conn);
+
+   if( $r > 0 ) {
+    echo "
+        <script>
+            alert('Data Berhasil ditambahkan!')
+            document.location.href = 'datatabeladmin.php'
+            </script>
+            ";
+        } else {
+            echo "
+            <script>
+            alert('Data Gagal ditambahkan!')
+            document.location.href = 'editdataloker.php'
+        </script>
+    ";
+}
+}
+?>
 <!doctype html>
-<!--  
-      Created By  : Indi Bagus Prasetyo
-      NIM         : 10121902
-      Kelas       : IF-9K/S1/II
-      Matkul      : Pemrograman Web 2
-      Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
-      Created File On v27072022:1113 (v.0.5)
--->
 <html lang="en">
     <head>
         <!-- MetaData -->
@@ -52,7 +103,10 @@
                   <a class="nav-link active" href="datatabeladmin.php">Data Tabel</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="editdataadmin.php">Edit/Tambah Data</a>
+                  <a class="nav-link" href="tambahdataloker.php">Tambah Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="editdataloker.php">Edit Data</a>
                 </li>
               </ul>
         </div>
@@ -63,7 +117,7 @@
           <h3>Tabel Data Loker (Lowongan Kerja)</h3>
           
           <div class="container">
-            <table>
+            <table width="100%">
               <tr>
                 <th>Idloker</th>
                 <th>Alamat logo</th>
@@ -79,63 +133,39 @@
                 <th>Link Perusahaan</th>
                 <th>Link Deskripsi</th>
                 <th>Edit</th>
+                <th>Hapus</th>
               </tr>
 
+              <?php
+              include "koneksidb.php";
+              $sql = "SELECT *, LEFT(deskripsi,50) as desk FROM loker";
+              if($result = mysqli_query($conn, $sql)) {
+                if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_array($result)) { ?>
               <tr>
-                <td>0001</td>
-                <td>multimedia/image/mainloker/ateja.jpg</td>
-                <td>PT. ATEJA TRINUNGGAL</td>
-                <td>SALES MARKETING</td>
-                <td>S1</td>
-                <td>All Gender</td>
-                <td>30</td>
-                <td>Full Time</td>
-                <td>3000000</td>
-                <td>BANDUNG</td>
-                <td>Mampu Bekerja dalam Tim Mampu Bekerja dalam Tim Lo...</td>
-                <td><a href="https://www.ateja.co.id">https://www.ateja.co.id</a></td>
-                <td><a href="https://www.career.ateja.co.id">https://www.career.ateja.co.id</a></td>
-                <td><a href="#">Edit</a></td>
+                <td><?= $row["idloker"]; ?></td>
+                <td><?= $row["logo"]; ?></td>
+                <td><?= $row["nama_pt"]; ?></td>
+                <td><?= $row["bidang_kerja"]; ?></td>
+                <td><?= $row["lulusan_min"]; ?></td>
+                <td><?= $row["gender"]; ?></td>
+                <td><?= $row["usia_max"]; ?></td>
+                <td><?= $row["durasi"]; ?></td>
+                <td><?= $row["gaji"]; ?></td>
+                <td><?= $row["lokasi"]; ?></td>
+                <td nowrap width="10%"><?= $row["desk"]; ?>...</td>
+                <td><a href="<?= $row["link_pt"]; ?>"><?= $row["link_pt"]; ?></a></td>
+                <td><a href="<?= $row["desk_lengkap"]; ?>"><?= $row["desk_lengkap"]; ?></a></td>
+                <td><a href="editdataloker.php?id=<?= $row["idloker"]; ?>">Edit</a></td>
+                <td><a href="hapusdataloker.php?id=<?= $row["idloker"]; ?>">Hapus</a></td>
               </tr>
+                <?php } 
+                 }
+               } ?>
               
-              <tr>
-                <td>0001</td>
-                <td>multimedia/image/mainloker/ateja.jpg</td>
-                <td>PT. ATEJA TRINUNGGAL</td>
-                <td>SALES MARKETING</td>
-                <td>S1</td>
-                <td>All Gender</td>
-                <td>30</td>
-                <td>Full Time</td>
-                <td>3000000</td>
-                <td>BANDUNG</td>
-                <td>Mampu Bekerja dalam Tim Mampu Bekerja dalam Tim Lo...</td>
-                <td><a href="https://www.ateja.co.id">https://www.ateja.co.id</a></td>
-                <td><a href="https://www.career.ateja.co.id">https://www.career.ateja.co.id</a></td>
-                <td><a href="#">Edit</a></td>
-              </tr>
-
-              <tr>
-                <td>0001</td>
-                <td>multimedia/image/mainloker/ateja.jpg</td>
-                <td>PT. ATEJA TRINUNGGAL</td>
-                <td>SALES MARKETING</td>
-                <td>S1</td>
-                <td>All Gender</td>
-                <td>30</td>
-                <td>Full Time</td>
-                <td>3000000</td>
-                <td>BANDUNG</td>
-                <td>Mampu Bekerja dalam Tim Mampu Bekerja dalam Tim Lo</td>
-                <td><a href="https://www.ateja.co.id">https://www.ateja.co.id</a></td>
-                <td><a href="https://www.career.ateja.co.id">https://www.career.ateja.co.id</a></td>
-                <td><a href="#">Edit</a></td>
               </tr>
             </table>
           </div>
         </div>
-
-
-
     </body>
 </html>

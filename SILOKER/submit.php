@@ -4,28 +4,34 @@
                         kelas   :IF9K
         created on              :20220703
         page name               :submit.php
-        total                   :??? pages
         logs                    :v1.0 20220703 - create file
-                                :v1.0 20220722 - finish file
-        [Table of contents]
+                                :v1.0 20220731 - finish file
+        [Table of contents]     :1 QUERY                                        Line 21
+                                :2 HEADER NAVBAR MENU                           Line 83
+                                :3 CONTENT                                      Line 150
+                                :   3.1 INFORMATION IKLAN                       Line 153
+                                :       3.1.1 INFO                              Line 156
+                                :       3.1.2 BANNER                            Line 160
+                                :       3.1.3 ISI IKLAN                         Line 163
+                                :       3.1.4 BUTTON DAFTAR                     Line 201
+                                :       3.1.5 BUTTON KEMBALI                    Line 211
+                                :4 FOOTER                                       Line 228
     -->
 
+<!-- 1 QUERY -->
 <?php
     require "fungsi.php";
     
-    //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
+    //tampilan USER yang sedang LOGIN
     session_start();
     $shareUsername = $_SESSION['username'];
     $nik = cekNik($shareUsername);
     if ($nik == 0) {
-        $infoNik = ' = NIK Tidak Ada';
+        $infoNik = ' - BIO TIDAK LENGKAP!';
     }
-    if(isset($_GET['idIklan'])){ //mendapatkan informasi dari page cekTempat.php untuk idIklan
-        $idIklan    =$_GET['idIklan']; //menyimpan informasi di variable
-    }
-    else {
-        die ("Error. No ID Selected!"); //error apabila tidak mendapatkan id
-    }
+    //mendapatkan informasi dari page cekTempat.php
+    $idIklan = $_GET['idIklan']; //menyimpan informasi ID di variable untuk membuka info detail
+    $view = $_GET['view']; //menyimpan informasi apabila hanya view saja
 
     //CONTENT SUBMIT AREA
     $info=""; //variable informasi
@@ -61,6 +67,7 @@
         }
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,7 +80,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<!-- HEADER -->
+<!-- 2 HEADER NAVBAR MENU -->
 <div class="">
     <div class=" jpageHeader fixed-top">
         <nav class="container navbar navbar-expand-lg">
@@ -128,7 +135,6 @@
                 </ul>
                 <div class="d-flex">
                     <b class="me-2">
-                        <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
                             <?php echo $shareUsername.$infoNik; ?>
                             <a href='index.php' class="btn">LOGOUT</a>
@@ -141,70 +147,85 @@
         </nav>
     </div>
 </div>
-<!-- CONTENT -->
+<!-- 3 CONTENT -->
 <div class="">
-    <!-- SUBMIT AREA-->
     <div class="jpageCon1">
-        <div class="container ">
-            <h4 class="text-center">SUBMIT INFORMATION DAFTAR KURSUS</h4>
+<!-- 3.1 INFORMATION IKLAN -->
+        <div class="container jInfoDaftar">
+            <h4 class="text-center">INFORMATION IKLAN</h4>
+<!-- 3.1.1 INFO -->
             <h5 class="text-center"><?php echo $info; ?></h5>
             <?php if ($hide != 1) :?>
-            <div>
-                <div class="text-center"><img class="highlight" src="<?php echo $result1['imageRegister']?>" alt=""></div>
-                <table cellpadding="2" style="margin-left: 200px;">
-                    <tr>
-                        <td>idIklan</td>
-                        <td style="padding-left: 50px;">: <?php echo $result1['idIklan']?></td>
-                    </tr>
-                    <tr>
-                        <td>tanggal</td>
-                        <td style="padding-left: 50px;">: <?php echo $result1['tanggal']?></td>
-                    </tr>
-                    <tr>
-                        <td>namaKursus</td>
-                        <td style="padding-left: 50px;">: <?php echo $result1['namaKursus']?></td>
-                    </tr>
-                    <tr>
-                        <td>bidang</td>
-                        <td style="padding-left: 50px;">: <?php echo $result1['bidang']?></td>
-                    </tr>
-                    <tr>
-                        <td>harga</td>
-                        <td style="padding-left: 50px;">: <?php echo $result1['harga']?></td>
-                    </tr>
-                    <tr>
-                        <td>wilayah</td>
-                        <td style="padding-left: 50px;">: <?php echo $result1['wilayah']?></td>
-                    </tr>
-                    <tr>
-                        <td>onlineOffline</td>
-                        <td style="padding-left: 50px;">: <?php echo $result1['onlineOffline']?></td>
-                    </tr>
-                    <tr>
-                        <td>imageRegister</td>
-                        <td style="padding-left: 50px;">: <?php echo $result1['imageRegister']?></td>
-                    </tr>
-                    <tr>
-                        <td>nik</td>
-                        <td style="padding-left: 50px;">: <?php echo $result1['nik']?></td>
-                    </tr>
-                    <tr height="50px">
-                        <td>
-                            <form method="POST" class="my-auto" id="myForm">
-                                <input type="submit" name="daftar" value="DAFTAR" class="btn btn-outline-secondary">
-                            </form>
-                        </td>
-                    </tr>
-                </table>
+            <div class="row">
+<!-- 3.1.2 BANNER -->
+                <div class="col-md-7 text-center"><img src="<?php echo $result1['imageRegister']?>" alt=""></div>
+                <div class="col-md-5">
+<!-- 3.1.3 ISI IKLAN -->
+                    <table class="table">
+                        <tr>
+                            <td>ID IKLAN</td>
+                            <td>: <?php echo $result1['idIklan']?></td>
+                        </tr>
+                        <tr>
+                            <td>TANGGAL PASANG</td>
+                            <td>: <?php echo $result1['tanggal']?></td>
+                        </tr>
+                        <tr>
+                            <td>NAMA</td>
+                            <td>: <?php echo $result1['namaKursus']?></td>
+                        </tr>
+                        <tr>
+                            <td>BIDANG</td>
+                            <td>: <?php echo $result1['bidang']?></td>
+                        </tr>
+                        <tr>
+                            <td>HARGA</td>
+                            <td>: <?php echo $result1['harga']?></td>
+                        </tr>
+                        <tr>
+                            <td>WILAYAH</td>
+                            <td>: <?php echo $result1['wilayah']?></td>
+                        </tr>
+                        <tr>
+                            <td>WAKTU</td>
+                            <td>: <?php echo $result1['onlineOffline']?></td>
+                        </tr>
+                        <tr>
+                            <td>IMAGE</td>
+                            <td>: <?php echo $result1['imageRegister']?></td>
+                        </tr>
+                        <tr>
+                            <td>NIK</td>
+                            <td>: <?php echo $result1['nik']?></td>
+                        </tr>
+<!-- 3.1.4 BUTTON DAFTAR -->
+                        <?php if ($view != 1) : ?>
+                            <tr height="50px">
+                                <td colspan="2">
+                                    <form method="POST" id="myForm">
+                                        <input type="submit" name="daftar" value="DAFTAR" class="btn btn-outline-secondary me-3 ">
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+<!-- 3.1.5 BUTTON KEMBALI -->
+                        <tr>
+                            <td colspan="2">
+                                <a href="cekTempat.php"><button class="text-center btn btn-outline-secondary">KEMBALI</button></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
+            <?php else : ?>
+                <div class="text-center">
+                    <a href="cekTempat.php"><button class="text-center btn btn-outline-secondary">KEMBALI</button></a>
+                </div>
             <?php endif; ?>
-        </div>
-        <div class="container text-center my-3">
-            <a href="cekTempat.php"><button class="btn btn-outline-secondary">KEMBALI</button></a>
         </div>
     </div>
 </div>
-<!-- FOOTER -->
+<!-- 4. FOOTER -->
 <div class="jpageFooter">
     <div class="">
         <div class="container">
@@ -217,18 +238,5 @@
     </div>
 </div>
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jmr.js"></script>
-<script>
-    //JS UNTUK HIDE TAMPILAN KETIKA DI SUBMIT
-    var run = <?=json_encode($hide, JSON_HEX_TAG | JSON_HEX_AMP) ?>; //informasi variable dari PHP
-    if (run == 1) { //run apabila sudah di submit
-        var x = document.getElementById("hide"); //DIV dengan id hide akan menghilang dari mukabumi
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
-    }
-</script>
 </body>
 </html>

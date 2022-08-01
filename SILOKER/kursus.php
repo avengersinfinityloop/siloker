@@ -3,14 +3,22 @@
                         nim     :10121910
                         kelas   :IF9K
         created on              :20220619
-        page name               :kursus.html
-        total                   :??? pages
+        page name               :kursus.php
         logs                    :v1.0 20220619 - create file
-                                :v1.0 2022???? - finish file
-                                :v1.1 2022???? - finishing  file
-        [Table of contents]
+                                :v1.0 20220731 - finish file
+        [Table of contents]     :1 QUERY                                        Line 18
+                                :2 HEADER NAVBAR MENU                           Line 59
+                                :3 CONTENT                                      Line 126
+                                :   3.1 HIGLIGHT                                Line 128
+                                :       3.1.1 IMAGE DENGAN BUTTON DAFTAR        Line 132
+                                :       3.1.2 PREV DAN NEXT IMAGE               Line 169
+                                :   3.2 EVENT                                   Line 179
+                                :       3.2.1 PINDAH PAGE KE CEK TEMPAT         Line 183
+                                :       3.2.2 PINDAH PAGE KE PASANG IKLAN       Line 191
+                                :4 FOOTER                                       Line 202
     -->
 
+<!-- 1 QUERY -->
 <?php
     require "fungsi.php";
     
@@ -18,24 +26,24 @@
     session_start();
     $shareUsername = $_SESSION['username'];
     $nik = cekNik($shareUsername);
-    if ($nik == 0) {
-        $infoNik = ' = NIK Tidak Ada';
+    if ($nik == 0) { 
+        $infoNik = ' - BIO TIDAK LENGKAP!';
         $hideMenu = 1;
     }
 
     //CONTENT HIGHLIGHT
-    $query1 = mysqli_query($conn, "SELECT namaKursus,imageRegister,idIklan FROM pasang_iklan ORDER BY RAND() LIMIT 3"); //query tampil 3 row by RANDOM
+    $query1 = mysqli_query($conn, "SELECT imageRegister,idIklan FROM pasang_iklan ORDER BY RAND() LIMIT 3"); //query tampil 3 row by RANDOM
     $result1 = mysqli_fetch_row($query1);
     $no=0; //nomor untuk index array
     do { //perulangan untuk menyimpan data ke variable
         $no++;
-        list($namaKursus,$imageRegister,$idIklan)=$result1;
+        list($imageRegister,$idIklan)=$result1;
         $image[$no]=$imageRegister; //var untuk memunculkan image
         $link[$no]=$idIklan; //var untuk link ke page DAFTAR berdasarkan IDIKLAN
-        $nama[$no]=$namaKursus; //var untuk nama Kursus berdasarkan IDIKLAN
     }
     while ($result1 = mysqli_fetch_row($query1));
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +56,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<!-- HEADER -->
+<!-- 2 HEADER NAVBAR MENU -->
 <div class="">
     <div class=" jpageHeader fixed-top">
         <nav class="container navbar navbar-expand-lg">
@@ -67,10 +75,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="kursus.php">MENU</a></li>
-                            <?php if($hideMenu != 1) :?>
                             <li><a class="dropdown-item" href="cekTempat.php">CEK TEMPAT</a></li>
                             <li><a class="dropdown-item" href="pasangIklan.php">PASANG IKLAN</a></li>
-                            <?php endif ?>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -105,7 +111,6 @@
                 </ul>
                 <div class="d-flex">
                     <b class="me-2">
-                        <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
                             <?php echo $shareUsername.$infoNik; ?>
                             <a href='index.php' class="btn">LOGOUT</a>
@@ -118,76 +123,83 @@
         </nav>
     </div>
 </div>
-<!-- CONTENT -->
+<!-- 3 CONTENT -->
 <div class="">
-    <!-- HIGHLIGHT -->
-    <div class="jpageCon1">
+<!-- 3.1 HIGLIGHT -->
+    <div class="jpageCon1 container">
         <div id="carousel" class=" carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner text-center">
+<!-- 3.1.1 IMAGE DENGAN BUTTON DAFTAR -->
                 <div class="carousel-item active" data-bs-interval="3000">
-                    <?php echo "<img src='$image[1]' class='highlight'>"; ?>
-                    <div class="carousel-caption d-none d-md-block">
-                        <?php if ($link[1] != '') : ?>
+                    <?php if ($link[1] != '') : ?>
+                        <?php echo "<img src='$image[1]' class='highlight'>"; ?>
+                        <div class="carousel-caption d-none d-md-block">
                             <?php if($hideMenu != 1) :?>
                                 <p><a href="submit.php?idIklan=<?=$link[1]?>">DAFTAR</a></p>
                             <?php endif ?>
-                        <?php else : ?>
-                            <h1>EMPTY</h1>
-                        <?php endif ?>
-                    </div>
+                        </div>
+                    <?php else : ?>
+                        <img src="multimedia/image/LibraryImage/default.jpg" alt="" class="highlight">
+                    <?php endif ?>
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <?php echo "<img src='$image[2]' class='highlight'>"; ?>
-                    <div class="carousel-caption d-none d-md-block">
-                        <?php if ($link[2] != '') : ?>
+                    <?php if ($link[2] != '') : ?>
+                        <?php echo "<img src='$image[2]' class='highlight'>"; ?>
+                        <div class="carousel-caption d-none d-md-block">
                             <?php if($hideMenu != 1) :?>
                                 <p><a href="submit.php?idIklan=<?=$link[2]?>">DAFTAR</a></p>
                             <?php endif ?>
-                        <?php else : ?>
-                            <h1>EMPTY</h1>
-                        <?php endif ?>
-                    </div>
+                        </div>
+                    <?php else : ?>
+                        <img src="multimedia/image/LibraryImage/default.jpg" alt="" class="highlight">
+                    <?php endif ?>
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <?php echo "<img src='$image[3]' class='highlight'>"; ?>
-                    <div class="carousel-caption d-none d-md-block">
-                        <?php if ($link[3] != '') : ?>
+                    <?php if ($link[3] != '') : ?>
+                        <?php echo "<img src='$image[3]' class='highlight'>"; ?>
+                        <div class="carousel-caption d-none d-md-block">
                             <?php if($hideMenu != 1) :?>
                                 <p><a href="submit.php?idIklan=<?=$link[3]?>">DAFTAR</a></p>
                             <?php endif ?>
-                        <?php else : ?>
-                            <h1>EMPTY</h1>
-                        <?php endif ?>
-                    </div>
+                        </div>
+                    <?php else : ?>
+                        <img src="multimedia/image/LibraryImage/default.jpg" alt="" class="highlight">
+                    <?php endif ?>
                 </div>
+<!-- 3.1.2 PREV DAN NEXT IMAGE -->
+                <button class="carousel-control-prev justify-content-start" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <img src="multimedia/image/icons/left.png" height="100px" alt="">
+                </button>
+                <button class="carousel-control-next justify-content-end" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <img src="multimedia/image/icons/right.png" height="100px" alt="">
+                </button>
             </div>
         </div>
     </div>
-    <!-- EVENT -->
+<!-- 3.2 EVENT -->
     <div class="jpageCon2">
         <div class="container">
             <div class="row justify-content-center text-center">
+<!-- 3.2.1 PINDAH PAGE KE CEK TEMPAT -->
                 <div class="col-md-4">
                     <h2 class="jText1">KURSUS</h2>
                     <p class="jText2 mb-3">Hanya Dengan Mengikuti Kursus Disini Anda Akan Mendapatkan Bonus Keren. <br> Yuk Belajar!</p>
-                    <?php if($hideMenu != 1) :?>
                     <p class="jText3"><a class="btn btn-outline-secondary" href="cekTempat.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">CEK TEMPAT</a></p>
-                    <?php endif ?>
                 </div>
                 <div class="col-md-2 my-3 maskot">
                     <img src="multimedia/image/concept/maskotsiloker.png" alt="">
+<!-- 3.2.2 PINDAH PAGE KE PASANG IKLAN -->
                 </div>
                 <div class="col-md-4">
                     <h2 class="jText1">PERUSAHAAN</h2>
                     <p class="jText2 mb-3">Pasang iklan Kursus agar terhubung dengan orang yang paling potensial. <br> Yuk Pasang!</p>
-                    <?php if($hideMenu != 1) :?>
                     <p class="jText3"><a class="btn btn-outline-secondary" href="pasangIklan.php"><img src="multimedia/image/logo/silokerlogo.png" alt="" width="30" height="30" class="d-inline-block align-text-center">PASANG IKLAN</a></p>
-                    <?php endif ?>
                 </div>
             </div>
+        </div>
     </div>
 </div>
-<!-- FOOTER -->
+<!-- 4 FOOTER -->
 <div class="jpageFooter">
     <div class="">
         <div class="container">
@@ -199,7 +211,6 @@
         </div>
     </div>
 </div>
-<script src="js/jmr.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

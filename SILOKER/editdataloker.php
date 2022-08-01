@@ -1,3 +1,12 @@
+<?php
+  include "koneksidb.php";
+  if( isset($_GET)) {
+    $id = $_GET["id"];
+    $query = mysqli_query($conn, "SELECT * FROM loker WHERE idloker = $id");
+    $row = mysqli_fetch_array($query);
+
+  }
+?>
 <!doctype html>
 <!--  
       Created By  : Indi Bagus Prasetyo
@@ -5,7 +14,7 @@
       Kelas       : IF-9K/S1/II
       Matkul      : Pemrograman Web 2
       Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
-      Created File On v27072022:1113 (v.0.5)
+      Created File On v31072022 (v.1.5)
 -->
 <html lang="en">
     <head>
@@ -36,38 +45,41 @@
                   <a class="nav-link" href="datatabeladmin.php">Data Tabel</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="editdataadmin.php">Edit/Tambah Data</a>
+                  <a class="nav-link" href="tambahdataloker.php">Tambah Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active disabled" href="editdataloker.php">Edit Data</a>
                 </li>
               </ul>
         </div>
 
         <br>
-
+        <form action="updatedataloker.php" method="POST">
         <div class="container">
           <div class="row">
             <div class="col">
               <h4>Input Gambar</h4>
-              <label class="form-label" for="customFile">Masukan Logo Perushaan Terkait</label>
-              <input type="file" class="form-control" id="customFile" />
+              <label class="form-label" for="customFile">Ubah Logo Perushaan Terkait</label>
+              <input type="file" name="logo" class="form-control" value="" id="customFile" />
             </div>
 
             <div class="col">
               <h4>Nama Perusahaan</h4>
-              <label class="form-label" for="nama_pt">Masukan Nama Perusahaan</label>
-              <input class="form-control" type="text" placeholder="nama_pt" aria-label="default input example">
+              <label class="form-label" for="nama_pt">Ubah Nama Perusahaan</label>
+              <input class="form-control" name="nama_pt" type="text" value="<?= $row["nama_pt"]; ?>" placeholder="nama_pt" aria-label="default input example">
             </div>
             
             <div class="col">
               <h4>Bidang Pekerjaan</h4>
-              <label class="form-label" for="bidang_kerja">Masukan Bidang Pekerjaan</label>
-              <input class="form-control" type="text" placeholder="bidang_kerja" aria-label="default input example">
+              <label class="form-label" for="bidang_kerja">Ubah Bidang Pekerjaan</label>
+              <input class="form-control" name="bidang_kerja" type="text" value="<?= $row["bidang_kerja"]; ?>" placeholder="bidang_kerja" aria-label="default input example">
             </div>
 
             <div class="col">
               <h4>Lulusan Minimal</h4>
               <label class="form-label" for="lulusan_min">Pilihlah Kriteria lulusan</label>
-              <select name="lulusan_min" class="form-select" aria-label="Default select example">
-                <option value="" selected>Pilih Lulusan</option>
+              <select name="lulusan_min" value="<?= $row["lulusan_min"]; ?>" class="form-select" aria-label="Default select example">
+                <option value="">Pilih Lulusan</option>
                 <option value="S1">S1 / D4 (Strata 1/DIPLOMA 4)</option>
                 <option value="S2">S2 / Strata 2 (Magister)</option>
                 <option value="S3">S3 / Strata 3 (Doktoral)</option>
@@ -87,34 +99,34 @@
             <div class="col">
               <h4>Gender</h4>
               <label class="form-label" for="gender">Jenis Kelamin</label>
-              <select name="gender" class="form-select" aria-label="Default select example">
-                <option selected>Pria</option>
-                <option value="1">Wanita</option>
-                <option value="2">All Gender</option>
+              <select name="gender" value="<?= $row["gender"]; ?>" class="form-select" aria-label="Default select example">
+                <option value="Pria">Pria</option>
+                <option value="Wanita">Wanita</option>
+                <option value="All Gender">All Gender</option>
               </select>
             </div>
 
             <div class="col">
               <h4>Usia Dibutuhkan</h4>
               <label class="form-label" for="usia_max">Maksimal Kriteria Usia</label>
-              <input class="form-control" type="number" placeholder="usia_max" aria-label="default input example">
+              <input class="form-control" name="usia_max" value="<?= $row["usia_max"]; ?>" type="number" placeholder="usia_max" aria-label="default input example">
             </div>
 
-              <div class="col">
+            <div class="col">
                 <h4>Tipe Durasi Kerja</h4>
-                <label class="form-label" for="gender">Jenis Durasi yang ditetapkan</label>
-                <select name="gender" class="form-select" aria-label="Default select example">
-                  <option selected>Full Time</option>
-                  <option value="1">Part Time</option>
-                  <option value="2">Freelance</option>
-                  <option value="3">Magang</option>
+                <label class="form-label" for="durasi">Jenis Durasi yang ditetapkan</label>
+                <select name="durasi" class="form-select" aria-label="Default select example">
+                  <option value="Full Time">Full Time</option>
+                  <option value="Part Time">Part Time</option>
+                  <option value="Freelance">Freelance</option>
+                  <option value="Magang">Magang</option>
                 </select>
               </div>
 
               <div class="col">
                 <h4>Gaji Perushaan</h4>
                 <label class="form-label" for="gaji">Gaji Yang Ditetapkan</label>
-                <input class="form-control" type="number" placeholder="masukan angka, contoh : 3000" aria-label="default input example">
+                <input class="form-control" name="gaji" type="number" value="<?= $row["gaji"]; ?>" id="gaji" placeholder="masukan angka, contoh : 3000" aria-label="default input example">
               </div>
           </div>
 
@@ -125,16 +137,22 @@
               <h4>Lokasi</h4>
               <label class="form-label" for="lokasi">Wilayah Kota Penetapan</label>
               <select name="lokasi" class="form-select" aria-label="Default select example">
-                <option selected>Bandung</option>
-                <option value="1">Jakarta</option>
-                <option value="2">Surabaya</option>
+                <option value="Bandung">Bandung</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Medan">Medan</option>
+                <option value="Yogyakarta">Yogyakarta</option>
+                <option value="Subang">Subang</option>
+                <option value="Purwakarta">Purwakarta</option>
+                <option value="Jabodetabek">Jabodetabek</option>
+                <option value="Tanggerang">Tanggerang</option>
               </select>
             </div>
 
             <div class="col">
               <h4>Deskripsi Kerja</h4>
-              <label class="form-label" for="deskripsi">Masukan Deskripsi tentang pekerjaan terkait</label>
-              <input class="form-control" type="text" placeholder="Deskripsi Informasi" aria-label="default input example">
+              <label class="form-label" for="deskripsi">Ubah Deskripsi tentang pekerjaan terkait</label>
+              <input class="form-control" name="deskripsi" type="text" value="<?= $row["deskripsi"]; ?>" placeholder="Deskripsi Informasi" aria-label="default input example">
             </div>
           </div>
 
@@ -144,13 +162,13 @@
             <div class="col">
               <h4>Link Web Perusahaan</h4>
               <label class="form-label" for="link_pt">Alamat web perushaan Terkait</label>
-              <input class="form-control" type="text" placeholder="link_pt" aria-label="default input example">
+              <input class="form-control" name="link_pt" type="text" value="<?= $row["link_pt"]; ?>" placeholder="link_pt" aria-label="default input example">
             </div>
 
             <div class="col">
               <h4>Tautan Karir</h4>
               <label class="form-label" for="desk_lengkap">Alamat tautan karir pada web terkait</label>
-              <input class="form-control" type="text" placeholder="Tautan Deskripsi Lengkap" aria-label="default input example">
+              <input class="form-control" name="desk_lengkap" type="text" value="<?= $row["desk_lengkap"]; ?>" placeholder="Tautan Deskripsi Lengkap" aria-label="default input example">
             </div>
           </div>
 
@@ -158,9 +176,11 @@
 
           <div class="row">
             <div class="col">
-              <button type="button" class="btn btn-outline-primary">Submit</button>
-              <button type="button" class="btn btn-outline-danger">Reset</button>
+              <button type="submit" name="submit" class="btn btn-outline-primary">Ubah Data!</button>
             </div>
+            <input type="hidden" name="idloker" value="<?= $row["idloker"]; ?>">
+          </form>
+
           </div>
         </div>
     </body>

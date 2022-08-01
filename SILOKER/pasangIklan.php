@@ -4,21 +4,42 @@
                         kelas   :IF9K
         created on              :20220623
         page name               :pasangIklan.php
-        total                   :??? pages
         logs                    :v1.0 20220623 - create file
-                                :v1.0 20220722 - finish file
-        [Table of contents]
+                                :v1.0 20220731 - finish file
+        [Table of contents]     :1 QUERY                                        Line 32
+                                :2 HEADER NAVBAR MENU                           Line 141
+                                :3 CONTENT                                      Line 208
+                                :   3.1 FORM PASANG IKLAN                       Line 210
+                                :       3.1.1 INFO                              Line 246
+                                :       3.1.2 BUTTON KEMBALI                    Line 256
+                                :       3.1.3 BUTTON PASANG                     Line 258
+                                :       3.1.4 BUTTON RESET                      Line 260
+                                :   3.2 TABLE PASANG IKLAN                      Line 270
+                                :       3.2.1 NAVIGASI                          Line 275
+                                :       3.2.2 HEADER                            Line 296
+                                :       3.2.3 ISI TABLE                         Line 310
+                                :       3.2.4 BUTTON EDIT                       Line 328
+                                :       3.2.5 BUTTON DELETE                     Line 330
+                                :   3.3 TABLE DAFTAR IKLAN                      Line 342
+                                :       3.3.1 NAVIGASI                          Line 357
+                                :       3.3.2 HEADER                            Line 379
+                                :       3.3.3 ISI TABLE                         Line 391
+                                :       3.3.4 BUTTON DELETE                     Line 405
+                                :       3.3.5 WARNING BIO TIDAK LENGKAP         Line 421
+                                :4 FOOTER                                       Line 435
     -->
-    
+
+<!-- 1 QUERY -->
 <?php
     require "fungsi.php";
     
-    //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
+    //tampilan USER yang sedang LOGIN
     session_start();
     $shareUsername = $_SESSION['username'];
     $nik = cekNik($shareUsername);
     if ($nik == 0) {
-        $infoNik = ' = NIK Tidak Ada';
+        $infoNik = ' - BIO TIDAK LENGKAP!';
+        $hideMenu = 1;
     }
 
     //CONTENT FORM
@@ -55,15 +76,15 @@
         }
     }
 
-    //CONTENT LIST IKLAN BY IDUSER
+    //CONTENT PASANG IKLAN BY IDUSER
     $RowPerHalIklan = 5;
     $RowIklan = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM pasang_iklan WHERE nik = $nik"));
     $HalPerPageIklan = ceil($RowIklan / $RowPerHalIklan);
     $halAktifIklan = (isset($_GET["halIklan"])) ? $_GET["halIklan"] : 1;
     $awalDataIklan = ($RowPerHalIklan * $halAktifIklan)-$RowPerHalIklan;
     $noIklan=$awalDataIklan; //tampilan nomor pada table IKLAN
-    $query2 = mysqli_query($conn, "SELECT * FROM pasang_iklan WHERE nik = $nik ORDER BY tanggal LIMIT $awalDataIklan, $RowPerHalIklan"); //query pada table LIST IKLAN
-    //CONTENT LIST IKLAN >>> DENGAN MENGGUNAKAN BUTTON DELETE MAKA AKAN DELETE ROW DI DATABASE
+    $query2 = mysqli_query($conn, "SELECT * FROM pasang_iklan WHERE nik = $nik ORDER BY tanggal LIMIT $awalDataIklan, $RowPerHalIklan"); //query berdasarkan nik yang pasang
+    //CONTENT PASANG IKLAN >>> DENGAN MENGGUNAKAN BUTTON DELETE MAKA AKAN DELETE ROW DI DATABASE
     if(isset($_POST['delete'])){ //berjalan ketika FORM table iklan di delete
         $idDelete = $_POST['delete']; //mengambil data ID
         $query4 = mysqli_query ($conn, "SELECT idIklan FROM daftar_kursus WHERE (idIklan = $idDelete)"); // search apa id terikat di database DAFTAR KURSUS
@@ -71,31 +92,40 @@
         $hasilcek = $result4['idIklan']; //hasil search query 4 masuk ke variable
         if ($hasilcek != $idDelete) { //berjalan dengan pengecekan hasil search dan id yang mau di delete
             $query3 = mysqli_query($conn, "DELETE FROM pasang_iklan WHERE idIklan = $idDelete"); //query untuk DELETE dari DATABASE
-            // refresh tampilan table LIST IKLAN setelah delete
+            // refresh tampilan table setelah delete
             $query2 = mysqli_query($conn, "SELECT * FROM pasang_iklan WHERE nik = $nik ORDER BY tanggal"); 
             $info= "IKLAN dengan IDIKLAN-".$idDelete."  berhasil di hapus!";
         } else {
             $info= "IKLAN dengan IDIKLAN-".$idDelete."  tidak bisa di delete karena ada USER yang sedang mendaftar. Harap DELETE dulu dari LIST DAFTAR!";
         }
     }
+    //CONTENT PASANG IKLAN >>> HIDE IF NO ROW
+    if (mysqli_num_rows($query2) <= 0) {
+        $hideMenu2 = 1;
+    }
 
-    //CONTENT LIST DAFTAR BY IDUSER
+    //CONTENT DAFTAR IKLAN
     $RowPerHalDaftar = 5;
     $RowDaftar = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM daftar_kursus WHERE idIklan IN (SELECT idIklan FROM pasang_iklan WHERE nik = $nik)"));
     $HalPerPageDaftar = ceil($RowDaftar / $RowPerHalDaftar);
     $halAktifDaftar = (isset($_GET["halDaftar"])) ? $_GET["halDaftar"] : 1;
     $awalDataDaftar = ($RowPerHalDaftar * $halAktifDaftar)-$RowPerHalDaftar;
-    $noDaftar=$awalDataDaftar; //tampilan nomor pada table LIST DAFTAR
-    $query5 = mysqli_query($conn, "SELECT * FROM daftar_kursus WHERE idIklan IN (SELECT idIklan FROM pasang_iklan WHERE nik = $nik) ORDER BY tanggal LIMIT $awalDataDaftar, $RowPerHalDaftar"); //query pada table LIST DAFTAR
-    //CONTENT LIST DAFTAR >>> DENGAN MENGGUNAKAN BUTTON DELETE MAKA AKAN DELETE ROW DI DATABASE
-    if(isset($_POST['delete2'])){ //berjalan ketika FORM table daftar di delete
+    $noDaftar=$awalDataDaftar; //tampilan nomor
+    $query5 = mysqli_query($conn, "SELECT daftar_kursus.idDaftar, daftar_kursus.idIklan, profil.nik, profil.username, daftar_kursus.tanggal, profil.email, profil.hp FROM daftar_kursus INNER JOIN profil ON daftar_kursus.nik = profil.nik WHERE daftar_kursus.idIklan in (SELECT idIklan FROM pasang_iklan WHERE nik = $nik) ORDER BY tanggal LIMIT $awalDataDaftar, $RowPerHalDaftar"); //query
+    //CONTENT DAFTAR IKLAN >>> DENGAN MENGGUNAKAN BUTTON DELETE MAKA AKAN DELETE ROW DI DATABASE
+    if(isset($_POST['delete2'])){ //berjalan ketika FORM table di delete
         $idDelete = $_POST['delete2']; //mengambil data ID
         $query6 = mysqli_query($conn, "DELETE FROM daftar_kursus WHERE idDaftar = $idDelete"); //query untuk DELETE dari DATABASE
-        // refresh tampilan table LIST DAFTAR setelah delete
+        // refresh tampilan setelah delete
         $query5 = mysqli_query($conn, "SELECT * FROM daftar_kursus WHERE idIklan IN (SELECT idIklan FROM pasang_iklan WHERE nik = $nik) ORDER BY tanggal"); 
         $info= "DAFTAR dengan ID-".$idDelete."  berhasil di hapus...!";
     }
+    //CONTENT DAFTAR IKLAN >>> HIDE IF NO ROW
+    if (mysqli_num_rows($query5) < 1) {
+        $hideMenu3 = 1;
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,7 +138,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<!-- HEADER -->
+<!-- 2 HEADER NAVBAR MENU -->
 <div class="">
     <div class=" jpageHeader fixed-top">
         <nav class="container navbar navbar-expand-lg">
@@ -163,7 +193,6 @@
                 </ul>
                 <div class="d-flex">
                     <b class="me-2">
-                        <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
                             <?php echo $shareUsername.$infoNik; ?>
                             <a href='index.php' class="btn">LOGOUT</a>
@@ -176,49 +205,60 @@
         </nav>
     </div>
 </div>
-<!-- CONTENT -->
+<!-- 3 CONTENT -->
 <div class="">
-    <!-- FORM -->
+<!-- 3.1 FORM PASANG IKLAN-->
+<?php if ($hideMenu != 1) : ?>
     <div class="jpageCon1">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 justify-content-center">
-                    <br>
-                    <form method="post" class="tableDaftar" enctype="multipart/form-data" action="#">
+                    <form method="post" class="jForm" enctype="multipart/form-data" action="#">
                     <table class="table">
                         <tr>
-                            <td>NAMA KURSUS</td>
-                            <td align="right"><input type="text" name="namaKursus" max="60" size="60"></td>
+                            <td>NAMA</td>
+                            <td align="right"><input type="text" name="namaKursus" max="60" size="60" class="form-select"></td>
                         </tr>
                             <td>BIDANG</td>
-                            <td align="right"><input type="text" name="bidang" max="60" size="60"></td>
+                            <td align="right"><input type="text" name="bidang" max="60" size="60" class="form-select"></td>
                         <tr>
                             <td>HARGA</td>
-                            <td align="right"><input type="text" name="harga" max="60" size="60"></td>
+                            <td align="right"><input type="text" name="harga" max="60" size="60" class="form-select"></td>
                         </tr>
                             <td>WILAYAH</td>
-                            <td align="right"><textarea name="wilayah" cols="62" rows="4" style="resize: none;"></textarea></td>
+                            <td align="right"><textarea name="wilayah" cols="62" rows="4" style="resize: none;" class="form-control"></textarea></td>
                         </tr>
                         <tr>
-                            <td>ONLINE/OFFLINE</td>
-                            <td align="right"><input type="text" name="onlineOffline" max="60" size="60"></td>
+                            <td>WAKTU</td>
+                            <td align="right">
+                                <select name="onlineOffline" class="form-select">
+                                    <option value="OFFLINE">OFFLINE</option>
+                                    <option value="ONLINE">ONLINE</option>
+                                    <option value="CUSTOM">CUSTOM</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2" align="left">
                                 <label for="gambar" class="form-label">IKLAN</label>
                                 <input class="form-control" type="file" accept="image/*" name="fileToUpload" id="fileToUpload"></td>
                         </tr>
-                        <tr>
-                            <td colspan="2" align="right">
-                                <a href="kursus.php"><input class="me-3 btn btn-outline-secondary" type="button" value="KEMBALI KE LAPTOP   "></a>
-                                <input class="me-3 btn btn-outline-secondary" type="submit" name="submit" value="PASANG"></input>
-                                <input class="btn btn-outline-secondary" type="reset" value="RESET">
-                            </td>
-                        </tr>
+<!-- 3.1.1 INFO -->
                         <tr>
                             <td colspan="2">
                             <p>INFO :</p>
                             <?php echo $info ;?>
+                            <br><br><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="right">
+<!-- 3.1.2 BUTTON KEMBALI-->
+                                <a href="kursus.php"><input class="me-3 btn btn-outline-secondary" type="button" value="KEMBALI KE LAPTOP   "></a>
+<!-- 3.1.3 BUTTON PASANG-->
+                                <input class="me-3 btn btn-outline-secondary" type="submit" name="submit" value="PASANG"></input>
+<!-- 3.1.4 BUTTON RESET-->
+                                <input class="btn btn-outline-secondary" type="reset" value="RESET">
                             </td>
                         </tr>
                     </table>
@@ -227,44 +267,47 @@
             </div>
         </div>
     </div>
-    <!-- LIST IKLAN -->
+<!-- 3.2 TABLE PASANG IKLAN -->
+    <?php if ($hideMenu2 != 1) : ?>
     <div class="jpageCon2">
-        <div class="container">
-            <h2 align="center">INFORMASI LIST IKLAN  <br> BY ID USER <?php echo $nik ?></h2><br><br>
-            <!-- navigasi -->
+        <div class="container jPasangIklan">
+            <h2 align="center" class="mt-3">PASANG IKLAN</h2><br><br>
+<!-- 3.2.1 NAVIGASI -->
             <div class="pagination mb-3">
                 <?php if($halAktifIklan > 1) : ?>
-                    <a class="page-link" href="? halIklan=<?= $halAktifIklan - 1 ?>" >Previous</a>
+                    <a class="jpagination" href="? halIklan=<?= $halAktifIklan - 1 ?>" >Previous</a>
                 <?php else : ?>
-                    <a class="page-link" href="" >Previous</a>
+                    <a class="jpagination" href="" >Previous</a>
                 <?php endif; ?>
                 <?php for($i = 1; $i <= $HalPerPageIklan; $i++) :?>
                     <?php if( $i == $halAktifIklan) : ?>
-                        <a class="page-link" href="?halIklan=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                        <a class="jpagination" href="?halIklan=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
                     <?php else : ?>
-                        <a class="page-link" href="?halIklan=<?= $i  ?>"><?= $i  ?></a>
+                        <a class="jpagination" href="?halIklan=<?= $i  ?>"><?= $i  ?></a>
                     <?php endif ; ?>
                 <?php endfor; ?>
                 <?php if($halAktifIklan < $HalPerPageIklan) : ?>
-                    <a class="page-link" href="?halIklan=<?= $halAktifIklan + 1; ?>">Next</a>
+                    <a class="jpagination" href="?halIklan=<?= $halAktifIklan + 1; ?>">Next</a>
                 <?php else : ?>
-                    <a class="page-link" href="" >Next</a>
+                    <a class="jpagination" href="" >Next</a>
                 <?php endif; ?>
             </div>
-            <table class="table table-bordered table-striped tableIklan">
-                <tr>
-                    <th width="50px">No</th>
-                    <th>idIklan</td>
-                    <th width="100px">tanggal</th>
-                    <th>namaKursus</th>
-                    <th>bidang</th>
-                    <th>harga</th>
-                    <th>wilayah</th>
-                    <th>onlineOffline</th>
-                    <th>imageRegister</th>
-                    <th>nik</th>
-                    <th>Action</th>
+            <table class="table table-bordered border-secondary table-light">
+<!-- 3.2.2 HEADER -->
+                <tr class="table-dark">
+                    <th width="50px">NO</th>
+                    <th>IDIKLAN</td>
+                    <th width="100px">TANGGAL PASANG</th>
+                    <th>NAMA</th>
+                    <th>BIDANG</th>
+                    <th>HARGA</th>
+                    <th>WILAYAH</th>
+                    <th>WAKTU</th>
+                    <th>IMAGE</th>
+                    <th>NIK</th>
+                    <th width="170px">ACTION</th>
                 </tr>
+<!-- 3.2.3 ISI TABLE -->
                 <?php
                 while($result2 = mysqli_fetch_array($query2)){
                 $noIklan++
@@ -278,12 +321,14 @@
                     <td><?php echo $result2['harga']?></td>
                     <td><?php echo $result2['wilayah']?></td>
                     <td><?php echo $result2['onlineOffline']?></td>
-                    <td><?php echo $result2['imageRegister']?></td>
+                    <td><img src="<?php echo $result2['imageRegister']?>" height="40px" width="auto"></td>
                     <td><?php echo $result2['nik']?></td>
-                    <td width="161px">
+                    <td>
                     <form method="post">
-                        <button class="btn btn-outline-secondary"><a href="update.php?idIklan=<?=$result2['idIklan']?>">EDIT</a></button>
-                        <button type="submit" name="delete" value="<?php echo $result2['idIklan']?>" class="btn btn-outline-secondary">DELETE</button>
+<!-- 3.2.4 BUTTON EDIT -->
+                        <button class="btn btn-outline-secondary"><a style="text-decoration:none; color:black;" href="update.php?idIklan=<?=$result2['idIklan']?>">EDIT</a></button>
+<!-- 3.2.5 BUTTON DELETE -->
+                        <button type="submit" name="delete" value="<?php echo $result2['idIklan']?>" class="btn btn-outline-secondary" style="color:black;">DELETE</button>
                     </form>
                     </td>
                 </tr>
@@ -293,63 +338,101 @@
             </table>
         </div>
     </div>
-    <!-- LIST DAFTAR -->
+    <?php endif ?>
+<!-- 3.3 TABLE DAFTAR IKLAN -->
+    <?php if ($hideMenu3 != 1) : ?>
     <div class="jpageCon2">
-        <div class="container">
-            <h2 align="center">INFORMASI LIST DAFTAR  <br>DARI IKLAN YANG DI BUAT ID USER <?php echo $nik ?></h2><br><br>
-            <!-- navigasi -->
-            <div class="pagination mb-3">
-                <?php if($halAktifDaftar > 1) : ?>
-                    <a class="page-link" href="? halDaftar=<?= $halAktifDaftar - 1 ?>" >Previous</a>
-                <?php else : ?>
-                    <a class="page-link" href="" >Previous</a>
-                <?php endif; ?>
-                <?php for($i = 1; $i <= $HalPerPageDaftar; $i++) :?>
-                    <?php if( $i == $halAktifDaftar) : ?>
-                        <a class="page-link" href="?halDaftar=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
-                    <?php else : ?>
-                        <a class="page-link" href="?halDaftar=<?= $i  ?>"><?= $i  ?></a>
-                    <?php endif ; ?>
-                <?php endfor; ?>
-                <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
-                    <a class="page-link" href="?halDaftar=<?= $halAktifDaftar + 1; ?>">Next</a>
-                <?php else : ?>
-                    <a class="page-link" href="" >Next</a>
-                <?php endif; ?>
+        <div class="container jdaftarIklan text-center">
+            <h2 align="center" class="mt-3">DAFTAR IKLAN</h2><br>
+            <div class="row justify-content-center">
+                <div class="col-xl-3">
+                    <div class="maskot2">
+                        <img src="multimedia/image/concept/maskotsiloker.png" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-9">
+                    <table class="table">
+                        <tr>
+                            <td colspan="9" align="left">
+<!-- 3.3.1 NAVIGASI -->
+                                <div class="pagination">
+                                    <?php if($halAktifDaftar > 1) : ?>
+                                        <a class="jpagination" href="? halDaftar=<?= $halAktifDaftar - 1 ?>" >Previous</a>
+                                    <?php else : ?>
+                                        <a class="jpagination" href="" >Previous</a>
+                                    <?php endif; ?>
+                                    <?php for($i = 1; $i <= $HalPerPageDaftar; $i++) :?>
+                                        <?php if( $i == $halAktifDaftar) : ?>
+                                            <a class="jpagination" href="?halDaftar=<?= $i  ?>" style="font-weight:bold; color:red;"><?= $i  ?></a>
+                                        <?php else : ?>
+                                            <a class="jpagination" href="?halDaftar=<?= $i  ?>"><?= $i  ?></a>
+                                        <?php endif ; ?>
+                                    <?php endfor; ?>
+                                    <?php if($halAktifDaftar < $HalPerPageDaftar) : ?>
+                                        <a class="jpagination" href="?halDaftar=<?= $halAktifDaftar + 1; ?>">Next</a>
+                                    <?php else : ?>
+                                        <a class="jpagination" href="" >Next</a>
+                                    <?php endif; ?>
+                                </div>
+                            </td>
+                        </tr>
+<!-- 3.3.2 HEADER -->
+                        <tr class="table-dark">
+                            <th width="50px">NO</th>
+                            <th>ID DAFTAR</td>
+                            <th>ID IKLAN</th>
+                            <th>NIK</td>
+                            <th>USERNAME</td>
+                            <th>EMAIL</td>
+                            <th>HP</td>
+                            <th width="120px">TANGGAL DAFTAR</th>
+                            <th width="100px">ACTION</th>
+                        </tr>
+<!-- 3.3.3 ISI TABLE -->
+                        <?php
+                        while($result5    =mysqli_fetch_array($query5)){
+                        $noDaftar++
+                        ?>
+                        <tr>
+                            <td><?php echo $noDaftar?></td>
+                            <td><?php echo $result5['idDaftar']?></td>
+                            <td><?php echo $result5['idIklan']?></td>
+                            <td><?php echo $result5['nik']?></td>
+                            <td><?php echo $result5['username']?></td>
+                            <td><?php echo $result5['email']?></td>
+                            <td><?php echo $result5['hp']?></td>
+                            <td><?php echo $result5['tanggal']?></td>
+<!-- 3.3.4 BUTTON DELETE -->
+                            <form method="post">
+                                <td width="80px"">
+                                    <button type="submit" name="delete2" value="<?php echo $result5['idDaftar']?>" class="btn btn-outline-secondary" style="color:black;">DELETE</button>
+                                </td>
+                            </form>
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                    </table>
+                </div>
             </div>
-            <table class="table table-bordered table-striped tableIklan">
-                <tr>
-                    <th width="50px">No</th>
-                    <th>idDaftar</td>
-                    <th>nik</th>
-                    <th>idIklan</th>
-                    <th width="100px">tanggal</th>
-                    <th>Action</th>
-                </tr>
-                <?php
-                while($result5    =mysqli_fetch_array($query5)){
-                $noDaftar++
-                ?>
-                <tr>
-                    <td><?php echo $noDaftar?></td>
-                    <td><?php echo $result5['idDaftar']?></td>
-                    <td><?php echo $result5['nik']?></td>
-                    <td><?php echo $result5['idIklan']?></td>
-                    <td><?php echo $result5['tanggal']?></td>
-                    <form method="post">
-                        <td width="80px"">
-                            <button type="submit" name="delete2" value="<?php echo $result5['idDaftar']?>" class="btn btn-outline-secondary">DELETE</button>
-                        </td>
-                    </form>
-                </tr>
-                <?php
-                }
-                ?>
-            </table>
         </div>
     </div>
+    <?php endif ?>
+<!-- 3.3.5 WARNING BIO TIDAK LENGKAP -->
+<?php else : ?>
+    <div class="jpageCon1 text-center ">
+        <div class="row warningNoNik">
+            <div class="col align-self-center">
+                BELUM ADA NIK. <br> 
+                TOLONG! <br> 
+                LENGKAPI BIODATA TERLEBIH DAHULU <br> 
+                DI MENU PROFILE.
+            </div>
+        </div>
+    </div>
+<?php endif ?>
 </div>
-<!-- FOOTER -->
+<!-- 4. FOOTER -->
 <div class="jpageFooter">
     <div class="">
         <div class="container">
@@ -361,7 +444,6 @@
         </div>
     </div>
 </div>
-<script src="js/jmr.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -4,28 +4,34 @@
                         kelas   :IF9K
         created on              :20220713
         page name               :update.php
-        total                   :??? pages
         logs                    :v1.0 20220713 - create file
-                                :v1.0 20220722 - finish file
-        [Table of contents]
+                                :v1.0 20220731 - finish file
+        [Table of contents]     :1 QUERY                                        Line 22
+                                :2 HEADER NAVBAR MENU                           Line 84
+                                :3 CONTENT                                      Line 151
+                                :   3.1 INFORMATION IKLAN                       Line 155
+                                :       3.1.1 INFO                              Line 157
+                                :       3.1.2 BANNER                            Line 161
+                                :       3.1.3 ISI IKLAN DAN FORM                Line 165
+                                :       3.1.4 BUTTON UPDATE                     Line 222
+                                :       3.1.5 BUTTON RESET                      Line 224
+                                :       3.1.6 BUTTON KEMBALI                    Line 232
+                                :4 FOOTER                                       Line 239
     -->
 
+<!-- 1 QUERY -->
 <?php
     require "fungsi.php";
     
-    //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
+    //tampilan USER yang sedang LOGIN
     session_start();
     $shareUsername = $_SESSION['username'];
     $nik = cekNik($shareUsername);
     if ($nik == 0) {
-        $infoNik = ' = NIK Tidak Ada';
+        $infoNik = ' - BIO TIDAK LENGKAP!';
     }
-    if(isset($_GET['idIklan'])){ //mendapatkan informasi dari page cekTempat.php untuk idIklan
-        $idIklan    =$_GET['idIklan']; //menyimpan informasi di variable
-    }
-    else {
-        die ("Error. No ID Selected!"); //error apabila tidak mendapatkan id
-    }
+    //mendapatkan informasi dari page cekTempat.php untuk idIklan
+    $idIklan = $_GET['idIklan']; //menyimpan informasi di variable
 
     //CONTENT UPDATE AREA
     $info=""; //variable informasi
@@ -62,6 +68,7 @@
         }
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +81,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<!-- HEADER -->
+<!-- 2 HEADER NAVBAR MENU -->
 <div class="">
     <div class=" jpageHeader fixed-top">
         <nav class="container navbar navbar-expand-lg">
@@ -129,7 +136,6 @@
                 </ul>
                 <div class="d-flex">
                     <b class="me-2">
-                        <?php echo $tes; ?>
                         <?php if ($shareUsername != '') : ?>
                             <?php echo $shareUsername.$infoNik; ?>
                             <a href='index.php' class="btn">LOGOUT</a>
@@ -142,53 +148,69 @@
         </nav>
     </div>
 </div>
-<!-- CONTENT -->
+<!-- 3 CONTENT -->
 <div class="">
-    <!-- UPDATE AREA-->
     <div class="jpageCon1">
         <div class="container ">
-            <h4 class="text-center">EDIT INFORMATION PASANG IKLAN</h4>
+<!-- 3.1 INFORMATION IKLAN -->
+            <h4 class="text-center">UPDATE INFORMATION IKLAN</h4>
+<!-- 3.1.1 INFO -->
             <h5 class="text-center"><?php echo $info; ?></h5>
             <?php if ($hide != 1) :?>
             <div>
+<!-- 3.1.2 BANNER -->
                 <div class="text-center"><img class="highlight" src="<?php echo $imageRegister1?>" alt=""></div>
-                <form method="post" class="tableDaftar" enctype="multipart/form-data" action="#">
+                <form method="post" class="jForm2" enctype="multipart/form-data" action="#">
                 <table class="table">
+<!-- 3.1.3 ISI IKLAN DAN FORM -->
                     <tr>
-                        <td>idIklan</td>
+                        <td>ID IKLAN</td>
                         <td>:&nbsp <?php echo $result1['idIklan']?></td>
                     </tr>
                     <tr>
-                        <td>nik</td>
+                        <td>NIK</td>
                         <td>:&nbsp <?php echo $result1['nik']?></td>
                     </tr>
                     <tr>
-                        <td>tanggal</td>
+                        <td>TANGGAL PASANG</td>
                         <td>:&nbsp <?php echo $result1['tanggal']?></td>
                     </tr>
                     <tr>
-                        <td>imageRegister</td>
+                        <td>IMAGE</td>
                         <td>:&nbsp <?php echo $result1['imageRegister']?></td>
                     </tr>
                     <tr>
-                        <td>namaKursus</td>
-                        <td>:&nbsp <input type="text" value="<?php echo $namaKursus1?>" name="namaKursus" max="60" size="60"> </td>
+                        <td>NAMA</td>
+                        <td><input type="text" value="<?php echo $namaKursus1?>" name="namaKursus" max="60" size="60"> </td>
                     </tr>
                     <tr>
-                        <td>bidang</td>
-                        <td>:&nbsp <input type="text" value="<?php echo $bidang1?>" name="bidang" max="60" size="60"> </td>
+                        <td>BIDANG</td>
+                        <td><input type="text" value="<?php echo $bidang1?>" name="bidang" max="60" size="60"> </td>
                     </tr>
                     <tr>
-                        <td>harga</td>
-                        <td>:&nbsp <input type="text" value="<?php echo $harga1?>" name="harga" max="60" size="60"> </td>
+                        <td>HARGA</td>
+                        <td><input type="text" value="<?php echo $harga1?>" name="harga" max="60" size="60"> </td>
                     </tr>
                     <tr>
-                        <td>wilayah</td>
-                        <td>:&nbsp <textarea name="wilayah" cols="62" rows="4" style="resize: none;"><?php echo $wilayah1?></textarea> </td>
+                        <td>WILAYAH</td>
+                        <td><textarea name="wilayah" cols="62" rows="4" style="resize: none;"><?php echo $wilayah1?></textarea> </td>
                     </tr>
                     <tr>
-                        <td>onlineOffline</td>
-                        <td>:&nbsp <input type="text" value="<?php echo $onlineOffline1?>" name="onlineOffline" max="60" size="60"> </td>
+                        <td>WAKTU</td>
+                        <td align="right">
+                                <select name="onlineOffline" class="form-select">
+                                    <option value="<?php echo $onlineOffline1?>" selected><?php echo $onlineOffline1?></option>
+                                    <?php if($onlineOffline1 != "OFFLINE") :?>
+                                        <option value="OFFLINE">OFFLINE</option>
+                                    <?php endif; ?>
+                                    <?php if($onlineOffline1 != "ONLINE") :?>
+                                        <option value="ONLINE">ONLINE</option>
+                                    <?php endif; ?>
+                                    <?php if($onlineOffline1 != "CUSTOM") :?>
+                                        <option value="CUSTOM">CUSTOM</option>
+                                    <?php endif; ?>
+                                </select>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2" align="left">
@@ -197,24 +219,24 @@
                     </tr>
                     <tr>
                         <td colspan="2" align="right">
+<!-- 3.1.4 BUTTON UPDATE -->
                             <input class="me-3 btn btn-outline-secondary" type="submit" name="submit" value="UPDATE"></input>
+<!-- 3.1.5 BUTTON RESET -->
                             <input class="btn btn-outline-secondary" type="reset" value="RESET">
                         </td>
                     </tr>
-                    <?php 
-                        
-                    ?>
                 </table>
                 </form>
             </div>
             <?php endif; ?>
+<!-- 3.1.6 BUTTON KEMBALI -->
             <div class="container text-center my-3">
                 <a href="pasangIklan.php"><button class="btn btn-outline-secondary">KEMBALI</button></a>
             </div>
         </div>
     </div>
 </div>
-<!-- FOOTER -->
+<!-- 4. FOOTER -->
 <div class="jpageFooter">
     <div class="">
         <div class="container">
@@ -227,7 +249,6 @@
     </div>
 </div>
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jmr.js"></script>
 <script>
 </script>
 </body>

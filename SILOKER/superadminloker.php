@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  if ($_SESSION and $_SESSION['username']) $shareUsername = $_SESSION['username']
+?>
 <!--  
       Created By  : Indi Bagus Prasetyo
       NIM         : 10121902
@@ -32,7 +36,9 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
               <div class="container-fluid">
-                <a class="navbar-brand" href="dashloker.php">SILOKER</a>
+              <a class="navbar-brand" href="dashloker.php">
+                <img src="multimedia/image/logo/silokerlogo.png" alt="no gambar" width="30" height="30">SILOKER
+              </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -78,14 +84,18 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#" style="padding-left: 15rem;">
-                        <p>Helo, <strong></strong></p>
+                      <p>Helo, <strong><?php echo $shareUsername;?></strong></p>
                       </a>
                     </li>
                     </ul>
                 </div>
             </div>
 
-            <a href="index.php" class="btn btn-light">Masuk</a>
+            <?php if( $shareUsername) {
+            ?> <a href="index.php" class="btn btn-light">Keluar</a>
+            <?php 
+            } else {
+            ?><a href="index.php" class="btn btn-light">Masuk</a> <?php } ?>
 
             </div>
         </nav>
