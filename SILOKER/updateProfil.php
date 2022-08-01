@@ -17,7 +17,7 @@
 ?>
 
 <?php
-    require("koneksi.php");
+    require("fungsi.php");
     // Variable Data Profil
 
     // Data Diri

@@ -31,7 +31,7 @@
 <script src="bar.js"></script>
 <body>
     <?php
-        require("koneksi.php");
+        require("fungsi.php");
         $nik = $_GET['nik'];
         $sql = "SELECT * FROM profil WHERE nik = '$nik'";
         $query = mysqli_query($conn,$sql);
