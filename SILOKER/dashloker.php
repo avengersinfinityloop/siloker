@@ -271,7 +271,7 @@
 
 <!-- Footer -->
         <div class="container">
-          <iframe src="footer.html" width="1280" height="480"></iframe>
+          <iframe class="responsive-iframe" src="footer.html" width="1280" height="480"></iframe>
         </div>
   </body>
 </html>

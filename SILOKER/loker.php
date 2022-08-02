@@ -415,7 +415,7 @@
 
 <!-- Footer -->
     <div class="container">
-        <iframe src="footer.html" width="1280" height="480">404</iframe>
+        <iframe class="responsive-iframe" src="footer.html" width="1280" height="480">404</iframe>
     </div>
 
     </body>
