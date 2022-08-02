@@ -4,7 +4,6 @@
     $id = $_GET["id"];
     $query = mysqli_query($conn, "SELECT * FROM loker WHERE idloker = $id");
     $row = mysqli_fetch_array($query);
-
   }
 ?>
 <!doctype html>
