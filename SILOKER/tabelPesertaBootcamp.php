@@ -38,7 +38,7 @@ $shareUsername = $_SESSION['username'];
         <!-- Navbar -->
         <nav class="navbar bg-white shadow navbar-expand-lg">
             <div class="container">
-                <div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 40%;" class="logo-light" alt="" /></a></div>
+                <div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 100%;" class="logo-light" alt="" /></a></div>
                 <div class="navbar-other ml-auto order-lg-3">
                     <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
                         <li class="nav-item">
@@ -111,48 +111,49 @@ $shareUsername = $_SESSION['username'];
             <h2 class="title-bg bg-violet color-white">List Peserta Bootcamp</h2>
         </div>
         <br>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>NIK</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>no.HP</th>
-                    <th>Kota</th>
-                    <th>Alamat</th>
-                    <th>Pekerjaan</th>
-                    <th>Bootcamp</th>
-                    <th>metode</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
+        <div class="container-inner d-flex table-responsive">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>NIK</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>no.HP</th>
+                        <th>Kota</th>
+                        <th>Alamat</th>
+                        <th>Pekerjaan</th>
+                        <th>Bootcamp</th>
+                        <th>metode</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                <?php
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $database = "siloker";
+                <tbody>
+                    <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $database = "siloker";
 
-                // Create connection
-                $connection = new mysqli($servername, $username, $password, $database);
+                    // Create connection
+                    $connection = new mysqli($servername, $username, $password, $database);
 
-                // Check connection
-                if ($connection->connect_error) {
-                    die("Connection failed: " . $connection->connect_error);
-                }
+                    // Check connection
+                    if ($connection->connect_error) {
+                        die("Connection failed: " . $connection->connect_error);
+                    }
 
-                // read all row from database table
-                $sql = "SELECT * FROM pesertabootcamp";
-                $result = $connection->query($sql);
+                    // read all row from database table
+                    $sql = "SELECT * FROM pesertabootcamp";
+                    $result = $connection->query($sql);
 
-                if (!$result) {
-                    die("Invalid query: " . $connection->error);
-                }
+                    if (!$result) {
+                        die("Invalid query: " . $connection->error);
+                    }
 
-                // read data of each row
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>
+                    // read data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
                 <td>" . $row["nik"] . "</td>
                 <td>" . $row["namaLengkap"] . "</td>
                 <td>" . $row["email"] . "</td>
@@ -167,12 +168,14 @@ $shareUsername = $_SESSION['username'];
                     <a class='btn btn-danger btn-sm' href='deletedb-pesertabootcamp.php?nik=" . $row['nik'] . "'>Delete</a>
                 </td>
             </tr>";
-                }
+                    }
 
-                $connection->close();
-                ?>
-            </tbody>
-        </table>
+                    $connection->close();
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
         <!-- table -->
     </div>
 

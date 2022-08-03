@@ -1,9 +1,19 @@
 <?php
 
-//PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
+require "callInputBootcamp.php";
+
+//tampilan USER yang sedang LOGIN
 session_start();
 $shareUsername = $_SESSION['username'];
-
+$nik = cekNik($shareUsername);
+if ($nik == 0) {
+  $infoNik = ' - BIO TIDAK LENGKAP!';
+}
+$nama = cekNamaLengkap($shareUsername);
+$email = cekEmail($shareUsername);
+$hp = cekHP($shareUsername);
+$kota = cekKota($shareUsername);
+$alamat = cekAlamat($shareUsername);
 ?>
 
 <!-- 
@@ -37,7 +47,7 @@ $shareUsername = $_SESSION['username'];
     <!-- Navbar -->
     <nav class="navbar bg-white shadow navbar-expand-lg">
       <div class="container">
-        <div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 40%;" class="logo-light" alt="" /></a></div>
+        <div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 100%;" class="logo-light" alt="" /></a></div>
         <div class="navbar-other ml-auto order-lg-3">
           <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
             <li class="nav-item">
@@ -117,7 +127,7 @@ $shareUsername = $_SESSION['username'];
               <div class="tp-caption font-weight-400 color-red" data-x="left" data-y="middle" data-hoffset="['250','250','250','175']" data-voffset="['30','30','30','60']" data-fontsize="['30','30','30','28']" data-lineheight="['40','40','40','38']" data-width="['550','550','550','340']" data-whitespace="['normal','normal','normal','normal']" data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-responsive="on" data-responsive_offset="on" style="z-index: 9;">Yuk, mulai petualanganmu menjadi UI/UX Designer idaman banyak perusahaan.
               </div>
               <!-- /.tp-caption -->
-              <a class="tp-caption btn btn-l btn-red btn-strong-hover scroll" data-x="left" data-y="middle" data-hoffset="['250','250','250','175']" data-voffset="['140','140','140','175']" data-width="['auto','auto','auto','auto']" data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-responsive="on" data-responsive_offset="on" style="z-index: 9;" href="">Learn More
+              <a class="tp-caption btn btn-l btn-red btn-strong-hover scroll" data-x="left" data-y="middle" data-hoffset="['250','250','250','175']" data-voffset="['140','140','140','175']" data-width="['auto','auto','auto','auto']" data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-responsive="on" data-responsive_offset="on" style="z-index: 9;" href="#tentangProgram">Learn More
               </a>
               <!-- /.tp-caption -->
               <!-- /.tp-caption -->
@@ -138,7 +148,7 @@ $shareUsername = $_SESSION['username'];
     <!-- Banner -->
 
     <!-- Tentang Program -->
-    <div class="container inner">
+    <div id="tentangProgram" class="container inner">
       <div class="text-center">
         <h2 class="title-bg bg-red color-white">Tentang Program</h2>
       </div>
@@ -430,7 +440,7 @@ $shareUsername = $_SESSION['username'];
                                 <div class="form-row">
                                   <div class="col-12">
                                     <div class="form-group">
-                                      <input id="form_nik" type="text" name="nik" class="form-control" placeholder="NIK*" required="required" data-error="NIK is required.">
+                                      <input id="form_nik" type="text" name="nik" class="form-control" placeholder="NIK*" value="<?php echo $nik ?>" required="required" data-error="NIK is required.">
                                       <div class="help-block with-errors"></div>
                                     </div>
                                   </div>
@@ -439,7 +449,7 @@ $shareUsername = $_SESSION['username'];
                                 <div class="form-row">
                                   <div class="col-12">
                                     <div class="form-group">
-                                      <input id="form_namaLengkap" type="text" name="namaLengkap" class="form-control" placeholder="Nama Lengkap *" required="required" data-error="Full Name is required.">
+                                      <input id="form_namaLengkap" type="text" name="namaLengkap" class="form-control" placeholder="Nama Lengkap *" value="<?php echo $nama ?>" required="required" data-error="Full Name is required.">
                                       <div class="help-block with-errors"></div>
                                     </div>
                                   </div>
@@ -448,7 +458,7 @@ $shareUsername = $_SESSION['username'];
                                 <div class="form-row">
                                   <div class="col-12">
                                     <div class="form-group">
-                                      <input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" required="required" data-error="Email is required.">
+                                      <input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" value="<?php echo $email ?>" required="required" data-error="Email is required.">
                                       <div class="help-block with-errors"></div>
                                     </div>
                                   </div>
@@ -457,7 +467,7 @@ $shareUsername = $_SESSION['username'];
                                 <div class="form-row">
                                   <div class="col-12">
                                     <div class="form-group">
-                                      <input id="form_noHP" type="number" name="noHP" class="form-control" placeholder="No.Handphone *" required="required" data-error="Nomor Handphone is required.">
+                                      <input id="form_noHP" type="number" name="noHP" class="form-control" placeholder="No.Handphone *" value="<?php echo $hp ?>" required="required" data-error="Nomor Handphone is required.">
                                       <div class="help-block with-errors"></div>
                                     </div>
                                   </div>
@@ -465,104 +475,9 @@ $shareUsername = $_SESSION['username'];
                                 <!-- Kota Tinggal -->
                                 <div class="form-row">
                                   <div class="col-md-12">
-                                    <div class="form-group custom-select-wrapper">
-                                      <select id="form_kota" class="custom-select" type="text" name="kota" placeholder="Kota Tinggal *" required="required" data-error="Kota Tinggal is required.">
-                                        <option selected>Kota</option>
-                                        <option>Ambon</option>
-                                        <option>Balikpapan</option>
-                                        <option>Banda Aceh</option>
-                                        <option>Bandar Lampung</option>
-                                        <option>Bandung</option>
-                                        <option>Banjar</option>
-                                        <option>Banjar Baru</option>
-                                        <option>Banjarmasin</option>
-                                        <option>Batam</option>
-                                        <option>Batu</option>
-                                        <option>Baubau</option>
-                                        <option>Bekasi</option>
-                                        <option>Bengkulu</option>
-                                        <option>Bima</option>
-                                        <option>Binjai</option>
-                                        <option>Bitung</option>
-                                        <option>Blitar</option>
-                                        <option>Bogor</option>
-                                        <option>Bontang</option>
-                                        <option>Bukittinggi</option>
-                                        <option>Cilegon</option>
-                                        <option>Cimahi</option>
-                                        <option>Cirebon</option>
-                                        <option>Denpasar</option>
-                                        <option>Depok</option>
-                                        <option>Dumai</option>
-                                        <option>Gorontalo</option>
-                                        <option>Gunungsitoli</option>
-                                        <option>Jakarta</option>
-                                        <option>Jambi</option>
-                                        <option>Jayapura</option>
-                                        <option>Kediri</option>
-                                        <option>Kendari</option>
-                                        <option>Kotamobagu</option>
-                                        <option>Kupang</option>
-                                        <option>Langsa</option>
-                                        <option>Lhokseumawe</option>
-                                        <option>Lubuklinggau</option>
-                                        <option>Madiun</option>
-                                        <option>Magelang</option>
-                                        <option>Makassar</option>
-                                        <option>Malang</option>
-                                        <option>Manado</option>
-                                        <option>Mataram</option>
-                                        <option>Medan</option>
-                                        <option>Metro</option>
-                                        <option>Mojokerto</option>
-                                        <option>Padang</option>
-                                        <option>Padang Panjang</option>
-                                        <option>Padang Sidempuan</option>
-                                        <option>Pagar Alam</option>
-                                        <option>Palangka Raya</option>
-                                        <option>Palembang</option>
-                                        <option>Palopo</option>
-                                        <option>Palu</option>
-                                        <option>Pangkalpinang</option>
-                                        <option>Parepare</option>
-                                        <option>Pariaman</option>
-                                        <option>Pasuruan</option>
-                                        <option>Payakumbuh</option>
-                                        <option>Pekalongan</option>
-                                        <option>Pekanbaru</option>
-                                        <option>Pematangsiantar</option>
-                                        <option>Pontianak</option>
-                                        <option>Prabumulih</option>
-                                        <option>Probolinggo</option>
-                                        <option>Sabang</option>
-                                        <option>Salatiga</option>
-                                        <option>Samarinda</option>
-                                        <option>Sawahlunto</option>
-                                        <option>Semarang</option>
-                                        <option>Serang</option>
-                                        <option>Sibolga</option>
-                                        <option>Singkawang</option>
-                                        <option>Solok</option>
-                                        <option>Sorong</option>
-                                        <option>Subulussalam</option>
-                                        <option>Sukabumi</option>
-                                        <option>Sungai Penuh</option>
-                                        <option>Surabaya</option>
-                                        <option>Surakarta</option>
-                                        <option>Tangerang Selatan</option>
-                                        <option>Tangerang</option>
-                                        <option>Tanjungbalai</option>
-                                        <option>Tanjungpinang</option>
-                                        <option>Tarakan</option>
-                                        <option>Tasikmalaya</option>
-                                        <option>Tebing Tinggi</option>
-                                        <option>Tegal</option>
-                                        <option>Ternate</option>
-                                        <option>Tidore Kepulauan</option>
-                                        <option>Tomohon</option>
-                                        <option>Tual</option>
-                                        <option>Yogyakarta</option>
-                                      </select>
+                                    <div class="form-group">
+                                      <input id="form_kota" type="text" name="kota" class="form-control" placeholder="Kota Tinggal *" value="<?php echo $kota ?>" required="required" data-error="Kota Tinggal is required.">
+                                      <div class="help-block with-errors"></div>
                                     </div>
                                   </div>
                                 </div>
@@ -570,7 +485,7 @@ $shareUsername = $_SESSION['username'];
                                 <div class="form-row">
                                   <div class="col-12">
                                     <div class="form-group">
-                                      <input id="form_alamat" type="text" name="alamat" class="form-control" placeholder="Alamat *" required="required" data-error="Alamat is required.">
+                                      <input id="form_alamat" type="text" name="alamat" class="form-control" placeholder="Alamat *" value="<?php echo $alamat ?>" required="required" data-error="Alamat is required.">
                                       <div class="help-block with-errors"></div>
                                     </div>
                                   </div>
