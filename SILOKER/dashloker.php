@@ -155,8 +155,8 @@
             <p class="lead">
               Bergabung untuk mendapatkan lebih.
             </p>
-            <a href="#" class="btn btn-primary btn-md">Pelajari Lebih Lanjut</a>
-            <a href="#" class="btn btn-success btn-md">Daftar</a>
+            <a href="faq.html" class="btn btn-primary btn-md">Pelajari Lebih Lanjut</a>
+            <a href="register.php" class="btn btn-success btn-md">Daftar</a>
         </div>
       </div>
     </div>

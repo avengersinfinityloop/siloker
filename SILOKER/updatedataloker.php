@@ -1,6 +1,12 @@
 <?php
-include "koneksidb.php";
-// require 'function.php';
+include 'koneksidb.php';
+//     Created By  : Indi Bagus Prasetyo
+//     NIM         : 10121902
+//     Kelas       : IF-9K/S1/II
+//     Matkul      : Pemrograman Web 2
+//     Dosen       : Geraldi Catur Pamuji, S.Kom, M.Kom.
+//     Created File On v27072022:1113 (v.0.5)
+//     require 'function.php';
 if( isset($_POST["submit"])) {
     $id = $_POST["idloker"];
     $data = $_POST;
@@ -20,7 +26,7 @@ if( isset($_POST["submit"])) {
     // htmlspecialchars digunakan agar element html yang di input tidak bisa dijalankan
  
      // Query Insert data
-    $query = "UPDATE `loker` SET nama_pt = '$nama_pt', bidang_kerja = '$bidang_kerja',
+    $query = "UPDATE `loker` SET logo = 'multimedia/image/mainloker/$logo',nama_pt = '$nama_pt', bidang_kerja = '$bidang_kerja',
                 lulusan_min = '$lulusan_min', gender = '$gender', usia_max = '$usia_max', durasi = '$durasi',
                 gaji = '$gaji', lokasi = '$lokasi', deskripsi = '$deskripsi', link_pt = '$link_pt', desk_lengkap = '$desk_lengkap'
                     WHERE idloker = '$id'
