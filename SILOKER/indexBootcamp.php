@@ -1,8 +1,9 @@
 <?php
-
+require "callInputBootcamp.php";
 //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
 session_start();
 $shareUsername = $_SESSION['username'];
+$email = cekEmail($shareUsername);
 
 ?>
 
@@ -439,7 +440,7 @@ $shareUsername = $_SESSION['username'];
 									<div class="col-md-10 offset-md-1">
 										<form action="insertdb-freetrial.php" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 											<div id="mc_embed_signup_scroll2" class="input-group">
-												<input type="email" value="" name="email" class="email form-control mb-0 mr-2 mb-sm-0" id="mce-EMAIL2" placeholder="Email Address" required>
+												<input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" value="<?php echo $email ?>" required="required" data-error="Email is required.">
 												<button type="submit" name="email" id="mc-embedded-subscribe2" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">Join</button>
 												<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 												<div style="position: absolute; left: -5000px;" aria-hidden="true">

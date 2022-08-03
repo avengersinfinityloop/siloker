@@ -94,3 +94,30 @@ if (isset($_POST['login_user'])) {
     }
   }
 }
+
+// Manggil Inputan
+function cekNik($username)
+{
+  global $conn;
+  $queryNik = mysqli_query($conn, "SELECT nik FROM profil WHERE username = '$username' ");
+  $resultNik = mysqli_fetch_array($queryNik);
+  if ($resultNik != null) {
+    $nik = $resultNik['nik'];
+  } else {
+    $nik = 0;
+  }
+  return $nik;
+}
+
+function cekEmail($username)
+{
+  global $conn;
+  $queryEmail = mysqli_query($conn, "SELECT email FROM profil WHERE username = '$username' ");
+  $resultEmail = mysqli_fetch_array($queryEmail);
+  if ($resultEmail != null) {
+    $nik = $resultEmail['email'];
+  } else {
+    $Email = 0;
+  }
+  return $Email;
+}

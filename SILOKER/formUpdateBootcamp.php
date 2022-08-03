@@ -1,8 +1,18 @@
 <?php
+require "callInputBootcamp.php";
 
 //PAGE SELANJUTNYA YANG MENDAPAT VARIABLE
 session_start();
 $shareUsername = $_SESSION['username'];
+$nik = cekNik($shareUsername);
+if ($nik == 0) {
+  $infoNik = ' - BIO TIDAK LENGKAP!';
+}
+$nama = cekNamaLengkap($shareUsername);
+$email = cekEmail($shareUsername);
+$hp = cekHP($shareUsername);
+$kota = cekKota($shareUsername);
+$alamat = cekAlamat($shareUsername);
 
 ?>
 
@@ -124,7 +134,7 @@ $shareUsername = $_SESSION['username'];
                     <div class="form-row">
                       <div class="col-12">
                         <div class="form-group">
-                          <input id="form_nik" type="number" name="nik" class="form-control" placeholder="NIK*" required="required" data-error="NIK is required.">
+                          <input id="form_nik" type="text" name="nik" class="form-control" placeholder="NIK*" value="<?php echo $nik ?>" required="required" data-error="NIK is required." readonly>
                           <div class="help-block with-errors"></div>
                         </div>
                       </div>
@@ -133,7 +143,7 @@ $shareUsername = $_SESSION['username'];
                     <div class="form-row">
                       <div class="col-12">
                         <div class="form-group">
-                          <input id="form_namaLengkap" type="text" name="namaLengkap" class="form-control" placeholder="Nama Lengkap *" required="required" data-error="Full Name is required.">
+                          <input id="form_namaLengkap" type="text" name="namaLengkap" class="form-control" placeholder="Nama Lengkap *" value="<?php echo $nama ?>" required="required" data-error="Full Name is required.">
                           <div class="help-block with-errors"></div>
                         </div>
                       </div>
@@ -142,7 +152,7 @@ $shareUsername = $_SESSION['username'];
                     <div class="form-row">
                       <div class="col-12">
                         <div class="form-group">
-                          <input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" required="required" data-error="Email is required.">
+                          <input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" value="<?php echo $email ?>" required="required" data-error="Email is required.">
                           <div class="help-block with-errors"></div>
                         </div>
                       </div>
@@ -151,7 +161,7 @@ $shareUsername = $_SESSION['username'];
                     <div class="form-row">
                       <div class="col-12">
                         <div class="form-group">
-                          <input id="form_noHP" type="number" name="noHP" class="form-control" placeholder="No.Handphone *" required="required" data-error="Nomor Handphone is required.">
+                          <input id="form_noHP" type="number" name="noHP" class="form-control" placeholder="No.Handphone *" value="<?php echo $hp ?>" required="required" data-error="Nomor Handphone is required.">
                           <div class="help-block with-errors"></div>
                         </div>
                       </div>
@@ -160,7 +170,7 @@ $shareUsername = $_SESSION['username'];
                     <div class="form-row">
                       <div class="col-md-12">
                         <div class="form-group custom-select-wrapper">
-                          <select id="form_kota" class="custom-select" type="text" name="kota" placeholder="Kota Tinggal *" required="required" data-error="Kota Tinggal is required.">
+                          <select id="form_kota" class="custom-select" type="text" name="kota" placeholder="Kota Tinggal *" value="<?php echo $lokasi ?>" required="required" data-error="Kota Tinggal is required.">
                             <option selected>Kota</option>
                             <option>Ambon</option>
                             <option>Balikpapan</option>
@@ -264,7 +274,7 @@ $shareUsername = $_SESSION['username'];
                     <div class="form-row">
                       <div class="col-12">
                         <div class="form-group">
-                          <input id="form_alamat" type="text" name="alamat" class="form-control" placeholder="Alamat *" required="required" data-error="Alamat is required.">
+                          <input id="form_alamat" type="text" name="alamat" class="form-control" placeholder="Alamat *" value="<?php echo $alamat ?>" required="required" data-error="Alamat is required.">
                           <div class="help-block with-errors"></div>
                         </div>
                       </div>
@@ -290,13 +300,8 @@ $shareUsername = $_SESSION['username'];
                     <!-- Pilih Bootcamp -->
                     <div class="form-row">
                       <div class="col-md-6">
-                        <div class="form-group custom-select-wrapper">
-                          <select id="form_namaBootcamp" class="custom-select" type="text" name="namaBootcamp" placeholder="Pilih Bootcamp *" required="required" data-error="Nama Bootcamp is required.">
-                            <option selected>Pilih Bootcamp</option>
-                            <option>Digital Marketing</option>
-                            <option>UI/UX Designer</option>
-                            <option>Full Stack Web Development</option>
-                          </select>
+                        <div class="form-group">
+                          <input id="form_namaBootcamp" class="form-control" type="text" name="namaBootcamp" value="UI/UX Designer" readonly>
                         </div>
                       </div>
                       <div class="col-md-6">
