@@ -25,6 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="icon" href="multimedia/image/logo/silokerlogo.png">
+    <script src="js/bootstrap.bundle.min.js"></script>
     <title>Data | Profil</title>
 </head>
 <body>
@@ -32,6 +33,54 @@
         require("fungsi.php");
         $sql = "SELECT * FROM profil";
      ?>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="multimedia/image/logo/silokerlogo.png" alt="no gambar" width="30" height="30">SILOKER
+        </a>
+        <!-- Dropdown -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kursus</a>
+                    <div class="dropdown-menu" aria-labelledby="NavbarDrop">
+                        <a class="dropdown-item" href="kursus.php">Menu</a>
+                        <a class="dropdown-item" href="cekTempat.php">Cek Tempat</a>
+                        <a class="dropdown-item" href="pasangIklan.php">Pasang Iklan</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Loker</a>
+                    <div class="dropdown-menu" aria-labelledby="NavbarDrop">
+                        <a class="dropdown-item" href="dashloker.php">Menu Utama</a>
+                        <a class="dropdown-item" href="loker.php">Main Loker</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bootcamp</a>
+                    <div class="dropdown-menu" aria-labelledby="NavbarDrop">
+                        <a class="dropdown-item" href="uiUx.php">UI UX</a>
+                        <a class="dropdown-item" href="indexBootcamp.php">Index Bootcamp</a>
+                        <a class="dropdown-item" href="fullStackWebDevelopment.php">Full Stack Web Development</a>
+                        <a class="dropdown-item" href="digitalMarketing.php">Digital Marketing</a>
+                        <a class="dropdown-item" href="about.php">About</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="NavbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
+                    <div class="dropdown-menu" aria-labelledby="NavbarDrop">
+                        <a class="dropdown-item" href="profil.php">Profil</a>
+                        <a class="dropdown-item" href="cekProfil.php">Edit Profil</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">LOGIN</a>
+                </li>
+                <li class="nav-item navbar-right">
+                    <a class="nav-link" style="margin-right: 15px" href="index.php">LOGOUT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <center>
         <h1 style="font-size: 3em; font-family: sans-serif">DATA ANDA</h1>
         <hr style="border: 1;
