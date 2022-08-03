@@ -38,7 +38,7 @@ $shareUsername = $_SESSION['username'];
 		<!-- Navbar -->
 		<nav class="navbar bg-white shadow navbar-expand-lg">
 			<div class="container">
-				<div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 40%;" class="logo-light" alt="" /></a></div>
+				<div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 100%;" class="logo-light" alt="" /></a></div>
 				<div class="navbar-other ml-auto order-lg-3">
 					<ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
 						<li class="nav-item">

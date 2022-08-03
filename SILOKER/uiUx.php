@@ -47,7 +47,7 @@ $alamat = cekAlamat($shareUsername);
     <!-- Navbar -->
     <nav class="navbar bg-white shadow navbar-expand-lg">
       <div class="container">
-        <div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 40%;" class="logo-light" alt="" /></a></div>
+        <div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 100%;" class="logo-light" alt="" /></a></div>
         <div class="navbar-other ml-auto order-lg-3">
           <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
             <li class="nav-item">
@@ -127,7 +127,7 @@ $alamat = cekAlamat($shareUsername);
               <div class="tp-caption font-weight-400 color-red" data-x="left" data-y="middle" data-hoffset="['250','250','250','175']" data-voffset="['30','30','30','60']" data-fontsize="['30','30','30','28']" data-lineheight="['40','40','40','38']" data-width="['550','550','550','340']" data-whitespace="['normal','normal','normal','normal']" data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-responsive="on" data-responsive_offset="on" style="z-index: 9;">Yuk, mulai petualanganmu menjadi UI/UX Designer idaman banyak perusahaan.
               </div>
               <!-- /.tp-caption -->
-              <a class="tp-caption btn btn-l btn-red btn-strong-hover scroll" data-x="left" data-y="middle" data-hoffset="['250','250','250','175']" data-voffset="['140','140','140','175']" data-width="['auto','auto','auto','auto']" data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-responsive="on" data-responsive_offset="on" style="z-index: 9;" href="">Learn More
+              <a class="tp-caption btn btn-l btn-red btn-strong-hover scroll" data-x="left" data-y="middle" data-hoffset="['250','250','250','175']" data-voffset="['140','140','140','175']" data-width="['auto','auto','auto','auto']" data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-responsive="on" data-responsive_offset="on" style="z-index: 9;" href="#tentangProgram">Learn More
               </a>
               <!-- /.tp-caption -->
               <!-- /.tp-caption -->
@@ -148,7 +148,7 @@ $alamat = cekAlamat($shareUsername);
     <!-- Banner -->
 
     <!-- Tentang Program -->
-    <div class="container inner">
+    <div id="tentangProgram" class="container inner">
       <div class="text-center">
         <h2 class="title-bg bg-red color-white">Tentang Program</h2>
       </div>

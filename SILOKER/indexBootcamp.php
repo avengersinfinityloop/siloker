@@ -39,7 +39,7 @@ $email = cekEmail($shareUsername);
 		<!-- Navbar -->
 		<nav class="navbar bg-white shadow navbar-expand-lg">
 			<div class="container">
-				<div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 40%;" class="logo-light" alt="" /></a></div>
+				<div class="navbar-brand"><a href="index.html"><img src="#" srcset="" class="logo-dark" alt="" /><img src="" srcset="multimedia/image/logo/silokerwithtextlogo.png" style="width: 100%;" class="logo-light" alt="" /></a></div>
 				<div class="navbar-other ml-auto order-lg-3">
 					<ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
 						<li class="nav-item">
@@ -93,7 +93,7 @@ $email = cekEmail($shareUsername);
 						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="profil.php">Profil</a>
 						</li>
 					</ul>
-					<div class="d-inline">
+					<div>
 						<?php if ($shareUsername != '') : ?>
 							<?php echo $shareUsername; ?>
 							<a href='index.php' class="btn btn-sm">Logout</a>
