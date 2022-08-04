@@ -428,8 +428,8 @@ $email = cekEmail($shareUsername);
 						</button>
 						<div class="box bg-white p-40 text-center">
 							<div class="row">
-								<div class="col-md-8 offset-md-2">
-									<figure class="mb-30"><img src="#" srcset="style/images/concept/concept19.png 1x, style/images/concept/concept19@2x.png 2x" alt="" /></figure>
+								<div class="col-lg-8 offset-md-2">
+									<figure class="mb-30"><img src="#" srcset="multimedia/image/concept/formimage-freetrial.png" alt="" /></figure>
 								</div>
 								<!-- /column -->
 							</div>

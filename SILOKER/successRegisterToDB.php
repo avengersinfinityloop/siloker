@@ -107,6 +107,13 @@ $shareUsername = $_SESSION['username'];
 
 		<figure class="cover"><img src="multimedia/image/concept/successtoredatabase.png" alt="" /></figure>
 
+		<div class="space50"></div>
+		<div class="d-flex justify-content-center">
+			<div class="text-center"><a href="indexBootcamp.php" class="btn">Home Bootcamp</a></div>
+			<div class="text-center"><a href="tabelPesertaBootcamp.php" class="btn">List Peserta Bootcamp</a></div>
+		</div>
+		<div class="space200"></div>
+
 		<!-- Footer -->
 		<footer class="dark-wrapper inverse-text">
 			<div class="space100"></div>
