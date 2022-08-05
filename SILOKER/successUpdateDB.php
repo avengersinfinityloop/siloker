@@ -106,7 +106,9 @@ $shareUsername = $_SESSION['username'];
 		<!-- Navbar -->
 
 		<figure class="cover"><img src="multimedia/image/concept/successupdatedatabase.png" alt="" /></figure>
-		<button>Kembali ke List Peserta Bootcamp</button>
+		<div class="space50"></div>
+		<div class="text-center"><a href="tabelPesertaBootcamp.php" class="btn">List Peserta Bootcamp</a></div>
+		<div class="space200"></div>
 
 		<!-- Footer -->
 		<footer class="dark-wrapper inverse-text">

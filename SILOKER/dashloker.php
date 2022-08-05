@@ -37,7 +37,7 @@
 
     <body>
 <!-- Navbar (Brands) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
       <div class="container">
         <div class="container-fluid">
         <a class="navbar-brand" href="dashloker.php">
@@ -113,6 +113,9 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
 
 <!-- Carousel (News Siloker) -->
     <div class="container">
@@ -155,8 +158,8 @@
             <p class="lead">
               Bergabung untuk mendapatkan lebih.
             </p>
-            <a href="#" class="btn btn-primary btn-md">Pelajari Lebih Lanjut</a>
-            <a href="#" class="btn btn-success btn-md">Daftar</a>
+            <a href="faq.html" class="btn btn-primary btn-md">Pelajari Lebih Lanjut</a>
+            <a href="register.php" class="btn btn-success btn-md">Daftar</a>
         </div>
       </div>
     </div>

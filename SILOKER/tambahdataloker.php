@@ -51,25 +51,25 @@
             <div class="col">
               <h4>Input Gambar</h4>
               <label class="form-label" for="customFile">Masukan Logo Perushaan Terkait</label>
-              <input type="file" name="logo" class="form-control" id="customFile" />
+              <input type="file" name="logo" class="form-control" id="customFile" required/>
             </div>
 
             <div class="col">
               <h4>Nama Perusahaan</h4>
               <label class="form-label" for="nama_pt">Masukan Nama Perusahaan</label>
-              <input class="form-control" name="nama_pt" type="text" placeholder="nama_pt" aria-label="default input example">
+              <input class="form-control" name="nama_pt" type="text" placeholder="nama_pt" aria-label="default input example" required>
             </div>
             
             <div class="col">
               <h4>Bidang Pekerjaan</h4>
               <label class="form-label" for="bidang_kerja">Masukan Bidang Pekerjaan</label>
-              <input class="form-control" name="bidang_kerja" type="text" placeholder="bidang_kerja" aria-label="default input example">
+              <input class="form-control" name="bidang_kerja" type="text" placeholder="bidang_kerja" aria-label="default input example"required>
             </div>
 
             <div class="col">
               <h4>Lulusan Minimal</h4>
               <label class="form-label" for="lulusan_min">Pilihlah Kriteria lulusan</label>
-              <select name="lulusan_min" class="form-select" aria-label="Default select example">
+              <select name="lulusan_min" class="form-select" aria-label="Default select example" required>
                 <option value="" selected>Pilih Lulusan</option>
                 <option value="S1">S1 / D4 (Strata 1/DIPLOMA 4)</option>
                 <option value="S2">S2 / Strata 2 (Magister)</option>
@@ -100,7 +100,7 @@
             <div class="col">
               <h4>Usia Dibutuhkan</h4>
               <label class="form-label" for="usia_max">Maksimal Kriteria Usia</label>
-              <input class="form-control" name="usia_max" type="number" placeholder="usia_max" aria-label="default input example">
+              <input class="form-control" name="usia_max" maxlength="2" type="number" placeholder="usia_max" aria-label="default input example">
             </div>
 
               <div class="col">
@@ -127,7 +127,7 @@
             <div class="col">
               <h4>Lokasi</h4>
               <label class="form-label" for="lokasi">Wilayah Kota Penetapan</label>
-              <select name="lokasi" class="form-select" aria-label="Default select example">
+              <select name="lokasi" class="form-select" aria-label="Default select example" required>
                 <option value="Bandung" selected>Bandung</option>
                 <option value="Jakarta">Jakarta</option>
                 <option value="Surabaya">Surabaya</option>
@@ -153,13 +153,13 @@
             <div class="col">
               <h4>Link Web Perusahaan</h4>
               <label class="form-label" for="link_pt">Alamat web perushaan Terkait</label>
-              <input class="form-control" name="link_pt" type="text" placeholder="link_pt" aria-label="default input example">
+              <input class="form-control" name="link_pt" type="text" placeholder="link_pt" aria-label="default input example" required>
             </div>
 
             <div class="col">
               <h4>Tautan Karir</h4>
               <label class="form-label" for="desk_lengkap">Alamat tautan karir pada web terkait</label>
-              <input class="form-control" name="desk_lengkap" type="text" placeholder="Tautan Deskripsi Lengkap" aria-label="default input example">
+              <input class="form-control" name="desk_lengkap" type="text" placeholder="Tautan Deskripsi Lengkap" aria-label="default input example" required>
             </div>
           </div>
 
