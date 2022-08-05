@@ -83,7 +83,6 @@
         <h1>Profil Diri</h1>
         <?php
         echo "<h1>$shareUsername</h1>";
-        var_dump($shareUsername);
         ?>
         <hr style="border: 0;
             height: 1px;
