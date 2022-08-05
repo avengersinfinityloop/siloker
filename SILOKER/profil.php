@@ -257,7 +257,7 @@
                             <option value=""></option>
                             <option value="Direktur">Direktur</option>
                             <option value="Manager">Manager</option>
-                            <option value="Supervisior">Supervisior</option>
+                            <option value="Supervisor">Supervisor</option>
                             <option value="CEO">Presiden Direktur - CEO</option>
                             <option value="Vice-Presiden">Vice Presiden</option>
                         </select>
