@@ -270,7 +270,7 @@
                             <option value="Ilmuwan">Ilmuwan</option>
                             <option value="Fotografer">Fotografer</option>
                             <option value="Hukum">Hukum</option>
-                            <option value="Komputer">Teknologi Informatisi</option>
+                            <option value="Komputer">Komputer</option>
                         </select>
                     </div>
                     <div class="form-group">
