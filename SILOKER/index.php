@@ -44,7 +44,7 @@
             header('location:profil.php');
         }
         else{
-            echo "<script type='text/javascript'>alert('Maaf email dan password anda tidak sesuai');document.location='index.php';</script>";
+            echo "<script type='text/javascript'>alert('Maaf username dan password anda tidak sesuai');document.location='index.php';</script>";
         }
     }
 ?>

@@ -83,7 +83,6 @@
         <h1>Profil Diri</h1>
         <?php
         echo "<h1>$shareUsername</h1>";
-        var_dump($shareUsername);
         ?>
         <hr style="border: 0;
             height: 1px;
@@ -258,7 +257,7 @@
                             <option value=""></option>
                             <option value="Direktur">Direktur</option>
                             <option value="Manager">Manager</option>
-                            <option value="Supervisior">Supervisior</option>
+                            <option value="Supervisor">Supervisor</option>
                             <option value="CEO">Presiden Direktur - CEO</option>
                             <option value="Vice-Presiden">Vice Presiden</option>
                         </select>
@@ -271,7 +270,7 @@
                             <option value="Ilmuwan">Ilmuwan</option>
                             <option value="Fotografer">Fotografer</option>
                             <option value="Hukum">Hukum</option>
-                            <option value="Komputer">Teknologi Informatisi</option>
+                            <option value="Komputer">Komputer</option>
                         </select>
                     </div>
                     <div class="form-group">

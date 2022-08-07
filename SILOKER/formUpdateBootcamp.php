@@ -300,8 +300,13 @@ $alamat = cekAlamat($shareUsername);
                     <!-- Pilih Bootcamp -->
                     <div class="form-row">
                       <div class="col-md-6">
-                        <div class="form-group">
-                          <input id="form_namaBootcamp" class="form-control" type="text" name="namaBootcamp" value="UI/UX Designer" readonly>
+                        <div class="form-group custom-select-wrapper">
+                          <select id="form_namaBootcamp" class="custom-select" type="text" name="namaBootcamp" placeholder="Pilih Bootcamp *" required="required" data-error="Pilih Bootcamp is required.">
+                            <option selected>Pilih Bootcamp</option>
+                            <option>Digital Marketing</option>
+                            <option>Full Stack Web Development</option>
+                            <option>UI/UX Designer</option>
+                          </select>
                         </div>
                       </div>
                       <div class="col-md-6">
