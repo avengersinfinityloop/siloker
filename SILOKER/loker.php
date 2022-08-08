@@ -268,28 +268,8 @@
 <!-- Main Card Loker -->
 <?php
   include("koneksidb.php");
-  $filter=[];
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    foreach($_POST as $key => $value) {
-      if (is_array($value)) {
-        $f=[];
-        foreach($value as $k => $v) {
-          if ($key=="usia_max") {
-            $f[]="{key} <= '{$v}'";
-          } else $f[]="{key} = '{$v}";
-        }
-        $filter[]="(".implode(" or ", $f).")";
-      } else {
-        if(!empty($value)) $filter[]="{$key} = '{$value}'";
-      }
-    }
-  } 
-  if(empty($filter)) {
-    $sql = "SELECT * FROM loker";
-  } else $sql = "SELECT * FROM loker WHERE " . implode(" and ",$filter);
-
-
+  $sql = "SELECT * FROM loker";
+  
   if($result = mysqli_query($conn, $sql)){
       if(mysqli_num_rows($result) > 0){
         $col = 0;
