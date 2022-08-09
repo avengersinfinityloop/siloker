@@ -357,6 +357,13 @@ canvas {
 .navbar.navbar-bg-light {
   background: var(--color-white) !important;
 }
+.navbar-brand {
+  width: 150px;
+}
+
+.navbar-brand > img {
+  width: 100%;
+}
 .navbar .navbar-brand {
   padding-top: 0;
   padding-bottom: 0;

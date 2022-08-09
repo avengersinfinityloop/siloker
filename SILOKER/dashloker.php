@@ -219,54 +219,6 @@
       </div>
     </div>
 
-<!-- Accordion (FAQ) -->
-    <div class="container p-5">
-      <div class="row">
-        <h2>FREQUENTLY ASKED QUESTIONS (FAQ's)</h2>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <p class="lead">Pertanyaan yang sering ditanyakan</p>
-        </div>
-
-        <div class="col">
-          <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  Mengapa Mencari Loker Disini?
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Dengan SILOKER anda akan dimudahkan dalam mencari pekerjaan swasta/negeri, pekembangan informasi yang didapat tentu terpercaya dan sangat cepat.</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                  Apa yang disediakan SILOKER?
-                </button>
-              </h2>
-              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Kami menyediakan beberapa layanan hanya melalui website di <a href="#">siloker.com</a>. Dengan layanan ini Anda dapat dimudahkan mencari lowongan pekerjaan, mencari pelatihan khusus/bootcamp, dimudahkan untuk mencari informasi terkait pekerjaan yang anda inginkan.</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                  Apakah SILOKER Berbayar?
-                </button>
-              </h2>
-              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Dengan fasilitas premium yang kami berikan, semuanya adalah <strong>GRATIS !</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <br>
     <br>
     <br>
