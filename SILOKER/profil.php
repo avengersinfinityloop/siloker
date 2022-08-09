@@ -211,7 +211,7 @@
                         <select name="jurusan" id="jurusan" onchange="tes()" class="form-control jurusan">
                             <option value=""></option>
                             <option value="Elektro">Elektro</option>
-                            <option value="Komputer">Teknologi Informatika</option>
+                            <option value="Komputer">Komputer</option>
                             <option value="Industri">Industri</option>
                             <option value="Manajemen">Manajemen</option>
                             <option value="Matematika">Matematika</option>
