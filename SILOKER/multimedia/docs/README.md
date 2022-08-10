@@ -1,2 +1,0 @@
-# siloker
-Project Web Siloker

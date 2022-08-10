@@ -1,0 +1,9 @@
+- DataBase
+	Menggunakaan XAMP, Import DB di bawah ke http://localhost/phpmyadmin/
+	DB PATH = SILOKER/DB/siloker_V013.sql
+
+- Untuk Registrasi di Menu KURSUS wajib login menggunakan user yang di profile nya memiliki biodata NIK di table profle
+
+- Untuk Registrasi di Menu LOKER wajib login menggunakan user :
+	USER 	= superadm
+	PASS	= superadm
